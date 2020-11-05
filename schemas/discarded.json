@@ -1,0 +1,8 @@
+{
+    "title": "Discarded tags",
+    "description": "Keys of tags to be deleted when editing features.",
+    "type": "object",
+    "additionalProperties": {
+        "type": "boolean"
+    }
+}

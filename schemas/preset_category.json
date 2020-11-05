@@ -1,0 +1,28 @@
+{
+    "title": "Preset category",
+    "description": "An ordered grouping of presets",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "The title of this category in US English",
+            "type": "string",
+            "required": true
+        },
+        "icon": {
+            "description": "Name of preset icon which represents this preset",
+            "type": "string",
+            "required": true
+        },
+        "members": {
+            "description": "The IDs of the presets in this category",
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "string"
+            },
+            "required": true
+        }
+    },
+    "additionalProperties": false
+}

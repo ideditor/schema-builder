@@ -1,0 +1,38 @@
+{
+    "title": "Default presets",
+    "description": "Directory of the IDs of the presets or categories to be shown in the default list for each geometry type.",
+    "type": "object",
+    "properties": {
+        "point": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "vertex": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "line": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "area": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "relation": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false
+}

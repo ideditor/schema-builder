@@ -1,0 +1,24 @@
+{
+    "title": "Deprecated tags",
+    "description": "An ordered list of old tags mapped to new tags.",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "old": {
+                "type": "object",
+                "additionalProperties": {
+                    "type": "string"
+                },
+                "required": true
+            },
+            "replace": {
+                "type": "object",
+                "additionalProperties": {
+                    "type": "string"
+                }
+            }
+        },
+        "additionalProperties": false
+    }
+}
