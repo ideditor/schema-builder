@@ -10,7 +10,7 @@
   },
   "license": "ISC",
   "main": "lib/schema-builder.js",
-  "devDependencies": {
+  "dependencies": {
     "colors": "^1.1.2",
     "glob": "^7.1.0",
     "js-yaml": "^3.14.0",
