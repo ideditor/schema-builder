@@ -1,4 +1,4 @@
-# `@ideditor/schema-builder`
+# schema-builder
 
 This package lets you define and compile OpenStreetMap presets, fields, and other tagging
 info into the format expected by the [iD editor](https://github.com/openstreetmap/iD).
