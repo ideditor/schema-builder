@@ -14,14 +14,16 @@
     "colors": "^1.1.2",
     "glob": "^7.1.0",
     "js-yaml": "^3.14.0",
-    "json-stringify-pretty-compact": "^2.0.0",
     "jsonschema": "^1.1.0",
     "shelljs": "^0.8.0"
   },
   "devDependencies": {
+    "eslint": "^7.13.0",
     "jest": "^26.6.3"
   },
   "scripts": {
+    "lint": "eslint lib",
+    "lint:fix": "eslint lib --fix",
     "test": "jest schema-builder.test.js"
   }
 }

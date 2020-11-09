@@ -26,7 +26,7 @@ beforeEach(() => {
 function writeSourceData(data) {
   for (let key in data) {
     let path = '';
-    let pathComponents = key.split('/')
+    let pathComponents = key.split('/');
     pathComponents.pop();
     while (pathComponents.length) {
       path += '/' + pathComponents.shift();
