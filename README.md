@@ -1,3 +1,6 @@
+[![npm version](https://badge.fury.io/js/%40ideditor%2Fschema-builder.svg)](https://badge.fury.io/js/%40ideditor%2Fschema-builder)
+[![Build Status](https://travis-ci.com/ideditor/schema-builder.svg?branch=main)](https://travis-ci.com/ideditor/schema-builder)
+
 # schema-builder
 
 This package lets you define and compile OpenStreetMap presets, fields, and other tagging
