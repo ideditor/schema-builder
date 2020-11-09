@@ -13,6 +13,7 @@ const schemaBuilder = require('@ideditor/schema-builder');
 schemaBuilder.build({
   inDirectory: 'data',
   outDirectory: 'dist',
+  sourceLocale: 'en',
   taginfoProjectInfo: {
     name: 'IntrepiD',
     description: 'iD editor, but adventurous.',
@@ -28,6 +29,7 @@ The following build options are supported. All options are optional.
 - `inDirectory`, `string`: The relative directory of the source data files. Defaults to `data`.
 - `outDirectory`, `string`: The relative directory of the built data files. Be aware that
 everything in this directory will be overwritten when building. Defaults to `dist`.
+- `sourceLocale`, `string`: The code of the language/locale used for the translatable strings in the data files. Defaults to `en`.
 - `taginfoProjectInfo`, `object`: Project metadata required by TagInfo. If this info is not provided, the `taginfo.json` file will not be built. See the [schema](https://github.com/taginfo/taginfo-projects/blob/master/taginfo-project-schema.json) for more details.
 - `processPresets`, `function(presets)`: An opportunity to edit the built presets.
 - `processFields`, `function(fields)`: An opportunity to edit the built fields.
@@ -109,7 +111,7 @@ A basic preset is of the form:
     "tags": {
         "leisure": "park"
     },
-    // English language display name for this map feature.
+    // Display name for this feature type in the `sourceLocale` language.
     "name": "Park"
 }
 ```
@@ -120,7 +122,7 @@ The complete JSON schema for presets can be found in [`schemas/preset.json`](sch
 
 ##### `name`
 
-The primary name of the feature type in American English.
+The primary name of the feature type in the `sourceLocale` language.
 
 Upon merging with `develop`, this is sent to Transifex for translating to other localizations. Changing the name of an existing preset will require it to be re-translated to all localizations.
 
