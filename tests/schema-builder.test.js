@@ -1,7 +1,7 @@
 const fs = require('fs');
 const shell = require('shelljs');
 
-const schemaBuilder = require('../lib/schema-builder.js');
+const schemaBuilder = require('../lib/index.js');
 
 const _workspace = './tests/workspace';
 
@@ -40,8 +40,9 @@ function writeSourceData(data) {
 
 
 describe('schema-builder', () => {
-  it('accesses module without error', () => {
+  it('accesses modules without error', () => {
     expect(schemaBuilder && schemaBuilder.build).not.toBeUndefined();
+    expect(schemaBuilder && schemaBuilder.fetchTranslations).not.toBeUndefined();
   });
 
   it('compiles data', () => {

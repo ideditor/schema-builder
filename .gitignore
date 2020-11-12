@@ -9,3 +9,5 @@ package-lock.json
 
 /.coverage
 /tests/workspace
+
+transifex.auth

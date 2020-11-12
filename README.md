@@ -11,6 +11,8 @@ this to manage iD's tags. You can use it to create a custom schema for your own 
 
 ## Usage
 
+### Building Data
+
 ```JS
 const schemaBuilder = require('@ideditor/schema-builder');
 schemaBuilder.build({
@@ -27,7 +29,7 @@ schemaBuilder.build({
 });
 ```
 
-The following build options are supported. All options are optional.
+The following options are optional:
 
 - `inDirectory`, `string`: The relative directory of the source data files. Defaults to `data`.
 - `outDirectory`, `string`: The relative directory of the built data files. Be aware that
@@ -37,6 +39,37 @@ everything in this directory will be overwritten when building. Defaults to `dis
 - `processPresets`, `function(presets)`: An opportunity to edit the built presets.
 - `processFields`, `function(fields)`: An opportunity to edit the built fields.
 - `processCategories`, `function(categories)`: An opportunity to edit the built preset categories.
+
+### Fetching Translations
+
+```JS
+const schemaBuilder = require('@ideditor/schema-builder');
+schemaBuilder.fetchTranslations({
+  outDirectory: 'dist',
+  sourceLocale: 'en',
+  organizationId: 'openstreetmap',
+  projectId: 'intrepid',
+  resourceIds: ['presets'],
+  reviewedOnly: ['de', 'es']
+});
+```
+
+The following options are required:
+
+- `organizationId`, `string`: The ID of the Transfiex organization where the translation project is hosted.
+- `projectId`, `string`: The ID of the Transfiex project within the organization where the schema resource is translated.
+
+The following options are optional:
+
+- `resourceIds`, `[string]`: The IDs of the resources to download. Defaults to `['presets']`.
+- `credentials`, `{ user: string, password: string }`: Your Transifex API credentials.
+Defaults to those stored as JSON in a `transifex.auth` file in your working directory.
+- `reviewedOnly`, `boolean` or `[string]`: If `true`, only reviewed translations are included.
+If `false`, all translations are included. If an array of locale codes, only reviewed
+translations are included for those specified locale codes, while all translations are included
+for the remaining locales.
+- `outDirectory`, `string`: Same as the `outDirectory` option for `schemaBuilder.build()`.
+- `sourceLocale`, `string`: Same as the `sourceLocale` option for `schemaBuilder.build()`.
 
 ## Source Files
 
