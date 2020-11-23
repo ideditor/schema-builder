@@ -45,6 +45,21 @@ describe('schema-builder', () => {
     expect(schemaBuilder && schemaBuilder.fetchTranslations).not.toBeUndefined();
   });
 
+  it('validates data', () => {
+    writeSourceData({
+      'data/presets/natural.json': {
+        tags: {
+          natural: '*'
+        },
+        geometry: ['point', 'vertex', 'line', 'area', 'relation'],
+        name: 'Natural Feature'
+      }
+    });
+    schemaBuilder.validate({
+      inDirectory: _workspace + '/data'
+    });
+  });
+
   it('compiles data', () => {
     writeSourceData({
       'data/presets/natural.json': {
