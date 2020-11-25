@@ -3,7 +3,7 @@ const shell = require('shelljs');
 
 const schemaBuilder = require('../lib/index.js');
 
-const _workspace = './tests/workspace';
+const _workspace = 'tests/workspace';
 
 beforeAll(() => {
   if (!fs.existsSync(_workspace)) {
@@ -82,7 +82,7 @@ describe('schema-builder', () => {
     expect(fs.existsSync(_workspace + '/dist')).toBe(false);
   });
 
-  it('runs buildDist', () => {
+  it('runs buildDist', (done) => {
     writeSourceData({
       'data/presets/natural.json': {
         tags: {
@@ -96,8 +96,10 @@ describe('schema-builder', () => {
       inDirectory: _workspace + '/data',
       interimDirectory: _workspace + '/interim',
       outDirectory: _workspace + '/dist'
+    }).then(function() {
+      expect(fs.existsSync(_workspace + '/interim/source_strings.yaml')).toBe(true);
+      expect(fs.existsSync(_workspace + '/dist')).toBe(true);
+      done();
     });
-    expect(fs.existsSync(_workspace + '/interim/source_strings.yaml')).toBe(true);
-    expect(fs.existsSync(_workspace + '/dist')).toBe(true);
   });
 });
