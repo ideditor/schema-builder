@@ -41,11 +41,13 @@ function writeSourceData(data) {
 
 describe('schema-builder', () => {
   it('accesses modules without error', () => {
-    expect(schemaBuilder && schemaBuilder.build).not.toBeUndefined();
+    expect(schemaBuilder && schemaBuilder.buildDist).not.toBeUndefined();
+    expect(schemaBuilder && schemaBuilder.buildDev).not.toBeUndefined();
+    expect(schemaBuilder && schemaBuilder.validate).not.toBeUndefined();
     expect(schemaBuilder && schemaBuilder.fetchTranslations).not.toBeUndefined();
   });
 
-  it('validates data', () => {
+  it('runs validate', () => {
     writeSourceData({
       'data/presets/natural.json': {
         tags: {
@@ -58,9 +60,11 @@ describe('schema-builder', () => {
     schemaBuilder.validate({
       inDirectory: _workspace + '/data'
     });
+    expect(fs.existsSync(_workspace + '/interim')).toBe(false);
+    expect(fs.existsSync(_workspace + '/dist')).toBe(false);
   });
 
-  it('compiles data', () => {
+  it('runs buildDev', () => {
     writeSourceData({
       'data/presets/natural.json': {
         tags: {
@@ -70,9 +74,30 @@ describe('schema-builder', () => {
         name: 'Natural Feature'
       }
     });
-    schemaBuilder.build({
+    schemaBuilder.buildDev({
       inDirectory: _workspace + '/data',
+      interimDirectory: _workspace + '/interim'
+    });
+    expect(fs.existsSync(_workspace + '/interim/source_strings.yaml')).toBe(true);
+    expect(fs.existsSync(_workspace + '/dist')).toBe(false);
+  });
+
+  it('runs buildDist', () => {
+    writeSourceData({
+      'data/presets/natural.json': {
+        tags: {
+          natural: '*'
+        },
+        geometry: ['point', 'vertex', 'line', 'area', 'relation'],
+        name: 'Natural Feature'
+      }
+    });
+    schemaBuilder.buildDist({
+      inDirectory: _workspace + '/data',
+      interimDirectory: _workspace + '/interim',
       outDirectory: _workspace + '/dist'
     });
+    expect(fs.existsSync(_workspace + '/interim/source_strings.yaml')).toBe(true);
+    expect(fs.existsSync(_workspace + '/dist')).toBe(true);
   });
 });

@@ -11,14 +11,15 @@ this to manage iD's tags. You can use it to create a custom schema for your own 
 
 ## Usage
 
-### Building Data
+### Building Distribution Data
 
-To validate your source data and compile output files for iD:
+To validate your source data and compile output files for iD (i.e. when releasing a new schema version):
 
 ```JS
 const schemaBuilder = require('@ideditor/schema-builder');
-schemaBuilder.build({
+schemaBuilder.buildDist({
   inDirectory: 'data',
+  interimDirectory: 'interim',
   outDirectory: 'dist',
   sourceLocale: 'en',
   taginfoProjectInfo: {
@@ -34,13 +35,36 @@ schemaBuilder.build({
 The following options are optional:
 
 - `inDirectory`: `string`, The relative directory of the source data files. Defaults to `data`.
-- `outDirectory`: `string`, The relative directory of the built data files. Be aware that
+- `interimDirectory`: `string`, The relative directory of files needed during development but not for distribution. Be aware that
+everything in this directory will be overwritten when building. Defaults to `interim`.
+- `outDirectory`: `string`, The relative directory of the built data files intended for distribution. Be aware that
 everything in this directory will be overwritten when building. Defaults to `dist`.
 - `sourceLocale`: `string`, The code of the language/locale used for the translatable strings in the data files. Defaults to `en`.
 - `taginfoProjectInfo`, `object`, Project metadata required by TagInfo. If this info is not provided, the `taginfo.json` file will not be built. See the [schema](https://github.com/taginfo/taginfo-projects/blob/master/taginfo-project-schema.json) for more details.
 - `processPresets`: `function(presets)`, An opportunity to edit the built presets.
 - `processFields`: `function(fields)`, An opportunity to edit the built fields.
 - `processCategories`: `function(categories)`, An opportunity to edit the built preset categories.
+
+### Building Development Data
+
+To validate your source data and compile files needed during development:
+
+```JS
+const schemaBuilder = require('@ideditor/schema-builder');
+schemaBuilder.buildDev({
+  inDirectory: 'data',
+  interimDirectory: 'interim',
+  sourceLocale: 'en'
+});
+```
+
+The following options are identical to those for `schemaBuilder.build()`:
+- `inDirectory`
+- `interimDirectory`
+- `sourceLocale`
+- `processPresets`
+- `processFields`
+- `processCategories`
 
 ### Validating Data
 
