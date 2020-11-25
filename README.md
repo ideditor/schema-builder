@@ -303,15 +303,18 @@ For example, a feature with `amenity=cafe` and `building=commercial` will match 
 
 The default is `1.0`.
 
-##### `countryCodes`
+##### `locationSet`
 
-An array of two-letter, lowercase [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. The preset will only be searchable when the user is editing over the specified, whitelisted countries. The locale and language of iD are not factors, just the position of the map.
+An object with the identifiers of regions where this field should or shouldn't be shown. By default, fields are available everywhere.
 
-By default, presets are available everywhere.
+See the [location-conflation](https://github.com/ideditor/location-conflation) package for details.
 
-##### `notCountryCodes`
-
-An array of two-letter, lowercase [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. Similar to `countryCodes` except a blocklist.
+```js
+"locationSet": {
+    "include": ["US"],
+    "exclude": ["PR", "VI"]
+}
+```
 
 ##### `replacement`
 
@@ -408,7 +411,8 @@ A string specifying the UI and behavior of the field. Must be one of the followi
 * `access` - Block of dropdowns for defining the `access=*` tags on a highway
 * `address` - Block of text and dropdown fields for entering address information (localized for editing location)
 * `cycleway` - Block of dropdowns for adding `cycleway:left` and `cycleway:right` tags on a highway
-* `maxspeed` - Numeric text field for speed and dropdown for "mph/kph"
+* `roadspeed` - Numeric text field for speed and dropdown for "mph" / "km/h", defaulting to the speed unit used for roads in the feature's region
+* `roadheight` - Numeric text field for height and dropdowns for "m" / "ft" and "in", defaulting to the height unit used for roads in the feature's region
 * `restrictions` - Graphical field for editing turn restrictions
 * `wikidata` - Search field for selecting a Wikidata entity
 * `wikipedia` - Block of fields for selecting a wiki language and Wikipedia page
@@ -544,11 +548,18 @@ For example, this is how we show the Internet Access Fee field only if the featu
 
 If a feature has a value for this field's `key` or `keys`, it will display regardless of the `prerequisiteTag` property.
 
-##### `countryCodes`
+##### `locationSet`
 
-An array of two-letter, lowercase [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. The field will only be available for features in the specified, whitelisted countries.
+An object with the identifiers of regions where this field should or shouldn't be shown. By default, fields are available everywhere.
 
-By default, fields are available everywhere.
+See the [location-conflation](https://github.com/ideditor/location-conflation) package for details.
+
+```js
+"locationSet": {
+    "include": ["US"],
+    "exclude": ["PR", "VI"]
+}
+```
 
 ##### `notCountryCodes`
 
