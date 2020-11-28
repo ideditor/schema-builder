@@ -585,10 +585,6 @@ See the [location-conflation](https://github.com/ideditor/location-conflation) p
 }
 ```
 
-##### `notCountryCodes`
-
-An array of two-letter, lowercase [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. Similar to `countryCodes` except a blocklist.
-
 ##### `urlFormat`
 
 For `identifier` fields, the permalink URL of the external record. It must contain a `{value}` placeholder where the tag value will be inserted. For example:
