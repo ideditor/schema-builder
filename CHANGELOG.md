@@ -7,6 +7,14 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 2.1.0
+##### 2020-Nov-30
+
+* Build both minified and non-minified translation files ([#2])
+* Discard `terms` preset and field properties with no values
+
+[#2]: https://github.com/ideditor/schema-builder/issues/2
+
 # 2.0.0
 ##### 2020-Nov-25
 
