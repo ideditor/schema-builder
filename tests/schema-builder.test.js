@@ -144,7 +144,7 @@ describe('schema-builder', () => {
         contact_name: 'J. Maintainer',
         contact_email: 'maintainer@example.com'
       },
-      listReusedIcons: 1
+      listReusedIcons: true
     }).then(function() {
       expect(fs.existsSync(_workspace + '/interim/source_strings.yaml')).toBe(true);
       expect(fs.existsSync(_workspace + '/dist')).toBe(true);
