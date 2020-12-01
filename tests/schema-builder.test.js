@@ -143,7 +143,8 @@ describe('schema-builder', () => {
         project_url: 'https://example.com/IntrepiD',
         contact_name: 'J. Maintainer',
         contact_email: 'maintainer@example.com'
-      }
+      },
+      listReusedIcons: 1
     }).then(function() {
       expect(fs.existsSync(_workspace + '/interim/source_strings.yaml')).toBe(true);
       expect(fs.existsSync(_workspace + '/dist')).toBe(true);

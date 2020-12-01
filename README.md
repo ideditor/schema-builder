@@ -44,6 +44,7 @@ everything in this directory will be overwritten when building. Defaults to `dis
 - `processPresets`: `function(presets)`, An opportunity to edit the built presets.
 - `processFields`: `function(fields)`, An opportunity to edit the built fields.
 - `processCategories`: `function(categories)`, An opportunity to edit the built preset categories.
+- `listReusedIcons`: `boolean` or `number`, If true, icons used by multiple presets will be listed. If a number, icons used more than that number of times are listed. Defaults to `false`.
 
 ### Building Development Data
 
@@ -65,6 +66,7 @@ The following options are identical to those for `schemaBuilder.build()`:
 - `processPresets`
 - `processFields`
 - `processCategories`
+- `listReusedIcons`
 
 ### Validating Data
 
@@ -82,6 +84,7 @@ The following options are identical to those for `schemaBuilder.build()`:
 - `processPresets`
 - `processFields`
 - `processCategories`
+- `listReusedIcons`
 
 ### Fetching Translations
 
