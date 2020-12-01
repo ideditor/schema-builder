@@ -34,7 +34,7 @@ function writeSourceData(data) {
         fs.mkdirSync(_workspace + path);
       }
     }
-    fs.writeFileSync(_workspace + '/' + key, JSON.stringify(data[key]));
+    fs.writeFileSync(_workspace + '/' + key, JSON.stringify(data[key], null, 4));
   }
 }
 
@@ -84,18 +84,66 @@ describe('schema-builder', () => {
 
   it('runs buildDist', (done) => {
     writeSourceData({
-      'data/presets/natural.json': {
+      'data/preset_categories/water.json': {
+        icon: 'temaki-water',
+        name: 'Water Features',
+        members: [
+          'natural/water',
+          'natural/water/pond'
+        ]
+      },
+      'data/fields/natural.json': {
+        key: 'natural',
+        type: 'typeCombo',
+        label: 'Natural Type',
+        placeholder: 'water, tree, wood…'
+      },
+      'data/fields/description.json': {
+        key: 'description',
+        type: 'textarea',
+        label: 'Description',
+        universal: true
+      },
+      'data/presets/_natural.json': {
+        fields: [
+          'natural'
+        ],
         tags: {
           natural: '*'
         },
         geometry: ['point', 'vertex', 'line', 'area', 'relation'],
+        searchable: false,
         name: 'Natural Feature'
+      },
+      'data/presets/natural/water.json': {
+        tags: {
+          natural: 'water'
+        },
+        geometry: ['point', 'area'],
+        terms: ['pond', 'lake', 'pool', 'reservoir'],
+        name: 'Water'
+      },
+      'data/presets/natural/water/pond.json': {
+        tags: {
+          natural: 'water',
+          water: 'pond'
+        },
+        geometry: ['point', 'area'],
+        terms: ['pool'],
+        name: 'Pond'
       }
     });
     schemaBuilder.buildDist({
       inDirectory: _workspace + '/data',
       interimDirectory: _workspace + '/interim',
-      outDirectory: _workspace + '/dist'
+      outDirectory: _workspace + '/dist',
+      taginfoProjectInfo: {
+        name: 'IntrepiD',
+        description: 'iD editor, but adventurous.',
+        project_url: 'https://example.com/IntrepiD',
+        contact_name: 'J. Maintainer',
+        contact_email: 'maintainer@example.com'
+      }
     }).then(function() {
       expect(fs.existsSync(_workspace + '/interim/source_strings.yaml')).toBe(true);
       expect(fs.existsSync(_workspace + '/dist')).toBe(true);
