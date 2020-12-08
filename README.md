@@ -59,7 +59,7 @@ schemaBuilder.buildDev({
 });
 ```
 
-The following options are identical to those for `schemaBuilder.build()`:
+The following options are identical to those for `schemaBuilder.buildDist()`:
 - `inDirectory`
 - `interimDirectory`
 - `sourceLocale`
@@ -79,7 +79,7 @@ schemaBuilder.validate({
 });
 ```
 
-The following options are identical to those for `schemaBuilder.build()`:
+The following options are identical to those for `schemaBuilder.buildDist()`:
 - `inDirectory`
 - `processPresets`
 - `processFields`
@@ -95,29 +95,29 @@ const schemaBuilder = require('@ideditor/schema-builder');
 schemaBuilder.fetchTranslations({
   outDirectory: 'dist',
   sourceLocale: 'en',
-  organizationId: 'openstreetmap',
-  projectId: 'intrepid',
-  resourceIds: ['presets'],
-  reviewedOnly: ['de', 'es']
+  translOrgId: 'openstreetmap',
+  translProjectId: 'intrepid',
+  translResourceIds: ['presets'],
+  translReviewedOnly: ['de', 'es']
 });
 ```
 
 The following options are required:
 
-- `organizationId`: `string`, The ID of the Transfiex organization where the translation project is hosted.
-- `projectId`: `string`, The ID of the Transfiex project within the organization where the schema resource is translated.
+- `translOrgId`: `string`, The ID of the Transfiex organization where the translation project is hosted.
+- `translProjectId`: `string`, The ID of the Transfiex project within the organization where the schema resource is translated.
 
 The following options are optional:
 
-- `resourceIds`: `[string]`, The IDs of the resources to download. Defaults to `['presets']`.
-- `credentials`: `{ user: string, password: string }`, Your Transifex API credentials.
+- `translResourceIds`: `[string]`, The IDs of the resources to download. Defaults to `['presets']`.
+- `translCredentials`: `{ user: string, password: string }`, Your Transifex API credentials.
 Defaults to those stored as JSON in a `transifex.auth` file in your working directory.
-- `reviewedOnly`: `boolean` or `[string]`, If `true`, only reviewed translations are included.
+- `translReviewedOnly`: `boolean` or `[string]`, If `true`, only reviewed translations are included.
 If `false`, all translations are included. If an array of locale codes, only reviewed
 translations are included for those specified locale codes, while all translations are included
 for the remaining locales.
-- `outDirectory`: `string`, Same as the `outDirectory` option for `schemaBuilder.build()`.
-- `sourceLocale`: `string`, Same as the `sourceLocale` option for `schemaBuilder.build()`.
+- `outDirectory`: `string`, Same as the `outDirectory` option for `schemaBuilder.buildDist()`.
+- `sourceLocale`: `string`, Same as the `sourceLocale` option for `schemaBuilder.buildDist()`.
 
 ## Source Files
 
