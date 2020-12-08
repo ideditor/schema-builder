@@ -46,6 +46,9 @@ everything in this directory will be overwritten when building. Defaults to `dis
 - `processCategories`: `function(categories)`, An opportunity to edit the built preset categories.
 - `listReusedIcons`: `boolean` or `number`, If true, icons used by multiple searchable presets will be listed. If a number, icons used more than that number of times are listed. Defaults to `false`.
 
+You can also include options from `schemaBuilder.fetchTranslations()` in order to
+download translation files at the same time as compiling data.
+
 ### Building Development Data
 
 To validate your source data and compile files needed during development:
