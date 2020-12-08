@@ -7,6 +7,21 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 3.0.0
+##### 2020-Dec-08
+
+* :warning: Don't include English strings redundantly in built data files that are already in translation files
+* :warning: Rename `fetchTranslations` options:
+  * `credentials` -> `translCredentials`
+  * `organizationId` -> `translOrgId`
+  * `projectId` -> `translProjectId`
+  * `resourceIds` -> `translResourceIds`
+  * `reviewedOnly` -> `translReviewedOnly`
+* Accept translation options in the `buildDist` function in order to run `fetchTranslations` at the same time
+* Add `autoSuggestions` combo field property to control whether TagInfo dropdown options should be loaded
+* Add `customValues` combo field property to specify if freeform text values are allowed
+* Add optional `listReusedIcons` diagnostic option to find overused icons
+
 # 2.1.0
 ##### 2020-Nov-30
 
