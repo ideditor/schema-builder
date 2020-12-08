@@ -105,6 +105,16 @@
                 "type": "string"
             }
         },
+        "autoSuggestions": {
+            "description": "If true, the top values from TagInfo will be suggested in the dropdown (combo fields only)",
+            "type": "boolean",
+            "default": true
+        },
+        "customValues": {
+            "description": "If true, the user can type their own value in addition to any listed in `options` or `strings.options` (combo fields only)",
+            "type": "boolean",
+            "default": true
+        },
         "universal": {
             "description": "If true, this field will appear in the Add Field list for all presets",
             "type": "boolean",

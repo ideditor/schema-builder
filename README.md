@@ -500,10 +500,12 @@ The user can pick from any of the options, or type their own value.
 
 ##### `strings`
 
-Combo field types can accept name-value pairs in the `strings` property.
-This is helpful when the field has a fixed number of options and you want to be
-able to provide a translatable description of each option.  When using `strings`,
-the user can not type their own value, they must choose one of the given values.
+The `strings` object contains values that the field wants to be translated on Transifex.
+
+Combo field types can accept key-label pairs in the `options` value of the `strings` property.
+These values populate the `options` property if it isn't otherwise specified.
+If `autoSuggestions` is `true` (as per default), then raw and labeled values might be mixed
+in the dropdown suggestions.
 
 ```js
 {
@@ -526,8 +528,15 @@ the user can not type their own value, they must choose one of the given values.
 }
 ```
 
-If a combo field does not specify `options` or `strings`, the field will fetch
-common tag values from the Taginfo service to use as dropdown values.
+##### `autoSuggestions`
+
+For combo fields, the most common tag values will be fetched from TagInfo and shown
+in the dropdown list if `autoSuggestions` is `true`. The default is `true`.
+
+##### `customValues`
+
+For combo fields, the user can type a custom value in addition to choosing any shown
+in the dropdown list if `customValues` is `true`. The default is `true`.
 
 ##### `snake_case`
 

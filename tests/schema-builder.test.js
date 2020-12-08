@@ -104,6 +104,48 @@ describe('schema-builder', () => {
         label: 'Description',
         universal: true
       },
+      'data/fields/water_quality.json': {
+        key: 'water_quality',
+        type: 'combo',
+        label: 'Water Quality',
+        strings: {
+          options: {
+            terrible: "Terrible",
+            bad: "Bad",
+            okay: "Okay",
+            good: "Good",
+            excellent: "Excellent"
+          }
+        }
+      },
+      'data/fields/swimming.json': {
+        key: 'swimming',
+        type: 'combo',
+        label: 'swimming',
+        strings: {
+          options: {
+            yes: "Yes",
+            no: "No",
+            seasonal: "Seasonal"
+          }
+        },
+        autoSuggestions: false
+      },
+      'data/fields/color_water.json': {
+        key: 'color',
+        type: 'semiCombo',
+        label: 'Colors',
+        options: [
+          'azure',
+          'teal',
+          'sky',
+          'aquamarine',
+          'pearl',
+          'turquoise',
+          'mud'
+        ],
+        autoSuggestions: false
+      },
       'data/presets/_natural.json': {
         fields: [
           'natural'
@@ -116,6 +158,10 @@ describe('schema-builder', () => {
         name: 'Natural Feature'
       },
       'data/presets/natural/water.json': {
+        fields: [
+          'water_quality',
+          'color_water'
+        ],
         tags: {
           natural: 'water'
         },
