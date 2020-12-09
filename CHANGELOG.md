@@ -7,6 +7,12 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 3.1.0
+##### 2020-Dec-09
+
+* Add `aliases` preset property for listing `name` synonyms
+* Fix an issue with generating some TagInfo field value descriptions
+
 # 3.0.0
 ##### 2020-Dec-08
 
