@@ -64,7 +64,14 @@
             "type": "string"
         },
         "terms": {
-            "description": "English synonyms or related terms",
+            "description": "English search terms or related keywords",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "aliases": {
+            "description": "Display-ready English synonyms for the `name`",
             "type": "array",
             "items": {
                 "type": "string"

@@ -175,8 +175,9 @@ describe('schema-builder', () => {
           water: 'pond'
         },
         geometry: ['point', 'area'],
-        terms: ['pool'],
-        name: 'Pond'
+        terms: ['frogs', 'guppies'],
+        name: 'Pond',
+        aliases: ['Vernal Pool', 'Puddle']
       }
     });
     schemaBuilder.buildDist({
