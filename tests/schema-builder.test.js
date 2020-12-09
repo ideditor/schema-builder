@@ -121,7 +121,7 @@ describe('schema-builder', () => {
       'data/fields/swimming.json': {
         key: 'swimming',
         type: 'combo',
-        label: 'swimming',
+        label: 'Swimming',
         strings: {
           options: {
             yes: "Yes",
@@ -130,6 +130,23 @@ describe('schema-builder', () => {
           }
         },
         autoSuggestions: false
+      },
+      'data/fields/salt.json': {
+        key: 'salt',
+        type: 'combo',
+        label: 'Salt',
+        strings: {
+          options: {
+            yes: {
+              title: "Yes",
+              description: "Notable salinity"
+            },
+            no: {
+              title: "No",
+              description: "No notable salinity"
+            }
+          }
+        }
       },
       'data/fields/color_water.json': {
         key: 'color',
@@ -161,6 +178,10 @@ describe('schema-builder', () => {
         fields: [
           'water_quality',
           'color_water'
+        ],
+        moreFields: [
+          'salt',
+          'swimming'
         ],
         tags: {
           natural: 'water'
