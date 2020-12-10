@@ -116,7 +116,10 @@ describe('schema-builder', () => {
             good: "Good",
             excellent: "Excellent"
           }
-        }
+        },
+        terms: [
+          'water health'
+        ]
       },
       'data/fields/swimming.json': {
         key: 'swimming',
@@ -146,7 +149,10 @@ describe('schema-builder', () => {
               description: "No notable salinity"
             }
           }
-        }
+        },
+        terms: [
+          'Saline', 'salinity ', '   saline', 'nitrates'
+        ]
       },
       'data/fields/color_water.json': {
         key: 'color',
@@ -187,7 +193,7 @@ describe('schema-builder', () => {
           natural: 'water'
         },
         geometry: ['point', 'area'],
-        terms: ['pond', 'lake', 'pool', 'reservoir'],
+        terms: ['pond', 'lake', ' POOL', 'reservoir  ', 'Lake'],
         name: 'Water'
       },
       'data/presets/natural/water/pond.json': {
