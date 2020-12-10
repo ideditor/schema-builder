@@ -7,6 +7,11 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 4.0.2
+##### 2020-Dec-10
+
+* Fix issue where only the first character of translated preset names would be saved
+
 # 4.0.1
 ##### 2020-Dec-10
 
