@@ -7,6 +7,15 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 4.0.0
+##### 2020-Dec-09
+
+* :warning: Separate `aliases` with newlines (\n) instead of commas
+* :warning: Don't include empty `terms` properties in the English locale
+* Make all `terms` lower case
+* Remove whitespace between `terms`
+* Collapse duplicate `terms`
+
 # 3.1.0
 ##### 2020-Dec-09
 
