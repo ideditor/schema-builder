@@ -114,7 +114,8 @@ describe('schema-builder', () => {
             bad: "Bad",
             okay: "Okay",
             good: "Good",
-            excellent: "Excellent"
+            excellent: "Excellent",
+            'super fantastic': "Super Fantastic"
           }
         },
         terms: [
