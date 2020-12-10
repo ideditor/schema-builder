@@ -7,6 +7,11 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 4.0.3
+##### 2020-Dec-10
+
+* Fix issue with generating source_strings.yaml when there are string keys with whitespace
+
 # 4.0.2
 ##### 2020-Dec-10
 
