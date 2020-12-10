@@ -7,8 +7,13 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 4.0.1
+##### 2020-Dec-10
+
+* Use commas instead of pluses to separate tags in the field label Transifex comments
+
 # 4.0.0
-##### 2020-Dec-09
+##### 2020-Dec-10
 
 * :warning: Separate `aliases` with newlines (\n) instead of commas
 * :warning: Don't include empty `terms` properties in the English locale
@@ -19,8 +24,10 @@
 # 3.1.0
 ##### 2020-Dec-09
 
-* Add `aliases` preset property for listing `name` synonyms
+* Add `aliases` preset property for listing `name` synonyms ([#3])
 * Fix an issue with generating some TagInfo field value descriptions
+
+[#3]: https://github.com/ideditor/schema-builder/issues/3
 
 # 3.0.0
 ##### 2020-Dec-08

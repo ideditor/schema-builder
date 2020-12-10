@@ -1,6 +1,6 @@
 {
   "name": "@ideditor/schema-builder",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Framework for defining iD-compatible tagging models",
   "homepage": "https://github.com/ideditor/schema-builder#readme",
   "bugs": "https://github.com/ideditor/schema-builder/issues",
