@@ -7,6 +7,11 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 4.0.4
+##### 2020-Dec-10
+
+* Don't add incorrect option comments for fields with `keys`
+
 # 4.0.3
 ##### 2020-Dec-10
 
