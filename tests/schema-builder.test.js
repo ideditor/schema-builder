@@ -110,12 +110,12 @@ describe('schema-builder', () => {
         label: 'Water Quality',
         strings: {
           options: {
-            terrible: "Terrible",
-            bad: "Bad",
-            okay: "Okay",
-            good: "Good",
-            excellent: "Excellent",
-            'super fantastic': "Super Fantastic"
+            terrible: 'Terrible',
+            bad: 'Bad',
+            okay: 'Okay',
+            good: 'Good',
+            excellent: 'Excellent',
+            'super fantastic': 'Super Fantastic'
           }
         },
         terms: [
@@ -128,9 +128,9 @@ describe('schema-builder', () => {
         label: 'Swimming',
         strings: {
           options: {
-            yes: "Yes",
-            no: "No",
-            seasonal: "Seasonal"
+            yes: 'Yes',
+            no: 'No',
+            seasonal: 'Seasonal'
           }
         },
         autoSuggestions: false
@@ -142,12 +142,12 @@ describe('schema-builder', () => {
         strings: {
           options: {
             yes: {
-              title: "Yes",
-              description: "Notable salinity"
+              title: 'Yes',
+              description: 'Notable salinity'
             },
             no: {
-              title: "No",
-              description: "No notable salinity"
+              title: 'No',
+              description: 'No notable salinity'
             }
           }
         },
@@ -194,8 +194,12 @@ describe('schema-builder', () => {
           natural: 'water'
         },
         geometry: ['point', 'area'],
-        terms: ['pond', 'lake', ' POOL', 'reservoir  ', 'Lake'],
-        name: 'Water'
+        terms: ['pond', 'lake', ' POOL', 'reservoir  ', 'Lake', 'water', 'WATER Body'],
+        name: 'Water',
+        aliases: [
+          'Water',
+          'Water Body'
+        ]
       },
       'data/presets/natural/water/pond.json': {
         tags: {
@@ -203,9 +207,17 @@ describe('schema-builder', () => {
           water: 'pond'
         },
         geometry: ['point', 'area'],
-        terms: ['frogs', 'guppies'],
+        terms: ['frogs', 'vernal pool ', 'guppies', 'puddle'],
         name: 'Pond',
         aliases: ['Vernal Pool', 'Puddle']
+      },
+      'data/presets/natural/water/lake.json': {
+        tags: {
+          natural: 'water',
+          water: 'lake'
+        },
+        geometry: ['point', 'area'],
+        name: 'Lake'
       }
     });
     schemaBuilder.buildDist({
