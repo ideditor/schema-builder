@@ -1,5 +1,5 @@
+[![build](https://github.com/ideditor/schema-builder/workflows/build/badge.svg)](https://github.com/ideditor/schema-builder/actions?query=workflow%3A%22build%22)
 [![npm version](https://badge.fury.io/js/%40ideditor%2Fschema-builder.svg)](https://badge.fury.io/js/%40ideditor%2Fschema-builder)
-[![Build Status](https://travis-ci.com/ideditor/schema-builder.svg?branch=main)](https://travis-ci.com/ideditor/schema-builder)
 
 # schema-builder
 
