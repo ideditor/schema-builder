@@ -235,7 +235,7 @@ This property is required. There is no default.
 
 An object with the `"key": "value"` tags a feature must have to match this preset. A `"*"` wildcard value can be set to have this preset match any value for that key.
 
-A features can only match one preset even if its tags and geometry could technically match more than one. iD will pick the best match based on `matchScore`, the number of tags, and the use of wildcard values.
+A feature can only match one preset even if its tags and geometry could technically match more than one. iD will pick the best match based on `matchScore`, the number of tags, and the use of wildcard values.
 
 This property is required. There is no default.
 
