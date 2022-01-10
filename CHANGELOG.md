@@ -7,6 +7,11 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 4.0.5
+##### 2022-Jan-10
+
+* Fix to a working version of a broken ("corrupted") dependency
+
 # 4.0.4
 ##### 2020-Dec-10
 
