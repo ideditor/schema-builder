@@ -7,6 +7,12 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+
+# 4.0.6
+##### 2022-Jan-18
+
+* Replace the broken `color` dependency with `chalk`
+
 # 4.0.4
 ##### 2020-Dec-10
 
