@@ -154,8 +154,8 @@ files located under the `data/presets` folder.
 
 #### Preset Files
 
-Presets are defined in JSON files located under `data/presets`.  They're organized in a
-directory hierarchy based on OSM key/value pairs.  For example, the preset that matches
+Presets are defined in JSON files located under `data/presets`. They're organized in a
+directory hierarchy based on OSM key/value pairs. For example, the preset that matches
 the tag `leisure=park` is in the file `data/presets/leisure/park.json`.
 
 #### Preset Schema
@@ -374,11 +374,11 @@ Fields are defined in JSON files located under `data/fields`.
 
 The field files are typically named according to their associated OSM key.
 For example, the field for the tag `sport=*` is stored in the file
-`data/fields/sport.json`.  When a field has multiple versions that
+`data/fields/sport.json`. When a field has multiple versions that
 depend on which preset is active, we add a suffix to the filename:
 (`sport.json`, `sport_ice.json`, `sport_racing_motor.json`).
 
-Some keys in OSM are namespaced using colons (':').  Namespaced fields
+Some keys in OSM are namespaced using colons (':'). Namespaced fields
 are nested in folders according to their tag.
 For example, the field for the tag `piste:difficulty=*` is stored in the file
 `data/fields/piste/difficulty.json`.
@@ -410,6 +410,7 @@ A string specifying the UI and behavior of the field. Must be one of the followi
 * `email` - Text field for entering email addresses
 * `url` - Text field for entering URLs
 * `identifier` - Text field for foreign IDs (e.g. `gnis:feature_id`)
+* `colour` - Text field for entering colours
 * `textarea` - Multi-line text area (e.g. `description=*`)
 
 ###### Combo/Dropdown fields
@@ -468,12 +469,12 @@ appear in the "Add Field" list for all presets
 
 ##### `geometry`
 
-If specified, only show the field for this kind of geometry.  Should contain
+If specified, only show the field for this kind of geometry. Should contain
 one of `point`, `vertex`, `line`, `area`.
 
 ##### `default`
 
-The default value for the field.  For example, the `building_area.json` field
+The default value for the field. For example, the `building_area.json` field
 will automatically add the tag `building=yes` to certain presets that are
 associated with building features (but only if drawn as a closed area).
 
