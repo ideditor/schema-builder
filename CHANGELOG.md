@@ -7,11 +7,17 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 4.0.7
+##### 2022-Jan-28
+
+* Fix fetching of translations after upgrading `js-yaml` library to v4
 
 # 4.0.6
 ##### 2022-Jan-18
 
 * Replace the broken `color` dependency with `chalk`
+* Use pipe separators instead of newlines for name translation comments
+* Filter out preset name from aliases and preset aliases from terms
 
 # 4.0.4
 ##### 2020-Dec-10
