@@ -121,9 +121,6 @@
             "type": "boolean",
             "default": false
         },
-        "icon": {
-            "type": "string"
-        },
         "placeholder": {
             "description": "Placeholder text for this field",
             "type": "string"
