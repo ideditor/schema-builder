@@ -1,7 +1,7 @@
-const fs = require('fs');
-const shell = require('shelljs');
+import fs from 'fs';
+import shell from 'shelljs';
 
-const schemaBuilder = require('../lib/index.js');
+import schemaBuilder from '../lib/index.js';
 
 const _workspace = 'tests/workspace';
 
