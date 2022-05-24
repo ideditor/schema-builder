@@ -215,6 +215,14 @@ Upon merging with `develop`, this is sent to Transifex for translating to other 
 
 This property is required. There is no default.
 
+##### `aliases`
+
+A list of synonyms for the preset's `name`.
+
+##### `terms`
+
+A list of search terms or keywords for the preset.
+
 ##### `geometry`
 
 An array of possible geometry types that a feature must have in order to match this preset.
