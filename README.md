@@ -149,6 +149,11 @@ The format for each file is defined in the [`schemas`](schemas) directory.
 
 ### Presets
 
+A [preset](https://wiki.openstreetmap.org/wiki/Preset) represents a specific type of
+[map feature](https://wiki.openstreetmap.org/wiki/Map_features). For example, presets
+can exist for parks, restaurants, drinking water fountains, buildings, railway tracks,
+and many more feature types.
+
 iD editor preset and field types are defined in [JSON](http://en.wikipedia.org/wiki/JSON)
 files located under the `data/presets` folder.
 
@@ -164,42 +169,51 @@ A basic preset is of the form:
 
 ```javascript
 {
-    // The icon in iD which represents this feature.
-    "icon": "maki-park",
-    // The names of fields that will appear by default in the editor sidebar.
-    // See the fields documentation for details of what's valid here.
-    "fields": [
-        "address"
+    // Display name for this feature type in the `sourceLocale` language.
+    "name": "Produce Stand",
+    // Aliases are synonyms of the preset's name - this is for alternative
+    // names a preset might also be known as
+    "aliases": [
+        "Farm Shop",
+        "Farm Stand"
+    ]
+    // Terms are additional search terms for the preset - these are added to
+    // fuel the search functionality. searching for 'vegetables' will bring
+    // up this 'farm shop' preset
+    "terms": [
+        "fresh food",
+        "fruits",
+        "greengrocer",
+        "orchard",
+        "organics",
+        "vegetables"
     ],
-    // The names of fields that the user can add manually. These will also
-    // appear if the corresponding tags are present.
-    "moreFields": [
-        "phone",
-        "website"
-    ],
+    // Tags that are added to the feature when selecting the preset,
+    // and also used to match the preset against existing features.
+    // You can use the value "*" to match any value.
+    "tags": {
+        "shop": "farm"
+    },
     // The geometry types for which this preset is valid.
     // options are point, area, line, and vertex.
     // vertices are points that are parts of lines, like the nodes in a road
     // lines are unclosed ways, and areas are closed ways
     "geometry": [
         "point", "area"
+    ]
+    // The icon in iD which represents this feature.
+    "icon": "maki-shop",
+    // The names of fields that will appear by default in the editor sidebar.
+    // See the fields documentation for details of what's valid here.
+    "fields": [
+        "{shop}",
+        "organic"
     ],
-    // Terms are synonyms for the preset - these are added to fuel
-    // the search functionality. searching for 'woodland' will bring
-    // up this 'park' preset
-    "terms": [
-        "esplanade",
-        "village green",
-        "woodland"
-    ],
-    // Tags that are added to the feature when selecting the preset,
-    // and also used to match the preset against existing features.
-    // You can use the value "*" to match any value.
-    "tags": {
-        "leisure": "park"
-    },
-    // Display name for this feature type in the `sourceLocale` language.
-    "name": "Park"
+    // The names of fields that the user can add manually. These will also
+    // appear if the corresponding tags are present.
+    "moreFields": [
+        "produce"
+    ]
 }
 ```
 The complete JSON schema for presets can be found in [`schemas/preset.json`](schemas/preset.json)
@@ -209,19 +223,19 @@ The complete JSON schema for presets can be found in [`schemas/preset.json`](sch
 
 ##### `name`
 
-The primary name of the feature type in the `sourceLocale` language.
+The primary name of the feature type.
 
-Upon merging with `develop`, this is sent to Transifex for translating to other localizations. Changing the name of an existing preset will require it to be re-translated to all localizations.
+Upon merging into the `main` branch, this is sent to Transifex for translating to other localizations. Changing the name of an existing preset will require it to be re-translated to all localizations.
 
 This property is required. There is no default.
 
 ##### `aliases`
 
-A list of synonyms for the preset's `name`.
+A list of synonyms for the preset's `name`. These are alternative terms a preset might _also be known as_.
 
 ##### `terms`
 
-A list of search terms or keywords for the preset.
+A list of additional search terms or keywords for the preset. These might be names which describe a subset of the preset's features, or simply related terms a user might enter when searching for the preset.
 
 ##### `geometry`
 
@@ -404,6 +418,10 @@ For example, the field for the tag `piste:difficulty=*` is stored in the file
 The complete JSON schema for fields can be found in [`schemas/field.json`](schemas/field.json)
 
 #### Field Properties
+
+##### `label`
+
+A sort desciption or caption of the field.
 
 ##### `type`
 
