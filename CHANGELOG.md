@@ -7,6 +7,11 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 4.0.
+##### 2022-Jun-17
+
+* Taginfo metadata output: Include short description about deprecated tags
+
 # 4.0.7
 ##### 2022-Jan-28
 
