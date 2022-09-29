@@ -10,8 +10,8 @@
 # 5.0.0
 ##### 2022-Sep-29
 
-* add new `colour` field type ([#26])
-* add functionality to reference labels/strings from other fields/presets by using the referenced preset/field name in brackets, similar to how the fields/moreFields can be referenced between presets ([#42])
+* :warning: add new `colour` field type ([#26])
+* :warning: add functionality to reference labels/strings from other fields/presets by using the referenced preset/field name in brackets, similar to how the fields/moreFields can be referenced between presets ([#42])
 * drop undocumented and unused `icon` property for fields ([#30])
 * refactor js code to be an ESM module ([#42])
 * improve documentation about usage of aliases and terms ([#57])
