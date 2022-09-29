@@ -122,6 +122,12 @@ describe('schema-builder', () => {
           'water health'
         ]
       },
+      'data/fields/water_quality_multi.json': {
+        key: 'water_quality',
+        type: 'semiCombo',
+        label: '{water_quality}',
+        stringsCrossReference: '{water_quality}'
+      },
       'data/fields/swimming.json': {
         key: 'swimming',
         type: 'combo',
@@ -157,7 +163,7 @@ describe('schema-builder', () => {
       },
       'data/fields/color_water.json': {
         key: 'color',
-        type: 'semiCombo',
+        type: 'colour',
         label: 'Colors',
         options: [
           'azure',
@@ -212,6 +218,10 @@ describe('schema-builder', () => {
         aliases: ['Vernal Pool', 'Puddle']
       },
       'data/presets/natural/water/lake.json': {
+        fields: [
+          'water_quality_multi',
+          'color_water'
+        ],
         tags: {
           natural: 'water',
           water: 'lake'

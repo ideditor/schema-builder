@@ -227,6 +227,8 @@ The primary name of the feature type.
 
 Upon merging into the `main` branch, this is sent to Transifex for translating to other localizations. Changing the name of an existing preset will require it to be re-translated to all localizations.
 
+A preset can optionally reference the label of another by using that preset's name contained in brackets, like `{preset}`. In which case the presets's _terms_ and _aliases_ are also automatically sourced from that other field. This is for example useful for regional presets which should get the same labels as the preset they are based on.
+
 This property is required. There is no default.
 
 ##### `aliases`
@@ -423,6 +425,9 @@ The complete JSON schema for fields can be found in [`schemas/field.json`](schem
 
 A sort desciption or caption of the field.
 
+A field can optionally reference the label of another by using that field's name contained in
+brackets, like `{field}`. In which case the field's _terms_ are also automatically sourced from that other field. This is for example useful when there are multiple variants of fields for the same tag, which should all have the same labels.
+
 ##### `type`
 
 A string specifying the UI and behavior of the field. Must be one of the following values.
@@ -557,6 +562,10 @@ in the dropdown suggestions.
     }
 }
 ```
+
+##### `stringsCrossReference`
+
+An optional property to reference to the strings of another field, indicated  by using that field's name contained in brackets, like `{field}`. This is for example useful when there are multiple variants of fields for the same tag, which should all use the same strings.
 
 ##### `autoSuggestions`
 

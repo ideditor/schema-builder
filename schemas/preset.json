@@ -4,7 +4,7 @@
     "type": "object",
     "properties": {
         "name": {
-            "description": "The English name for the feature",
+            "description": "The English name for the feature. A preset can reference the label of another by using that preset's identifier contained in brackets (e.g. {preset}), in which case also the preset's aliases and terms will also be referenced from that preset.",
             "type": "string",
             "required": true
         },
@@ -42,14 +42,14 @@
             }
         },
         "fields": {
-            "description": "Default form fields that are displayed for the preset",
+            "description": "Default form fields that are displayed for the preset. A preset can reference the fields of another by using that preset's identifier contained in brackets, like {preset}.",
             "type": "array",
             "items": {
                 "type": "string"
             }
         },
         "moreFields": {
-            "description": "Additional form fields that can be attached with the 'Add field' dropdown",
+            "description": "Additional form fields that can be attached with the 'Add field' dropdown. A preset can reference the \"moreFields\" of another by using that preset's identifier contained in brackets, like {preset}.",
             "type": "array",
             "items": {
                 "type": "string"
