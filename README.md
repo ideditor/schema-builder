@@ -231,7 +231,7 @@ This property is required. There is no default.
 
 ##### `aliases`
 
-A list of synonyms for the preset's `name`. These are alternative terms a preset might _also be known as_.
+A list of synonyms for the preset's `name`. These are alternative terms a preset might _also be known as_. For example, _Port_ could be added as an alias to the _Harbor_ preset. Terms which describe a specific sub-type of a preset should not be added as an alias (e.g. _Barber Shop_ should not be added as an alias to the _Hairdresser_ preset).
 
 ##### `terms`
 
