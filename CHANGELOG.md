@@ -7,6 +7,21 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 5.0.0
+##### 2022-Sep-29
+
+* add new `colour` field type ([#26])
+* add functionality to reference labels/strings from other fields/presets by using the referenced preset/field name in brackets, similar to how the fields/moreFields can be referenced between presets ([#42])
+* drop undocumented and unused `icon` property for fields ([#30])
+* refactor js code to be an ESM module ([#42])
+* improve documentation about usage of aliases and terms ([#57])
+
+[#26]: https://github.com/ideditor/schema-builder/issues/26
+[#30]: https://github.com/ideditor/schema-builder/issues/30
+[#42]: https://github.com/ideditor/schema-builder/issues/42
+[#57]: https://github.com/ideditor/schema-builder/pull/57
+
+
 # 4.0.8
 ##### 2022-Jun-17
 
