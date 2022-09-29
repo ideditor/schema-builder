@@ -122,7 +122,7 @@
             "default": false
         },
         "placeholder": {
-            "description": "Placeholder text for this field",
+            "description": "Placeholder text for this field. A field can reference the placeholder text of another by using that field's identifier contained in brackets, like {field}.",
             "type": "string"
         },
         "strings": {

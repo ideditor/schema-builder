@@ -7,6 +7,11 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 5.1.0
+##### 2022-Sep-29
+
+* :warning: make `placeholder` property of fields referenceable like labels/terms/etc.
+
 # 5.0.0
 ##### 2022-Sep-29
 
