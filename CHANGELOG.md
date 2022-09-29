@@ -7,6 +7,11 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 5.1.1
+##### 2022-Sep-29
+
+* Fix a bug which caused a crash when fetching translations
+
 # 5.1.0
 ##### 2022-Sep-29
 
