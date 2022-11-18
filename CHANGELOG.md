@@ -7,6 +7,11 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 5.2.1
+##### 2022-Nov-18
+
+* fix clearing the `dist` directory when running `buildDist` (regression in v5.2.0)
+
 
 # 5.2.0
 ##### 2022-Nov-18
