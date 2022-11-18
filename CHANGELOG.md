@@ -7,6 +7,13 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+
+# 5.2.0
+##### 2022-Nov-18
+
+* upgrade transifex API version to v3
+* don't clear translations when running `buildDist` without translation settings
+
 # 5.1.1
 ##### 2022-Sep-29
 
