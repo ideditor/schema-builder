@@ -7,11 +7,17 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 5.2.2
+##### 2022-Nov-28
+
+* fix test and build commands on Windows OS (regression in v5.0.0) ([id-tagging-schema#655])
+
+[id-tagging-schema#655]: https://github.com/openstreetmap/id-tagging-schema/issues/655
+
 # 5.2.1
 ##### 2022-Nov-18
 
 * fix clearing the `dist` directory when running `buildDist` (regression in v5.2.0)
-
 
 # 5.2.0
 ##### 2022-Nov-18
