@@ -7,6 +7,14 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 5.3.0
+##### 2022-Dec-09
+
+* Add requirement to json schema that either `key` or `keys` property must be present on (most) fields ([#78])
+* Upgrade dependency `@transifex/api` to v5
+
+[#78]: https://github.com/ideditor/schema-builder/pull/78
+
 # 5.2.2
 ##### 2022-Nov-28
 
