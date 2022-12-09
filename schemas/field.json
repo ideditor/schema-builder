@@ -245,5 +245,16 @@
             "enum": ["preset", "changeset", "manual", "group"]
         }
     },
-    "additionalProperties": false
+    "additionalProperties": false,
+    "anyOf": [
+        { "$id": "field-type-without-key", "properties": { "type": { "enum": ["restrictions"] } } },
+        { "$id": "field-type-with-key-and-keys", "properties": { "type": { "enum": ["address", "wikipedia", "wikidata"] } }, "required": ["key", "keys"] },
+        { "$id": "field-type-with-key-or-keys", "allOf": [
+            { "not": { "properties": { "type": { "enum": ["address", "wikipedia","wikipedia",  "wikidata", "restrictions"] } } } },
+            { "oneOf": [
+                { "required": ["key"] },
+                { "required": ["keys"] }
+            ]}
+        ]}
+    ]
 }
