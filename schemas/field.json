@@ -245,5 +245,9 @@
             "enum": ["preset", "changeset", "manual", "group"]
         }
     },
-    "additionalProperties": false
+    "additionalProperties": false,
+    "oneOf": [
+        { "$id": "field-with-key", "required": ["key"] },
+        { "$id": "field-with-keys", "required": ["keys"] }
+    ]
 }
