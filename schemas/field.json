@@ -246,8 +246,15 @@
         }
     },
     "additionalProperties": false,
-    "oneOf": [
-        { "$id": "field-with-key", "required": ["key"] },
-        { "$id": "field-with-keys", "required": ["keys"] }
+    "anyOf": [
+        { "$id": "field-type-no-key", "properties": { "type": { "enum": ["restrictions"] } } },
+        { "$id": "field-type-key-keys", "properties": { "type": { "enum": ["address", "wikipedia", "wikidata"] } }, "required": ["key", "keys"] },
+        { "allOf": [
+            { "not": { "properties": { "type": { "enum": ["address", "wikipedia","wikipedia",  "wikidata", "restrictions"] } } } },
+            { "oneOf": [
+                { "$id": "field-with-key", "required": ["key"] },
+                { "$id": "field-with-keys", "required": ["keys"] }
+            ]}
+        ]}
     ]
 }
