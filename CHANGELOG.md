@@ -10,7 +10,8 @@
 # Unreleased
 ##### 2023-Jan-xx
 
-* :warning: Rename field type `cycleway` to `directionalCombo` ([#79])
+* :warning: Rename field type `cycleway` to `directionalCombo`
+  * :warning: the tag keys of this field are now split into two separate parts: the `key` property contains the common (e.g. `*:both`) variant of the tag and the `keys` property is for the directional (e.g. `:left`/`:right`) subtags ([#79])
 * Introduce new `date` field type ([#76])
 * Allow the `Röntgen` icon set to be used for icons ([#75])
 * Allow to specify icons for values of combo fields ([#56])
