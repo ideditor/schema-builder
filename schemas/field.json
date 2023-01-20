@@ -16,7 +16,7 @@
         },
         "reference": {
             "description": "Taginfo documentation parameters (to be used when a field manages multiple tags)",
-            "type": [
+            "anyOf": [
                 {
                     "type": "object",
                     "properties": {
