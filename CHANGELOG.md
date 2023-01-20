@@ -7,6 +7,11 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 6.0.1
+##### 2023-Jan-20
+
+* Fix bug in validation of `prerequisiteTag` values (v6.0.0 does falsely disallow requirements with only a `key` but neither `value` nor `valueNot`)
+
 # 6.0.0
 ##### 2023-Jan-20
 

@@ -171,7 +171,19 @@
             "description": "Tagging constraint for showing this field in the editor",
             "oneOf": [
                 {
-                    "$id": "requires-key-is-value",
+                    "$id": "requires-key-any-value",
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "description": "The key of the required tag",
+                            "type": "string",
+                            "required": true
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                {
+                    "$id": "requires-key-equals-value",
                     "type": "object",
                     "properties": {
                         "key": {
@@ -181,13 +193,14 @@
                         },
                         "value": {
                             "description": "The value that the tag must have. (alternative to 'valueNot')",
-                            "type": "string"
+                            "type": "string",
+                            "required": true
                         }
                     },
                     "additionalProperties": false
                 },
                 {
-                    "$id": "requires-key-is-not-value",
+                    "$id": "requires-key-not-value",
                     "type": "object",
                     "properties": {
                         "key": {
@@ -197,7 +210,8 @@
                         },
                         "valueNot": {
                             "description": "The value that the tag cannot have. (alternative to 'value')",
-                            "type": "string"
+                            "type": "string",
+                            "required": true
                         }
                     },
                     "additionalProperties": false
