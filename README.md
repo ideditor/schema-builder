@@ -656,6 +656,30 @@ For `identifier` fields, the permalink URL of the external record. It must conta
 
 For `identifier` fields, the regular expression that valid values are expected to match to be linkable.
 
+##### `icons`
+
+For combo fields, the `icons` object might contain the name of icons which represent the different values of the field.
+
+Combo field types can accept key-label pairs in the `options` value of the `strings` property.
+
+```js
+{
+    "key": "crossing:markings",
+    "type": "combo",
+    "label": "Crossing Markings",
+    "icons": {
+        "zebra": "iD-crossing_markings-zebra",
+        "lines": "iD-crossing_markings-lines",
+        …
+    }
+}
+```
+
+##### `iconsCrossReferences`
+
+An optional property to reference to the icons of another field, indicated  by using that field's name contained in brackets, like `{field}`. This is for example useful when there are multiple variants of fields for the same tag, which should all use the same icons.
+
+
 ## Contributing
 
 iD's [code of conduct](https://github.com/openstreetmap/iD/blob/release/CODE_OF_CONDUCT.md) and
