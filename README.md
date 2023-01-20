@@ -471,7 +471,7 @@ A string specifying the UI and behavior of the field. Must be one of the followi
 
 * `access` - Block of dropdowns for defining the `access=*` tags on a highway
 * `address` - Block of text and dropdown fields for entering address information (localized for editing location)
-* `directionalCombo` - Block of dropdowns for adding `*:left` and `*:right` tags on a highway (this field was named `cycleway` until [`v5.3.0`](CHANGELOG.md#540))
+* `directionalCombo` - Block of dropdowns for adding `*:left` and `*:right` tags on a linear way (this field was named `cycleway` until [`v5.3.0`](CHANGELOG.md#540))
 * `roadspeed` - Numeric text field for speed and dropdown for "mph" / "km/h", defaulting to the speed unit used for roads in the feature's region
 * `roadheight` - Numeric text field for height and dropdowns for "m" / "ft" and "in", defaulting to the height unit used for roads in the feature's region
 * `restrictions` - Graphical field for editing turn restrictions
