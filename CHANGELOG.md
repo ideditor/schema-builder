@@ -7,10 +7,10 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
-# 5.4.0
+# Unreleased
 ##### 2023-Jan-xx
 
-* Rename `cycleway` to `directionalCombo` ([see README](https://github.com/ideditor/schema-builder#special))
+* :warning: Rename field type `cycleway` to `directionalCombo`
 
 # 5.3.0
 ##### 2022-Dec-09
