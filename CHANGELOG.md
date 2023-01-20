@@ -11,7 +11,7 @@
 ##### 2023-Jan-xx
 
 * :warning: Rename field type `cycleway` to `directionalCombo`
-  * :warning: the tag keys of this field are now split into two separate parts: the `key` property contains the common (e.g. `*:both`) variant of the tag and the `keys` property is for the directional (e.g. `:left`/`:right`) subtags ([#79])
+  * :warning: the tag keys of this field are now split into two separate parts: the `key` property contains the common (e.g. `*:both`) variant of the tag and the `keys` property is for the directional (e.g. `:left`/`:right`) subtags ([#79], thanks [@tordans])
 * Introduce new `date` field type ([#76])
 * Allow the `Röntgen` icon set to be used for icons ([#75])
 * Allow to specify icons for values of combo fields ([#56])
@@ -20,6 +20,7 @@
 [#75]: https://github.com/ideditor/schema-builder/issues/75
 [#76]: https://github.com/ideditor/schema-builder/issues/76
 [#79]: https://github.com/ideditor/schema-builder/issues/79
+[@tordans]: https://github.com/tordans
 
 # 5.3.0
 ##### 2022-Dec-09
