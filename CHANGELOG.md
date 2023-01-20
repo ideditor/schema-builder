@@ -11,7 +11,9 @@
 ##### 2023-Jan-xx
 
 * :warning: Rename field type `cycleway` to `directionalCombo` ([#79])
+* Introduce new `date` field type ([#76])
 
+[#76]: https://github.com/ideditor/schema-builder/issues/76
 [#79]: https://github.com/ideditor/schema-builder/issues/79
 
 # 5.3.0

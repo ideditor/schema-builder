@@ -442,6 +442,7 @@ A string specifying the UI and behavior of the field. Must be one of the followi
 * `identifier` - Text field for foreign IDs (e.g. `gnis:feature_id`)
 * `colour` - Text field for entering colours
 * `textarea` - Multi-line text area (e.g. `description=*`)
+* `date` - Text field for entering dates in ISO 8601 format.
 
 ###### Combo/Dropdown fields
 
