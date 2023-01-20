@@ -15,11 +15,13 @@
 * Introduce new `date` field type ([#76])
 * Allow the `Röntgen` icon set to be used for icons ([#75])
 * Allow to specify icons for values of combo fields ([#56])
+* Fix JSON schema's type definition of `prerequisiteTag` ([#81], thanks [@tordans]) and `reference` property of fields
 
 [#56]: https://github.com/ideditor/schema-builder/issues/56
 [#75]: https://github.com/ideditor/schema-builder/issues/75
 [#76]: https://github.com/ideditor/schema-builder/issues/76
 [#79]: https://github.com/ideditor/schema-builder/issues/79
+[#81]: https://github.com/ideditor/schema-builder/pull/81
 [@tordans]: https://github.com/tordans
 
 # 5.3.0
