@@ -12,7 +12,9 @@
 
 * :warning: Rename field type `cycleway` to `directionalCombo` ([#79])
 * Introduce new `date` field type ([#76])
+* Allow the `Röntgen` icon set to be used for icons ([#75])
 
+[#75]: https://github.com/ideditor/schema-builder/issues/75
 [#76]: https://github.com/ideditor/schema-builder/issues/76
 [#79]: https://github.com/ideditor/schema-builder/issues/79
 
