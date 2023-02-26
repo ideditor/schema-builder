@@ -617,7 +617,7 @@ An object defining the tags the feature needs before this field will be displaye
 
 And may optionally be combined with one of these properties:
 
-- `value`: The value that the key must have.
+- `value`: The value(s) that the key must have. It can be a single value, or a list of possible values.
 - `valueNot`: The value that the key must not have.
 
 Alternatively, the object may contain a single property:
