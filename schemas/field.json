@@ -191,9 +191,10 @@
                             "type": "string",
                             "required": true
                         },
-                        "value": {
-                            "description": "The value that the tag must have. (alternative to 'valueNot')",
-                            "type": "string",
+                        "values": {
+                            "description": "The values that the tag must have. (alternative to 'valueNot')",
+                            "type": "array",
+                            "items": { "type": "string" },
                             "required": true
                         }
                     },
