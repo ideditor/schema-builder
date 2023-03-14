@@ -7,6 +7,13 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 6.1.0
+##### 2023-Mar-14
+
+* Update `teamki` URLs to new repository organization
+* Bump `glob` dependency to v9.3
+* Move documentation about icons to a separate page
+
 # 6.0.1
 ##### 2023-Jan-20
 
