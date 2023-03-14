@@ -320,18 +320,7 @@ preset are generally not inherited. E.g. the `shop` field is not inherited by `s
 
 ##### `icon`
 
-The name of a local SVG icon file. You can use icons from any of the following icon sets. When specifying an icon, use the prefixed version of the name, for example `"icon": "maki-park"`.
-
-* [iD's spritesheet](https://github.com/openstreetmap/iD/tree/develop/svg/iD-sprite/presets) (`iD-`)
-* [Maki](https://labs.mapbox.com/maki-icons/) (`maki-`), map-specific icons from Mapbox
-* [Temaki](https://ideditor.github.io/temaki/docs/) (`temaki-`), an expansion pack for Maki
-    * This is the best place to submit a PR if you want to create a preset icon!
-* [Röntgen](https://github.com/enzet/map-machine#r%C3%B6ntgen-icon-set) [icon set](https://wiki.openstreetmap.org/wiki/R%C3%B6ntgen) (`roentgen-`), part of the Map Machine project
-* [Font Awesome](https://fontawesome.com/icons?d=gallery&m=free), thousands of general-purpose icons
-    * There is a free and pro tier. You can use any icon from the free tier in the following styles:
-        * [Solid](https://fontawesome.com/icons?d=gallery&s=solid&m=free) (`fas-`)
-        * [Regular](https://fontawesome.com/icons?d=gallery&s=regular&m=free) (`far-`)
-        * [Brands](https://fontawesome.com/icons?d=gallery&s=brands&m=free) (`fab-`)
+An icon representing the preset, e.g. `"icon": "maki-park"`. More information about available icon sets and usage of icons can be found on the [icons subpage](ICONS.md).
 
 ##### `imageURL`
 
@@ -658,7 +647,7 @@ For `identifier` fields, the regular expression that valid values are expected t
 
 ##### `icons`
 
-For combo fields, the `icons` object might contain the name of icons which represent the different values of the field.
+For combo fields, the `icons` object might contain the name of icons which represent the different values of the field. More information about available icon sets and usage of icons can be found on the [icons subpage](ICONS.md).
 
 Combo field types can accept key-label pairs in the `options` value of the `strings` property.
 
