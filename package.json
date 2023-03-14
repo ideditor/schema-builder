@@ -14,7 +14,7 @@
   "dependencies": {
     "@transifex/api": "^5.0.1",
     "chalk": "^5.0.1",
-    "glob": "^9.2.1",
+    "glob": "^9.3.0",
     "js-yaml": "^4.0.0",
     "jsonschema": "^1.1.0",
     "marky": "^1.2.4",
