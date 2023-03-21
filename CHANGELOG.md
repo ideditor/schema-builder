@@ -7,6 +7,15 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 6.2.0
+##### 2023-Mar-21
+
+* Produce transifex developer notes also for options of multi-key fields and fields with title/description strings ([#92])
+* Extend transifex developer notes for regional presets/fields ([#93])
+
+[#92]: https://github.com/ideditor/schema-builder/pull/92
+[#93]: https://github.com/ideditor/schema-builder/pull/93
+
 # 6.1.0
 ##### 2023-Mar-14
 
