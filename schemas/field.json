@@ -283,9 +283,13 @@
     "additionalProperties": false,
     "anyOf": [
         { "$id": "field-type-without-key", "properties": { "type": { "enum": ["restrictions"] } } },
+        { "$id": "field-type-with-key-and-or-keys", "properties": { "type": { "enum": ["email", "url", "tel", "text", "number"] } }, "anyOf": [
+                { "required": ["key"] },
+                { "required": ["keys"] }
+        ]},
         { "$id": "field-type-with-key-and-keys", "properties": { "type": { "enum": ["address", "wikipedia", "wikidata", "directionalCombo"] } }, "required": ["key", "keys"] },
         { "$id": "field-type-with-key-or-keys", "allOf": [
-            { "not": { "properties": { "type": { "enum": ["address", "wikipedia", "wikipedia", "wikidata", "directionalCombo", "restrictions"] } } } },
+            { "not": { "properties": { "type": { "enum": ["restriction", "email", "url", "tel", "text", "number", "address", "wikipedia", "wikidata", "directionalCombo"] } } } },
             { "oneOf": [
                 { "required": ["key"] },
                 { "required": ["keys"] }
