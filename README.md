@@ -664,7 +664,7 @@ Combo field types can accept key-label pairs in the `options` value of the `stri
 }
 ```
 
-##### `iconsCrossReferences`
+##### `iconsCrossReference`
 
 An optional property to reference to the icons of another field, indicated  by using that field's name contained in brackets, like `{field}`. This is for example useful when there are multiple variants of fields for the same tag, which should all use the same icons.
 
