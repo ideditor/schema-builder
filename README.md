@@ -481,8 +481,23 @@ A string specifying how iD uses the field. Must be one of the following values.
 
 ##### `key`/`keys`
 
-The `key` property names the OSM key that the field will edit.
-Compound fields like `address` expect an array of keys in the `keys` property.
+The `key` property names the OSM tag key that the field will edit. Some fields, like the `address` field, operate on more than one tag: These expect an array of keys in the `keys` property. The following table lists which field types accept which properties: 
+
+field type | `key` | `keys` | description | example
+---------- | ----- | ------ | ----------- | -------
+`text`, `number`, `email`, `url`, `tel` | :heavy_check_mark: | optional | Optionaly, these fields can match multiple tag `keys` of an OSM object: which is useful to support OSM tags which have more than one established tag key like `phone` and `contact:phone`.[^1] | `"key": "phone", "keys": ["phone", "contact:phone"]`
+`address` | :heavy_check_mark: | :heavy_check_mark: | `keys` contains all possible address-subtags, `key` must contain the tag key prefix (e.g. `addr`). | `"key": "addr", "keys": ["addr:city", "addr:street", …]`
+`wikipedia`, `wikidata` | :heavy_check_mark: | :heavy_check_mark: | As the values of these two fields should be updated in sync by the editor, the `keys` should always contain both the respective wikipedia and wikidata keys. | `"key": "flag:wikidata", "keys": ["flag:wikidata", "flag:wikipedia"]`
+`directionalCombo` | :heavy_check_mark: | :heavy_check_mark: | For directional fields, the `key` is the tag to use when the OSM feature has the same attributes in both directions, while the `keys` are the two tags for the individual directions. | `"key": "cycleway", "keys": ["cycleway:right", "cycleway:left"]`
+`access` | :x: | :heavy_check_mark: | `keys` lists all access tags to consider in the field. | `"keys": ["access", "foot", "bicycle",  …]`
+`localized` | :heavy_check_mark: | :x: | `key` specified the main tag, which will also be used as the tag key prefix for localized versions of the tag (i.e. the `name` field will also display contents of the tags `name:*`). | `"key": "name"`
+`multiCombo` | :heavy_check_mark: | :x: | This field allows to toggle multiple `yes/no` subtags which share a common tag prefix specified in the field's `key`. | `"key": "recycling:"`
+`manyCombo` | :x: | :heavy_check_mark: | Similar to the `multiCombo` field, but here the `keys` property contains the full list of OSM tag keys which the options of the field should correspond to. | `"keys": ["hiking", "bicycle", …]`
+`structureRadio` | :x: | :heavy_check_mark: | Like the `radio` field, but operates on multiple tags: Selecting an option will remove the tag for the previously active option. | `"keys": ["bridge", "tunnel", …]`
+`restrictions` | :x: | :x: | A special field which does not operate on tags, therefore does not need `key` or `keys`. | 
+all other fields | :heavy_check_mark: | :x: | A regular field which only operates on a single tag. | `"key": "oneway"`
+
+[^1]: The intended behaviour of a field with alternative `keys` is the following: If an OSM feature does not yet have a tag of the given `keys`, the supplied `key` will be used; if a feature has a single tag which matches a key from the `keys`, it should be used by the field; if a feature has multiple tags matching a key from the `keys` alternatives, the field should update them simultaneously and display a _multiple/conflicting values_ message if necessary.
 
 ##### `universal`
 
