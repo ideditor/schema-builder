@@ -485,8 +485,8 @@ The `key` property names the OSM tag key that the field will edit. Some fields, 
 
 field type | `key` | `keys` | description | example
 ---------- | ----- | ------ | ----------- | -------
-`text`, `number`, `email`, `url`, `tel` | :heavy_check_mark: | optional | Optionaly, these fields can match multiple tag `keys` of an OSM object: which is useful to support OSM tags which have more than one established tag key like `phone` and `contact:phone`.[^1] | `"key": "phone", "keys": ["phone", "contact:phone"]`
-`address` | :heavy_check_mark: | :heavy_check_mark: | `keys` contains all possible address-subtags, `key` must contain the tag key prefix (e.g. `addr`). | `"key": "addr", "keys": ["addr:city", "addr:street", …]`
+`text`, `number`, `email`, `url`, `tel` | :heavy_check_mark: | optional | Optionally, these fields can match multiple tag `keys` of an OSM object: which is useful to support OSM tags which have more than one established tag key like `phone` and `contact:phone`.[^1] | `"key": "phone", "keys": ["phone", "contact:phone"]`
+`address` | :heavy_check_mark: | :heavy_check_mark: | `keys` must contains all possible subtags to be used in the address field and `key` must contain the tag key prefix (e.g. `addr`). | `"key": "addr", "keys": ["addr:city", "addr:street", …]`
 `wikipedia`, `wikidata` | :heavy_check_mark: | :heavy_check_mark: | As the values of these two fields should be updated in sync by the editor, the `keys` should always contain both the respective wikipedia and wikidata keys. | `"key": "flag:wikidata", "keys": ["flag:wikidata", "flag:wikipedia"]`
 `directionalCombo` | :heavy_check_mark: | :heavy_check_mark: | For directional fields, the `key` is the tag to use when the OSM feature has the same attributes in both directions, while the `keys` are the two tags for the individual directions. | `"key": "cycleway", "keys": ["cycleway:right", "cycleway:left"]`
 `access` | :x: | :heavy_check_mark: | `keys` lists all access tags to consider in the field. | `"keys": ["access", "foot", "bicycle",  …]`
