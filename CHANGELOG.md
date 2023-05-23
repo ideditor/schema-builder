@@ -7,6 +7,15 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 6.3.0
+##### 2023-May-23
+
+* Allow to specify alternative keys for `text`, `number`, `tel`, `email` and `url` fields. ([#98])
+* Fix regression to make the project work on Windows ([#97])
+
+[#97]: https://github.com/ideditor/schema-builder/pull/97
+[#98]: https://github.com/ideditor/schema-builder/pull/98
+
 # 6.2.0
 ##### 2023-Mar-21
 
