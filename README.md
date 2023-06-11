@@ -40,7 +40,11 @@ everything in this directory will be overwritten when building. Defaults to `int
 - `outDirectory`: `string`, The relative directory of the built data files intended for distribution. Be aware that
 everything in this directory will be overwritten when building. Defaults to `dist`.
 - `sourceLocale`: `string`, The code of the language/locale used for the translatable strings in the data files. Defaults to `en`.
-- `taginfoProjectInfo`: `object`, Project metadata required by TagInfo. If this info is not provided, the `taginfo.json` file will not be built. See the [schema](https://github.com/taginfo/taginfo-projects/blob/master/taginfo-project-schema.json) for more details.
+- `taginfoProjectInfo`: `object`, Project metadata required by TagInfo ([Wiki](https://wiki.openstreetmap.org/wiki/Taginfo/Projects)). If this info is not provided, the `taginfo.json` file will not be built. See the [schema](https://github.com/taginfo/taginfo-projects/blob/master/taginfo-project-schema.json) for more details. The generated taginfo.json will use the following mnemonics to give context to the generated [description on taginfo](https://taginfo.openstreetmap.org/projects/id_editor#tags): 
+  - 🄿: [preset](https://github.com/openstreetmap/id-tagging-schema/tree/main/data/presets)
+  - 🄵: [field](https://github.com/openstreetmap/id-tagging-schema/tree/main/data/fields)
+  - 🄵🅅: field value
+  - 🄳: [deprecated tag](https://github.com/openstreetmap/id-tagging-schema/blob/main/data/deprecated.json)
 - `processPresets`: `function(presets)`, An opportunity to edit the built presets.
 - `processFields`: `function(fields)`, An opportunity to edit the built fields.
 - `processCategories`: `function(categories)`, An opportunity to edit the built preset categories.
