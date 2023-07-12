@@ -14,7 +14,7 @@ Icons from the below listed sources can be used. When specifying an icon, use th
         * [Solid](https://fontawesome.com/search?o=r&m=free&s=solid) (`fas-`)
         * [Regular](https://fontawesome.com/search?o=r&m=free&s=regular) (`far-`)
         * [Brands](https://fontawesome.com/search?o=r&f=brands) (`fab-`)
-* [iD's spritesheet](https://github.com/openstreetmap/iD/tree/develop/svg/iD-sprite/presets) (`iD-`)
+* [iD's presets-icons](https://github.com/openstreetmap/iD/tree/develop/svg/iD-sprite/presets), [iD's fields-icons](https://github.com/openstreetmap/iD/tree/develop/svg/iD-sprite/fields) (`iD-`)
 
 ## How can I add new icons?
 
