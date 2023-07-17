@@ -330,7 +330,7 @@ The URL of a remote image file. This does not fully replace `icon`—both may be
 
 For example, `imageURL` is used to specify the logos of brand presets from the [name-suggestion-index](https://github.com/osmlab/name-suggestion-index).
 
-Bitmap images should be at least 100x100px to look good at 50x50px on high-resolution screens.
+Bitmap images should be at least 100×100 px² to look good on high-resolution screens.
 
 ##### `searchable`
 
