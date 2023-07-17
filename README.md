@@ -289,12 +289,12 @@ The tags that are removed from the feature when deselecting this preset. Default
 
 Both these properties are arrays of field paths (e.g. `description` or `generator/type`).
 `fields` are shown by default and `moreFields` are shown if manually added by the
-user or if a matching tag is present. Note that some fields have a `prerequisiteTag`
+user or if a matching tag is present. Note that some fields have a [`prerequisiteTag`](#prerequisitetag)
 property that limits when they will be shown.
 
 A preset can reference the fields of another by using that preset's name contained in
-brackets, like `{preset}`. For example, `shop/books` references and extends the fields
-of `shop`:
+brackets, like `{preset}`. For example, `{shop}` in `presets/shop/books.json` references and extends the fields
+of `presets/shop.json`. When subfolders are used, the format is `{shop/books}` to reference the properties of the `shop/books.json`.
 
 ```javascript
 "fields": [
@@ -316,11 +316,13 @@ preset are used. For example, `shop/convenience` automatically uses the same
 fields as `shop`.
 
 In both explicit and implicit inheritance, fields for keys that define the
-preset are generally not inherited. E.g. the `shop` field is not inherited by `shop/…` presets.
+preset via `tags` are generally not inherited, even when specified by the parent explicity.
+E.g. the `shop` field is not inherited by `shop/…` presets.
+This can be overwritten by adding the field explicitly like `"fields": [ "shop", "{shop}" ],`
 
 ##### `icon`
 
-An icon representing the preset, e.g. `"icon": "maki-park"`. More information about available icon sets and usage of icons can be found on the [icons subpage](ICONS.md).
+An icon representing a preset, e.g. `"icon": "temaki-power_tower"` ([Example](https://github.com/openstreetmap/id-tagging-schema/blob/main/data/presets/power/tower.json)). More information about available icon sets and usage of icons can be found on the [icons subpage](ICONS.md).
 
 ##### `imageURL`
 
@@ -328,7 +330,7 @@ The URL of a remote image file. This does not fully replace `icon`—both may be
 
 For example, `imageURL` is used to specify the logos of brand presets from the [name-suggestion-index](https://github.com/osmlab/name-suggestion-index).
 
-Bitmap images should be at least 100x100px to look good at 50x50pt on high-resolution screens.
+Bitmap images should be at least 100×100 px² to look good on high-resolution screens.
 
 ##### `searchable`
 
