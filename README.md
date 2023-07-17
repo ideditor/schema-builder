@@ -45,6 +45,7 @@ everything in this directory will be overwritten when building. Defaults to `dis
   - 🄵: [field](https://github.com/openstreetmap/id-tagging-schema/tree/main/data/fields)
   - 🄵🅅: field value
   - 🄳: [deprecated tag](https://github.com/openstreetmap/id-tagging-schema/blob/main/data/deprecated.json)
+  - 🄳🄳: [discarded tag](https://github.com/openstreetmap/id-tagging-schema/blob/main/data/discarded.json)
 - `processPresets`: `function(presets)`, An opportunity to edit the built presets.
 - `processFields`: `function(fields)`, An opportunity to edit the built fields.
 - `processCategories`: `function(categories)`, An opportunity to edit the built preset categories.
