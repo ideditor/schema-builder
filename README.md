@@ -322,11 +322,7 @@ This can be overwritten by adding the field explicitly like `"fields": [ "shop",
 
 ##### `icon`
 
-An icon representing…
-- a preset, e.g. `"icon": "maki-park"` ([Example](https://github.com/tordans/id-tagging-schema/blob/main/data/presets/power/tower.json))
-- a field, e.g. `"icons": { "foo-value": "maki-park" }` ([Example](https://github.com/tordans/id-tagging-schema/blob/main/data/fields/design_power_tower.json))
-
-More information about available icon sets and usage of icons can be found on the [icons subpage](ICONS.md).
+An icon representing a preset, e.g. `"icon": "temaki-power_tower"` ([Example](https://github.com/openstreetmap/id-tagging-schema/blob/main/data/presets/power/tower.json)). More information about available icon sets and usage of icons can be found on the [icons subpage](ICONS.md).
 
 ##### `imageURL`
 
