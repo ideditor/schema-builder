@@ -694,7 +694,7 @@ An optional property to reference to the icons of another field, indicated  by u
 
 Use `deprecated.json` ([Example](https://github.com/openstreetmap/id-tagging-schema/blob/main/data/deprecated.json), [Schema](https://github.com/ideditor/schema-builder/blob/main/schemas/deprecated.json)) to specify tag deprecations.
 
-Editors can use this list to update deprecated tags. For example, iD Editor will automatically and silently change tags when an OSM object was modified.
+Usage example: iD Editor will show an information panel that informs users about deprecated tags and an update-tag-action.
 
 **Example: Default Case**
 
