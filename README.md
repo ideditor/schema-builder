@@ -371,7 +371,7 @@ See the [location-conflation](https://github.com/ideditor/location-conflation) p
 
 The ID of a preset that is preferable to this one. iD's validator will flag features matching this preset and recommend that the user upgrade the tags.
 
-When possible, use `deprecated.json` instead to specify upgrade paths for old tags. This property is meant for special cases, such as upgrades with geometry requirements.
+When possible, use [`deprecated.json`](#deprecations) instead to specify upgrade paths for old tags. This property is meant for special cases, such as upgrades with geometry requirements.
 
 ##### `reference`
 
@@ -690,6 +690,39 @@ Combo field types can accept key-label pairs in the `options` value of the `stri
 
 An optional property to reference to the icons of another field, indicated  by using that field's name contained in brackets, like `{field}`. This is for example useful when there are multiple variants of fields for the same tag, which should all use the same icons.
 
+### Deprecations
+
+Use `deprecated.json` ([Example](https://github.com/openstreetmap/id-tagging-schema/blob/main/data/deprecated.json), [Schema](https://github.com/ideditor/schema-builder/blob/main/schemas/deprecated.json)) to specify tag deprecations.
+
+Usage example: iD Editor will show an information panel that informs users about deprecated tags and an update-tag-action.
+
+**Example: Default Case**
+
+To update a specific tag to a specific new tag
+
+```
+  {
+    "old": {"foo": "value"},
+    "replace": {"bar": "value"}
+  },
+```
+
+**Example: Change the key, keep the value**
+
+```
+  {
+    "old": {"foo": "*"},
+    "replace": {"bar": "$1"}
+  },
+```
+
+**Example: Delete a tag**
+
+```
+  {
+    "old": {"content": "unknown"}
+  },
+```
 
 ## Contributing
 
