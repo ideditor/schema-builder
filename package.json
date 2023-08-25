@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@ideditor/schema-builder",
-  "version": "7.0.0",
+  "version": "6.4.0",
   "description": "Framework for defining iD-compatible tagging models",
   "homepage": "https://github.com/ideditor/schema-builder#readme",
   "bugs": "https://github.com/ideditor/schema-builder/issues",

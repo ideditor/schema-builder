@@ -7,6 +7,18 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 6.4.0
+##### 2023-Aug-25
+
+* Improve documentation of: Field inheritance ([#104]), Icons ([#103]), TagInfo output ([#102]), tag deprecations ([#105]), thanks [@tordans]
+* Enhance taginfo output: mention used special characters in the project description which are used in tag descriptions, resolve labels of presets/fields which use cross-referenced strings, include discarded tags in taginfo output
+
+[#102]: https://github.com/ideditor/schema-builder/pull/102
+[#103]: https://github.com/ideditor/schema-builder/pull/103
+[#104]: https://github.com/ideditor/schema-builder/pull/104
+[#105]: https://github.com/ideditor/schema-builder/pull/105
+
+
 # 6.3.0
 ##### 2023-May-23
 
