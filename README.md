@@ -556,10 +556,12 @@ The user can pick from any of the options, or type their own value.
 
 The `strings` object contains values that the field wants to be translated on Transifex.
 
-Combo field types can accept key-label pairs in the `options` value of the `strings` property.
+[Combo field types](#combodropdown-fields) can accept key-label pairs in the `options` value of the `strings` property.
 These values populate the `options` property if it isn't otherwise specified.
 If `autoSuggestions` is `true` (as per default), then raw and labeled values might be mixed
 in the dropdown suggestions.
+
+[Checkbox field tyes](#checkboxes) use the options keys as values for the main `key` ([Example](https://github.com/openstreetmap/id-tagging-schema/blob/main/data/fields/crossing_raised.json)).
 
 ```js
 {
