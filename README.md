@@ -561,8 +561,6 @@ These values populate the `options` property if it isn't otherwise specified.
 If `autoSuggestions` is `true` (as per default), then raw and labeled values might be mixed
 in the dropdown suggestions.
 
-[Checkbox field tyes](#checkboxes) use the options keys as values for the main `key` ([Example](https://github.com/openstreetmap/id-tagging-schema/blob/main/data/fields/crossing_raised.json)).
-
 ```js
 {
     "key": "smoothness",
@@ -583,6 +581,12 @@ in the dropdown suggestions.
     }
 }
 ```
+
+[Checkbox field tyes](#checkboxes) use the options keys to specify the values of the OSM tag corresponding 
+to the different states of the checkbox input element, in the following order:
+1. fields of type `check`: _unset state_ (must use the option `undefined`), _checked state_,
+_unchecked state_ ([example](https://github.com/openstreetmap/id-tagging-schema/blob/2375a6b/data/fields/parcel_pickup.json))
+2. fields of type `defaultCheck`: _unchecked state_ (must use the option `undefined`), _checked state_ ([example](https://github.com/openstreetmap/id-tagging-schema/blob/2375a6b/data/fields/crossing_raised.json))
 
 ##### `stringsCrossReference`
 
