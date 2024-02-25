@@ -193,7 +193,17 @@
                         },
                         "value": {
                             "description": "The value that the tag must have. (alternative to 'valueNot')",
-                            "type": "string",
+                            "type": {
+                                "anyOf": [
+                                    {
+                                        "type": "string"
+                                    },
+                                    {
+                                        "type": "array",
+                                        "items": { "type": "string" }
+                                    }
+                                ]
+                            },
                             "required": true
                         }
                     },
