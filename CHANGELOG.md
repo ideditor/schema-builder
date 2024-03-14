@@ -13,6 +13,7 @@
 * Fix links to icons from the maki icon set ([#119], thanks [@Cj-Malone])
 * Write a list of used icons to the `/interim` directory, so they can be more timely pre-fetched/included by consumer applications like iD
 
+[#119]: https://github.com/ideditor/schema-builder/pull/119
 [@Cj-Malone]: https://github.com/Cj-Malone
 
 # 6.4.0
