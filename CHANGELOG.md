@@ -10,7 +10,7 @@
 # 6.5.1
 ##### 2024-Mar-14
 
-* Also include category icons in '/interim/icons.json'
+* Also include category icons in `/interim/icons.json`
 
 
 # 6.5.0
