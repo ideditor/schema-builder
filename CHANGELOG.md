@@ -7,6 +7,12 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# 6.5.1
+##### 2024-Mar-14
+
+* Also include category icons in '/interim/icons.json'
+
+
 # 6.5.0
 ##### 2024-Mar-14
 
