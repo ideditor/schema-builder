@@ -29,8 +29,8 @@
     "node": ">=18"
   },
   "scripts": {
-    "lint": "eslint lib --no-config-lookup",
-    "lint:fix": "eslint lib --fix --no-config-lookup",
+    "lint": "eslint lib",
+    "lint:fix": "eslint lib --fix",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest schema-builder.test.js"
   }
 }

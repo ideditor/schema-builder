@@ -1,20 +1,20 @@
-{
-    "env": {
-        "browser": true,
-        "node": true,
-        "es6": true
+import js from '@eslint/js';
+import globals from 'globals';
+
+export default [
+  js.configs.recommended,
+  {
+    files: ['**/*.js', '**/*.mjs'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...globals.es6
+      }
     },
-    "extends": [
-        "eslint:recommended"
-    ],
-    "globals": {
-        "d3": false
-    },
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "rules": {
+    rules: {
         "accessor-pairs": "error",
         "array-callback-return": "warn",
         "arrow-spacing": "warn",
@@ -104,5 +104,9 @@
         "semi-spacing": "error",
         "space-unary-ops": "error",
         "wrap-regex": "off"
+
     }
-}
+  }
+];
+
+
