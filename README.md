@@ -588,6 +588,19 @@ to the different states of the checkbox input element, in the following order:
 _unchecked state_ ([example](https://github.com/openstreetmap/id-tagging-schema/blob/2375a6b/data/fields/parcel_pickup.json))
 2. fields of type `defaultCheck`: _unchecked state_ (must use the option `undefined`), _checked state_ ([example](https://github.com/openstreetmap/id-tagging-schema/blob/2375a6b/data/fields/crossing_raised.json))
 
+**Custom tooltips:**
+
+In iD and Rapid, the default tooltip on an options string is the raw tag value. You can provide a custom tooltip via an options object:
+```
+        "options": {
+            "yes": {
+                "title": "Allowed",
+                "description": "Access allowed by law; a right of way"
+            }
+        }
+```
+In this case, iD and Rapid will not show the original tag value but only the `description`.
+
 ##### `stringsCrossReference`
 
 An optional property to reference to the strings of another field, indicated  by using that field's name contained in brackets, like `{field}`. This is for example useful when there are multiple variants of fields for the same tag, which should all use the same strings.
