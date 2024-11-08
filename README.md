@@ -232,7 +232,7 @@ The primary name of the feature type.
 
 Upon merging into the `main` branch, this is sent to Transifex for translating to other localizations. Changing the name of an existing preset will require it to be re-translated to all localizations.
 
-A preset can optionally reference the label of another by using that preset's name contained in brackets, like `{preset}`. In which case the presets's _terms_ and _aliases_ are also automatically sourced from that other field. This is for example useful for regional presets which should get the same labels as the preset they are based on.
+A preset can optionally reference the name of another by using that preset's name in brackets, like `{folder/preset}`. In which case the presets's _terms_ and _aliases_ are also automatically sourced from that other field. This is for example useful for regional presets which should get the same labels as the preset they are based on.
 
 This property is required. There is no default.
 
