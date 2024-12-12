@@ -9,8 +9,7 @@
                 "type": "object",
                 "additionalProperties": {
                     "type": "string"
-                },
-                "required": true
+                }
             },
             "replace": {
                 "type": "object",
@@ -19,6 +18,7 @@
                 }
             }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "required": ["old"]
     }
 }

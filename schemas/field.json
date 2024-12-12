@@ -22,15 +22,15 @@
                     "properties": {
                         "key": {
                             "description": "For documentation of a key",
-                            "type": "string",
-                            "required": true
+                            "type": "string"
                         },
                         "value": {
                             "description": "For documentation of a tag (key and value)",
                             "type": "string"
                         }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                    "required": ["key"]
                 },
                 {
                     "type": "object",
@@ -78,13 +78,11 @@
                 "url",
                 "wikidata",
                 "wikipedia"
-            ],
-            "required": true
+            ]
         },
         "label": {
             "description": "English label for the field caption. A field can reference the label of another by using that field's identifier contained in brackets (e.g. {field}), in which case also the field's terms will be referenced from that field.",
-            "type": "string",
-            "required": true
+            "type": "string"
         },
         "geometry": {
             "description": "If specified, only show the field for these kinds of geometry",
@@ -176,11 +174,11 @@
                     "properties": {
                         "key": {
                             "description": "The key of the required tag",
-                            "type": "string",
-                            "required": true
+                            "type": "string"
                         }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                    "required": ["key"]
                 },
                 {
                     "$id": "requires-key-equals-value",
@@ -188,16 +186,15 @@
                     "properties": {
                         "key": {
                             "description": "The key of the required tag",
-                            "type": "string",
-                            "required": true
+                            "type": "string"
                         },
                         "value": {
                             "description": "The value that the tag must have. (alternative to 'valueNot')",
-                            "type": "string",
-                            "required": true
+                            "type": "string"
                         }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                    "required": ["key", "value"]
                 },
                 {
                     "$id": "requires-key-not-value",
@@ -205,16 +202,15 @@
                     "properties": {
                         "key": {
                             "description": "The key of the required tag",
-                            "type": "string",
-                            "required": true
+                            "type": "string"
                         },
                         "valueNot": {
                             "description": "The value that the tag cannot have. (alternative to 'value')",
-                            "type": "string",
-                            "required": true
+                            "type": "string"
                         }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                    "required": ["key", "valueNot"]
                 },
                 {
                     "$id": "requires-not-key",
@@ -222,11 +218,11 @@
                     "properties": {
                         "keyNot": {
                             "description": "A key that must not be present",
-                            "type": "string",
-                            "required": true
+                            "type": "string"
                         }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                    "required": ["keyNot"]
                 }
             ]
         },
@@ -281,6 +277,7 @@
         }
     },
     "additionalProperties": false,
+    "required": ["type", "label"],
     "anyOf": [
         { "$id": "field-type-without-key-nor-keys", "properties": { "type": { "enum": ["restrictions"] } }, "allOf": [
             { "not": { "required": ["key"] }},
