@@ -1,4 +1,6 @@
 {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://github.com/ideditor/schema-builder/raw/main/schemas/preset_category.json",
     "title": "Preset category",
     "description": "An ordered grouping of presets",
     "type": "object",
