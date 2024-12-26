@@ -7,8 +7,7 @@
     "properties": {
         "name": {
             "description": "The English name for the feature. A preset can reference the label of another by using that preset's identifier contained in brackets (e.g. {preset}), in which case also the preset's aliases and terms will also be referenced from that preset.",
-            "type": "string",
-            "required": true
+            "type": "string"
         },
         "geometry": {
             "description": "Valid geometry types for the feature, in order of preference",
@@ -18,16 +17,14 @@
             "items": {
                 "type": "string",
                 "enum": ["point", "vertex", "line", "area", "relation"]
-            },
-            "required": true
+            }
         },
         "tags": {
             "description": "Tags that must be present for the preset to match",
             "type": "object",
             "additionalProperties": {
                 "type": "string"
-            },
-            "required": true
+            }
         },
         "addTags": {
             "description": "Tags that are added when changing to the preset (default is the same value as 'tags')",
@@ -95,15 +92,15 @@
             "properties": {
                 "key": {
                     "description": "For documentation of a key",
-                    "type": "string",
-                    "required": true
+                    "type": "string"
                 },
                 "value": {
                     "description": "For documentation of a tag (key and value)",
                     "type": "string"
                 }
             },
-            "additionalProperties": false
+            "additionalProperties": false,
+            "required": ["key"]
         },
         "replacement": {
             "description": "The ID of a preset that is preferable to this one",
@@ -131,5 +128,6 @@
             "additionalProperties": false
         }
     },
-    "additionalProperties": false
+    "additionalProperties": false,
+    "required": ["name", "geometry", "tags"]
 }
