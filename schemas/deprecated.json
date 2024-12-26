@@ -1,4 +1,6 @@
 {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://github.com/ideditor/schema-builder/raw/main/schemas/deprecated.json",
     "title": "Deprecated tags",
     "description": "An ordered list of old tags mapped to new tags.",
     "type": "array",
