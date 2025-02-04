@@ -154,6 +154,11 @@
             "type": "boolean",
             "default": false
         },
+        "allowDuplicates": {
+            "description": "If true, duplicate values are allowed (semiCombo fields only)",
+            "type": "boolean",
+            "default": false
+        },
         "minValue": {
             "description": "Minimum field value (number fields only)",
             "type": "integer"
