@@ -199,6 +199,23 @@
                     "required": ["key", "value"]
                 },
                 {
+                    "$id": "requires-key-equals-values",
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "description": "The key of the required tag",
+                            "type": "string"
+                        },
+                        "values": {
+                            "description": "The values that the tag must have. (alternative to 'valueNot')",
+                            "type": "array",
+                            "items": { "type": "string" }
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": ["key", "values"]
+                },
+                {
                     "$id": "requires-key-not-value",
                     "type": "object",
                     "properties": {
