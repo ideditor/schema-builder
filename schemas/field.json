@@ -71,6 +71,7 @@
                 "restrictions",
                 "roadheight",
                 "roadspeed",
+                "schedule",
                 "semiCombo",
                 "structureRadio",
                 "tel",
