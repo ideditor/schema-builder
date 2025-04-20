@@ -11,9 +11,9 @@ Icons from the below listed sources can be used. When specifying an icon, use th
 * [Röntgen](https://github.com/enzet/map-machine#r%C3%B6ntgen-icon-set) ([available icons](https://github.com/openstreetmap/iD/tree/develop/svg/roentgen)) (`roentgen-`), part of the Map Machine project
 * [Font Awesome](https://fontawesome.com/icons?d=gallery&m=free), thousands of general-purpose icons
     * There is a free and pro tier. You can use any icon from the free tier in the following styles:
-        * [Solid](https://fontawesome.com/search?o=r&m=free&s=solid) (`fas-`)
-        * [Regular](https://fontawesome.com/search?o=r&m=free&s=regular) (`far-`)
-        * [Brands](https://fontawesome.com/search?o=r&f=brands) (`fab-`)
+        * [Solid](https://fontawesome.com/search?o=r&ic=free&s=solid) (`fas-`)
+        * [Regular](https://fontawesome.com/search?o=r&ic=free&s=regular) (`far-`)
+        * [Brands](https://fontawesome.com/search?o=r&ic=free&ip=brands) (`fab-`)
 * [iD's presets-icons](https://github.com/openstreetmap/iD/tree/develop/svg/iD-sprite/presets), [iD's fields-icons](https://github.com/openstreetmap/iD/tree/develop/svg/iD-sprite/fields) (`iD-`)
 
 ## How can I add new icons?
