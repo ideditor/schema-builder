@@ -40,7 +40,7 @@ everything in this directory will be overwritten when building. Defaults to `int
 - `outDirectory`: `string`, The relative directory of the built data files intended for distribution. Be aware that
 everything in this directory will be overwritten when building. Defaults to `dist`.
 - `sourceLocale`: `string`, The code of the language/locale used for the translatable strings in the data files. Defaults to `en`.
-- `taginfoProjectInfo`: `object`, Project metadata required by TagInfo ([Wiki](https://wiki.openstreetmap.org/wiki/Taginfo/Projects)). If this info is not provided, the `taginfo.json` file will not be built. See the [schema](https://github.com/taginfo/taginfo-projects/blob/master/taginfo-project-schema.json) for more details. The generated taginfo.json will use the following mnemonics to give context to the generated [description on taginfo](https://taginfo.openstreetmap.org/projects/id_editor#tags): 
+- `taginfoProjectInfo`: `object`, Project metadata required by TagInfo ([Wiki](https://wiki.openstreetmap.org/wiki/Taginfo/Projects)). If this info is not provided, the `taginfo.json` file will not be built. See the [schema](https://github.com/taginfo/taginfo-projects/blob/master/taginfo-project-schema.json) for more details. The generated taginfo.json will use the following mnemonics to give context to the generated [description on taginfo](https://taginfo.openstreetmap.org/projects/id_editor#tags):
   - 🄿: [preset](https://github.com/openstreetmap/id-tagging-schema/tree/main/data/presets)
   - 🄵: [field](https://github.com/openstreetmap/id-tagging-schema/tree/main/data/fields)
   - 🄵🅅: field value
@@ -344,7 +344,7 @@ This means that they will be recognized by iD when editing existing data,
 but will not be available as an option when adding new features.
 
 By convention, unsearchable presets have filenames that begin with an underscore
-(e.g. `data/presets/landuse/_farm.json`). However, when using the preset name as reference, 
+(e.g. `data/presets/landuse/_farm.json`). However, when using the preset name as reference,
 the underscore is omitted (e.g. `{landuse/farm}`).
 
 ##### `matchScore`
@@ -490,7 +490,7 @@ A string specifying how iD uses the field. Must be one of the following values.
 
 ##### `key`/`keys`
 
-The `key` property names the OSM tag key that the field will edit. Some fields, like the `address` field, operate on more than one tag: These expect an array of keys in the `keys` property. The following table lists which field types accept which properties: 
+The `key` property names the OSM tag key that the field will edit. Some fields, like the `address` field, operate on more than one tag: These expect an array of keys in the `keys` property. The following table lists which field types accept which properties:
 
 field type | `key` | `keys` | description | example
 ---------- | ----- | ------ | ----------- | -------
@@ -503,7 +503,7 @@ field type | `key` | `keys` | description | example
 `multiCombo` | :heavy_check_mark: | :x: | This field allows to toggle multiple `yes/no` subtags which share a common tag prefix specified in the field's `key`. | `"key": "recycling:"`
 `manyCombo` | :x: | :heavy_check_mark: | Similar to the `multiCombo` field, but here the `keys` property contains the full list of OSM tag keys which the options of the field should correspond to. | `"keys": ["hiking", "bicycle", …]`
 `structureRadio` | :x: | :heavy_check_mark: | Like the `radio` field, but operates on multiple tags: Selecting an option will remove the tag for the previously active option. | `"keys": ["bridge", "tunnel", …]`
-`restrictions` | :x: | :x: | A special field which does not operate on tags, therefore does not need `key` or `keys`. | 
+`restrictions` | :x: | :x: | A special field which does not operate on tags, therefore does not need `key` or `keys`. |
 all other fields | :heavy_check_mark: | :x: | A regular field which only operates on a single tag. | `"key": "oneway"`
 
 [^1]: The intended behaviour of a field with alternative `keys` is the following: If an OSM feature does not yet have a tag of the given `keys`, the supplied `key` will be used; if a feature has a single tag which matches a key from the `keys`, it should be used by the field; if a feature has multiple tags matching a key from the `keys` alternatives, the field should update them simultaneously and display a _multiple/conflicting values_ message if necessary.
@@ -584,7 +584,7 @@ in the dropdown suggestions.
 }
 ```
 
-[Checkbox field tyes](#checkboxes) use the options keys to specify the values of the OSM tag corresponding 
+[Checkbox field tyes](#checkboxes) use the options keys to specify the values of the OSM tag corresponding
 to the different states of the checkbox input element, in the following order:
 1. fields of type `check`: _unset state_ (must use the option `undefined`), _checked state_,
 _unchecked state_ ([example](https://github.com/openstreetmap/id-tagging-schema/blob/2375a6b/data/fields/parcel_pickup.json))
@@ -634,10 +634,10 @@ An object defining the tags the feature needs before this field will be displaye
 
 - `key`: The key for the required tag.
 
-And may optionally be combined with one of these properties:
+And may optionally be combined with one of these properties, but not both:
 
-- `value`: The value that the key must have.
-- `valueNot`: The value that the key must not have.
+- `values`: The value(s) that the key must have. For backwards compatibly, `value` can also be used.
+- `valuesNot`: The value(s) that the key must not have. For backwards compatibly, `valueNot` can also be used.
 
 Alternatively, the object may contain a single property:
 
