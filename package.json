@@ -13,6 +13,8 @@
   "exports": "./lib/index.js",
   "dependencies": {
     "@transifex/api": "^7.1.0",
+    "cldr-core": "^47.0.0",
+    "cldr-units-full": "^47.0.0",
     "js-yaml": "^4.0.0",
     "jsonschema": "^1.1.0",
     "marky": "^1.2.4",
@@ -28,6 +30,7 @@
     "node": ">=22"
   },
   "scripts": {
+    "build": "node scripts/build-schema.js",
     "lint": "eslint lib",
     "lint:fix": "eslint lib --fix",
     "test": "NODE_OPTIONS=--experimental-vm-modules jest schema-builder.test.js"
