@@ -643,7 +643,10 @@ Alternatively, the object may contain a single property:
 
 - `keyNot`: The key that must not be present.
 
-For example, this is how we show the Internet Access Fee field only if the feature has an `internet_access` tag not equal to `no`.
+If a feature already has a value for this field's `key`, it will always display and ignore the prerequsites.
+If a field with `prerequisiteTag`s is referenced as `moreFields` the "Add field" dropdown will only include it if the prerequisites are met.
+
+Example: This is how we show the Internet Access Fee field only if the feature has an `internet_access` tag not equal to `no`.
 
 ```js
 "prerequisiteTag": {
@@ -651,8 +654,6 @@ For example, this is how we show the Internet Access Fee field only if the featu
     "valueNot": "no"
 }
 ```
-
-If a feature has a value for this field's `key` or `keys`, it will display regardless of the `prerequisiteTag` property.
 
 ##### `locationSet`
 
