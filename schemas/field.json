@@ -205,6 +205,24 @@
                     "required": ["key", "value"]
                 },
                 {
+                    "$id": "requires-key-equals-values",
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "description": "The key of the required tag",
+                            "type": "string"
+                        },
+                        "values": {
+                            "description": "The values that the tag must have. (alternative to 'valuesNot')",
+                            "type": "array",
+                            "items": { "type": "string" },
+                            "minItems": 1
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": ["key", "values"]
+                },
+                {
                     "$id": "requires-key-not-value",
                     "type": "object",
                     "properties": {
@@ -219,6 +237,24 @@
                     },
                     "additionalProperties": false,
                     "required": ["key", "valueNot"]
+                },
+                {
+                    "$id": "requires-key-not-values",
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "description": "The key of the required tag",
+                            "type": "string"
+                        },
+                        "valuesNot": {
+                            "description": "The values that the tag cannot have. (alternative to 'values')",
+                            "type": "array",
+                            "items": { "type": "string" },
+                            "minItems": 1
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": ["key", "valuesNot"]
                 },
                 {
                     "$id": "requires-not-key",
