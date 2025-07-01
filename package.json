@@ -12,6 +12,7 @@
   "license": "ISC",
   "exports": "./lib/index.js",
   "dependencies": {
+    "@rapideditor/country-coder": "^5.4.0",
     "@transifex/api": "^7.1.0",
     "chalk": "^5.0.1",
     "glob": "^11.0.2",
