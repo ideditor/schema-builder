@@ -432,7 +432,7 @@ A string specifying the UI and behavior of the field. Must be one of the followi
 ###### Text fields
 
 * `text` - Basic single line text field
-* `number` - Text field with up/down buttons for entering numbers (e.g. `width=*`)
+* `number` & `integer` - Text field with up/down buttons for entering numbers (e.g. `width=*`)
 * `localized` - Text field with localization abilities (e.g. `name=*`, `name:es=*`, etc.)
 * `tel` - Text field for entering phone numbers (localized for editing location)
 * `email` - Text field for entering email addresses
@@ -494,7 +494,7 @@ The `key` property names the OSM tag key that the field will edit. Some fields, 
 
 field type | `key` | `keys` | description | example
 ---------- | ----- | ------ | ----------- | -------
-`text`, `number`, `email`, `url`, `tel` | :heavy_check_mark: | optional | Optionally, these fields can match multiple tag `keys` of an OSM object: which is useful to support OSM tags which have more than one established tag key like `phone` and `contact:phone`.[^1] | `"key": "phone", "keys": ["phone", "contact:phone"]`
+`text`, `number`, `integer`, `email`, `url`, `tel` | :heavy_check_mark: | optional | Optionally, these fields can match multiple tag `keys` of an OSM object: which is useful to support OSM tags which have more than one established tag key like `phone` and `contact:phone`.[^1] | `"key": "phone", "keys": ["phone", "contact:phone"]`
 `address` | :heavy_check_mark: | :heavy_check_mark: | `keys` must contains all possible subtags to be used in the address field and `key` must contain the tag key prefix (e.g. `addr`). | `"key": "addr", "keys": ["addr:city", "addr:street", …]`
 `wikipedia`, `wikidata` | :heavy_check_mark: | :heavy_check_mark: | As the values of these two fields should be updated in sync by the editor, the `keys` should always contain both the respective wikipedia and wikidata keys. | `"key": "flag:wikidata", "keys": ["flag:wikidata", "flag:wikipedia"]`
 `directionalCombo` | :heavy_check_mark: | :heavy_check_mark: | For directional fields, the `key` is the tag to use when the OSM feature has the same attributes in both directions, while the `keys` are the two tags for the individual directions. iD considers `key` with and without the `:both` suffix (for example, `cycleway` and `cycleway:both`). | `"key": "cycleway", "keys": ["cycleway:right", "cycleway:left"]`
@@ -618,15 +618,15 @@ For semiCombo fields, duplicate values are allowed if `allowDuplicates` is `true
 
 ##### `minValue`
 
-For number fields, the lowest valid value. There is no default.
+For `number` & `integer` fields, the lowest valid value. There is no default.
 
 ##### `maxValue`
 
-For number fields, the greatest valid value. There is no default.
+For `number` & `integer` fields, the greatest valid value. There is no default.
 
 ##### `increment`
 
-For number fields, the amount the stepper control increases or decreases the value. The default is `1`.
+For `number` & `integer` fields, the amount the stepper control increases or decreases the value. The default is `1`.
 
 ##### `prerequisiteTag`
 
