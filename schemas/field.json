@@ -278,26 +278,35 @@
             }
         },
         "locationSet": {
-            "description": "An object specifying the IDs of regions where this field is or isn't valid. See: https://github.com/ideditor/location-conflation",
-            "type": "object",
-            "properties": {
-                "include": {
-                    "type": "array",
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    }
+            "oneOf": [
+                {
+                    "description": "An object specifying the IDs of regions where this field is or isn't valid. See: https://github.com/ideditor/location-conflation",
+                    "type": "object",
+                    "properties": {
+                        "include": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "exclude": {
+                            "type": "array",
+                            "uniqueItems": true,
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "additionalProperties": false
                 },
-                "exclude": {
-                    "type": "array",
-                    "uniqueItems": true,
-                    "items": {
-                        "type": "string"
-                    }
+                {
+                    "description": "An string referencing another preset which has a locationSet",
+                    "type": "string",
+                    "pattern": "^\\{.+\\}$"
                 }
-            },
-            "additionalProperties": false
-        },
+            ]
+        } ,
         "urlFormat":  {
             "description": "Permalink URL for `identifier` fields. Must contain a {value} placeholder",
             "type": "string"
