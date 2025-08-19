@@ -590,6 +590,15 @@ to the different states of the checkbox input element, in the following order:
 _unchecked state_ ([example](https://github.com/openstreetmap/id-tagging-schema/blob/2375a6b/data/fields/parcel_pickup.json))
 2. fields of type `defaultCheck`: _unchecked state_ (must use the option `undefined`), _checked state_ ([example](https://github.com/openstreetmap/id-tagging-schema/blob/2375a6b/data/fields/crossing_raised.json))
 
+The value of each option can be a reference to another field or preset's name. For example:
+```json
+  "strings": {
+    "options": {
+      "portal_crane": "{presets/man_made/crane/portal_crane}",
+    }
+  }
+```
+
 ##### `stringsCrossReference`
 
 An optional property to reference to the strings of another field, indicated  by using that field's name contained in brackets, like `{field}`. This is for example useful when there are multiple variants of fields for the same tag, which should all use the same strings.
