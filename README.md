@@ -376,13 +376,20 @@ When possible, use [`deprecated.json`](#deprecations) instead to specify upgrade
 
 ##### `reference`
 
-A key and optionally a value to link to the wiki documentation for this preset. Only necessary if the preset consists of several tags.
+A key and optionally a value to link to the wiki documentation for this preset. Only necessary if the preset consists of several tags or pages like [`Key:payment:*`](https://wiki.openstreetmap.org/wiki/Key:payment:*) should be referenced ([Example](https://github.com/openstreetmap/id-tagging-schema/blob/main/data/fields/payment_multi.json#L5-L7)).
 
-For example,
+Examples: 
+
 ```javascript
 "reference": {
     "key": "tower:type",
     "value": "communication"
+}
+```
+
+```javascript
+"reference": {
+    "key": "payment:*"
 }
 ```
 
