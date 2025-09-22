@@ -134,12 +134,30 @@
             "properties": {
                 "options": {
                     "description": "Translatable options (combo fields).",
-                    "type": "object"
+                    "type": "object",
+                    "additionalProperties": {
+                        "oneOf": [
+                            { "type": "string" },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "title": { "type": "string" },
+                                    "description": { "type": "string" }
+                                }
+                            }
+                        ]
+                    }
+                },
+                "types": {
+                    "description": "Translatable types (directionalCombo and access only).",
+                    "type": "object",
+                    "additionalProperties": { "type": "string" }
+                },
+                "placeholders": {
+                    "description": "Translatable placeholders (address only).",
+                    "type": "object",
+                    "additionalProperties": { "type": "string" }
                 }
-            },
-            "additionalProperties": {
-                "description": "Specialized fields can request translation of arbitrary strings",
-                "type": "object"
             }
         },
         "stringsCrossReference": {
