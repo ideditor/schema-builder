@@ -60,6 +60,7 @@
                 "directionalCombo",
                 "email",
                 "identifier",
+                "integer",
                 "lanes",
                 "localized",
                 "manyCombo",
