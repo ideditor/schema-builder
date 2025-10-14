@@ -7,13 +7,11 @@
     "properties": {
         "name": {
             "description": "The title of this category in US English",
-            "type": "string",
-            "required": true
+            "type": "string"
         },
         "icon": {
             "description": "Name of preset icon which represents this preset",
-            "type": "string",
-            "required": true
+            "type": "string"
         },
         "members": {
             "description": "The IDs of the presets in this category",
@@ -22,9 +20,9 @@
             "uniqueItems": true,
             "items": {
                 "type": "string"
-            },
-            "required": true
+            }
         }
     },
+    "required": ["name", "icon", "members"],
     "additionalProperties": false
 }
