@@ -200,7 +200,7 @@ describe('schema-builder', () => {
           natural: 'water'
         },
         geometry: ['point', 'area'],
-        terms: ['pool', 'lake', 'pond', 'reservoir', 'water', 'water body'],
+        terms: ['lake', 'pond', 'pool', 'reservoir', 'water', 'water body'],
         name: 'Water',
         aliases: [
           'Water',
