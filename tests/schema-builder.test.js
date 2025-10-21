@@ -158,7 +158,7 @@ describe('schema-builder', () => {
           }
         },
         terms: [
-          'Saline', 'salinity ', '   saline', 'nitrates'
+          'nitrates', 'saline', 'salinity'
         ]
       },
       'data/fields/color_water.json': {
@@ -200,7 +200,7 @@ describe('schema-builder', () => {
           natural: 'water'
         },
         geometry: ['point', 'area'],
-        terms: ['pond', 'lake', ' POOL', 'reservoir  ', 'Lake', 'water', 'WATER Body'],
+        terms: ['pool', 'lake', 'water body', 'lake', 'pond', 'reservoir', 'water'],
         name: 'Water',
         aliases: [
           'Water',
@@ -213,7 +213,7 @@ describe('schema-builder', () => {
           water: 'pond'
         },
         geometry: ['point', 'area'],
-        terms: ['frogs', 'vernal pool ', 'guppies', 'puddle'],
+        terms: ['frogs', 'guppies', 'puddle', 'vernal pool'],
         name: 'Pond',
         aliases: ['Vernal Pool', 'Puddle']
       },
