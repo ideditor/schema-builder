@@ -4,6 +4,8 @@
     "title": "Deprecated tags",
     "description": "An ordered list of old tags mapped to new tags.",
     "type": "array",
+    "minItems": 1,
+    "uniqueItems": true,
     "items": {
         "type": "object",
         "properties": {

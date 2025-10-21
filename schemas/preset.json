@@ -29,6 +29,7 @@
         "addTags": {
             "description": "Tags that are added when changing to the preset (default is the same value as 'tags')",
             "type": "object",
+            "minProperties": 1,
             "additionalProperties": {
                 "type": "string"
             }
@@ -36,6 +37,7 @@
         "removeTags": {
             "description": "Tags that are removed when changing to another preset (default is the same value as 'addTags' which in turn defaults to 'tags')",
             "type": "object",
+            "minProperties": 1,
             "additionalProperties": {
                 "type": "string"
             }
@@ -43,6 +45,8 @@
         "fields": {
             "description": "Default form fields that are displayed for the preset. A preset can reference the fields of another by using that preset's identifier contained in brackets, like {preset}.",
             "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
             "items": {
                 "type": "string"
             }
@@ -50,6 +54,8 @@
         "moreFields": {
             "description": "Additional form fields that can be attached with the 'Add field' dropdown. A preset can reference the \"moreFields\" of another by using that preset's identifier contained in brackets, like {preset}.",
             "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
             "items": {
                 "type": "string"
             }
@@ -65,6 +71,8 @@
         "terms": {
             "description": "English search terms or related keywords",
             "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
             "items": {
                 "type": "string"
             }
@@ -72,6 +80,8 @@
         "aliases": {
             "description": "Display-ready English synonyms for the `name`",
             "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
             "items": {
                 "type": "string"
             }
@@ -125,6 +135,7 @@
                     }
                 }
             },
+            "minProperties": 1,
             "additionalProperties": false
         }
     },
