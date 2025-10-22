@@ -29,7 +29,6 @@
         "addTags": {
             "description": "Tags that are added when changing to the preset (default is the same value as 'tags')",
             "type": "object",
-            "minProperties": 1,
             "additionalProperties": {
                 "type": "string"
             }
@@ -37,7 +36,6 @@
         "removeTags": {
             "description": "Tags that are removed when changing to another preset (default is the same value as 'addTags' which in turn defaults to 'tags')",
             "type": "object",
-            "minProperties": 1,
             "additionalProperties": {
                 "type": "string"
             }
