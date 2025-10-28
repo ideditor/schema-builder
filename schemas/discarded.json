@@ -2,9 +2,16 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://github.com/ideditor/schema-builder/raw/main/schemas/discarded.json",
     "title": "Discarded tags",
-    "description": "Keys of tags to be deleted when editing features.",
+    "description": "Keys or tags to be deleted when editing features.",
     "type": "object",
     "additionalProperties": {
-        "type": "boolean"
+      "anyOf": [
+        { "type": "boolean", "enum": [true] },
+        {
+          "type": "object",
+          "additionalProperties": { "type": "boolean", "enum": [true] },
+          "minProperties": 1
+        }
+      ]
     }
 }
