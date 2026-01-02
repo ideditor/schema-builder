@@ -165,7 +165,13 @@
                     "additionalProperties": { "type": "string" }
                 },
                 "placeholders": {
-                    "description": "Translatable placeholders (address only).",
+                    "description": "Translatable placeholders of fields with subfields (address only).",
+                    "type": "object",
+                    "minProperties": 1,
+                    "additionalProperties": { "type": "string" }
+                },
+                "labels": {
+                    "description": "Translatable labels of fields with subfields (address only).",
                     "type": "object",
                     "minProperties": 1,
                     "additionalProperties": { "type": "string" }
