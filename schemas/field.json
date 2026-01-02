@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://github.com/ideditor/schema-builder/raw/main/schemas/field.json",
+    "$id": "https://cdn.jsdelivr.net/npm/@ideditor/schema-builder/schemas/field.json",
     "title": "Field",
     "description": "A reusable form element for presets",
     "type": "object",
@@ -67,6 +67,7 @@
                 "lanes",
                 "localized",
                 "manyCombo",
+                "measurement",
                 "multiCombo",
                 "networkCombo",
                 "number",
@@ -340,11 +341,11 @@
             },
             "additionalProperties": false
         },
-        "urlFormat":  {
+        "urlFormat": {
             "description": "Permalink URL for `identifier` fields. Must contain a {value} placeholder",
             "type": "string"
         },
-        "pattern":  {
+        "pattern": {
             "description": "Regular expression that a valid `identifier` value is expected to match",
             "type": "string"
         },
@@ -364,6 +365,35 @@
         "iconsCrossReference": {
             "description": "A field can reference icons of another by using that field's identifier contained in brackets, like {field}.",
             "type": "string"
+        },
+        "measurement": {
+            "type": "object",
+            "description": "defines the units of measurement that this field uses. Only supported by the 'measurement' field type.",
+            "properties": {
+                "dimension": {
+                    "type": "string",
+                    "description": "The corresponding 'dimension' from CLDR",
+                    "$ref": "./generated/dimension.json"
+                },
+                "usage": {
+                    "type": "string",
+                    "description": "The corresponding 'usage' from CLDR"
+                },
+                "units": {
+                    "type": "object",
+                    "description": "Defines the permitted units. The key is the ID used by CLDR. The value is the value used in the OSM tag. If there are multiple values, the first one will be preferred. Use an empty string if the unit is not included in the OSM tag.",
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "minProperties": 1
+                }
+            },
+            "allOf": [
+                { "$ref": "./generated/usage.json" },
+                { "$ref": "./generated/units.json" }
+            ],
+            "additionalItems": false,
+            "required": ["dimension", "usage", "units"]
         }
     },
     "additionalProperties": false,
