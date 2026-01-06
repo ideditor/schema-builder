@@ -232,7 +232,7 @@ The primary name of the feature type.
 
 Upon merging into the `main` branch, this is sent to Transifex for translating to other localizations. Changing the name of an existing preset will require it to be re-translated to all localizations.
 
-A preset can optionally reference the label of another by using that preset's name contained in brackets, like `{presetId}` or `{folder/presetId}`. In which case the presets's _terms_ and _aliases_ are also automatically sourced from that other field. This is for example useful for regional presets which should get the same labels as the preset they are based on. The `presetId` is the same as the filename but ignoring the underscore convention for unsearchable presets. So for a preset at `folder/_name` the reference would be `{folder/name}`.
+A preset can optionally reference the location of another by using that preset's name contained in brackets, like `{presetId}` or `{folder/presetId}`. In which case the presets's _terms_ and _aliases_ are also automatically sourced from that other field. This is for example useful for regional presets which should get the same labels as the preset they are based on. The `presetId` is the same as the filename but ignoring the underscore convention for unsearchable presets. So for a preset at `folder/_name` the reference would be `{folder/name}`.
 
 This property is required. There is no default.
 
