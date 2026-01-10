@@ -40,7 +40,7 @@ everything in this directory will be overwritten when building. Defaults to `int
 - `outDirectory`: `string`, The relative directory of the built data files intended for distribution. Be aware that
 everything in this directory will be overwritten when building. Defaults to `dist`.
 - `sourceLocale`: `string`, The code of the language/locale used for the translatable strings in the data files. Defaults to `en`.
-- `taginfoProjectInfo`: `object`, Project metadata required by TagInfo ([Wiki](https://wiki.openstreetmap.org/wiki/Taginfo/Projects)). If this info is not provided, the `taginfo.json` file will not be built. See the [schema](https://github.com/taginfo/taginfo-projects/blob/master/taginfo-project-schema.json) for more details. The generated taginfo.json will use the following mnemonics to give context to the generated [description on taginfo](https://taginfo.openstreetmap.org/projects/id_editor#tags): 
+- `taginfoProjectInfo`: `object`, Project metadata required by TagInfo ([Wiki](https://wiki.openstreetmap.org/wiki/Taginfo/Projects)). If this info is not provided, the `taginfo.json` file will not be built. See the [schema](https://github.com/taginfo/taginfo-projects/blob/master/taginfo-project-schema.json) for more details. The generated taginfo.json will use the following mnemonics to give context to the generated [description on taginfo](https://taginfo.openstreetmap.org/projects/id_editor#tags):
   - 🄿: [preset](https://github.com/openstreetmap/id-tagging-schema/tree/main/data/presets)
   - 🄵: [field](https://github.com/openstreetmap/id-tagging-schema/tree/main/data/fields)
   - 🄵🅅: field value
@@ -344,7 +344,7 @@ This means that they will be recognized by iD when editing existing data,
 but will not be available as an option when adding new features.
 
 By convention, unsearchable presets have filenames that begin with an underscore
-(e.g. `data/presets/landuse/_farm.json`). However, when using the preset name as reference, 
+(e.g. `data/presets/landuse/_farm.json`). However, when using the preset name as reference,
 the underscore is omitted (e.g. `{landuse/farm}`).
 
 ##### `matchScore`
@@ -432,7 +432,7 @@ A string specifying the UI and behavior of the field. Must be one of the followi
 ###### Text fields
 
 * `text` - Basic single line text field
-* `number` - Text field with up/down buttons for entering numbers (e.g. `width=*`)
+* `number` & `integer` - Text field with up/down buttons for entering numbers (e.g. `width=*`)
 * `localized` - Text field with localization abilities (e.g. `name=*`, `name:es=*`, etc.)
 * `tel` - Text field for entering phone numbers (localized for editing location)
 * `email` - Text field for entering email addresses
@@ -490,11 +490,11 @@ A string specifying how iD uses the field. Must be one of the following values.
 
 ##### `key`/`keys`
 
-The `key` property names the OSM tag key that the field will edit. Some fields, like the `address` field, operate on more than one tag: These expect an array of keys in the `keys` property. The following table lists which field types accept which properties: 
+The `key` property names the OSM tag key that the field will edit. Some fields, like the `address` field, operate on more than one tag: These expect an array of keys in the `keys` property. The following table lists which field types accept which properties:
 
 field type | `key` | `keys` | description | example
 ---------- | ----- | ------ | ----------- | -------
-`text`, `number`, `email`, `url`, `tel` | :heavy_check_mark: | optional | Optionally, these fields can match multiple tag `keys` of an OSM object: which is useful to support OSM tags which have more than one established tag key like `phone` and `contact:phone`.[^1] | `"key": "phone", "keys": ["phone", "contact:phone"]`
+`text`, `number`, `integer`, `email`, `url`, `tel` | :heavy_check_mark: | optional | Optionally, these fields can match multiple tag `keys` of an OSM object: which is useful to support OSM tags which have more than one established tag key like `phone` and `contact:phone`.[^1] | `"key": "phone", "keys": ["phone", "contact:phone"]`
 `address` | :heavy_check_mark: | :heavy_check_mark: | `keys` must contains all possible subtags to be used in the address field and `key` must contain the tag key prefix (e.g. `addr`). | `"key": "addr", "keys": ["addr:city", "addr:street", …]`
 `wikipedia`, `wikidata` | :heavy_check_mark: | :heavy_check_mark: | As the values of these two fields should be updated in sync by the editor, the `keys` should always contain both the respective wikipedia and wikidata keys. | `"key": "flag:wikidata", "keys": ["flag:wikidata", "flag:wikipedia"]`
 `directionalCombo` | :heavy_check_mark: | :heavy_check_mark: | For directional fields, the `key` is the tag to use when the OSM feature has the same attributes in both directions, while the `keys` are the two tags for the individual directions. iD considers `key` with and without the `:both` suffix (for example, `cycleway` and `cycleway:both`). | `"key": "cycleway", "keys": ["cycleway:right", "cycleway:left"]`
@@ -503,7 +503,7 @@ field type | `key` | `keys` | description | example
 `multiCombo` | :heavy_check_mark: | :x: | This field allows to toggle multiple `yes/no` subtags which share a common tag prefix specified in the field's `key`. | `"key": "recycling:"`
 `manyCombo` | :x: | :heavy_check_mark: | Similar to the `multiCombo` field, but here the `keys` property contains the full list of OSM tag keys which the options of the field should correspond to. | `"keys": ["hiking", "bicycle", …]`
 `structureRadio` | :x: | :heavy_check_mark: | Like the `radio` field, but operates on multiple tags: Selecting an option will remove the tag for the previously active option. | `"keys": ["bridge", "tunnel", …]`
-`restrictions` | :x: | :x: | A special field which does not operate on tags, therefore does not need `key` or `keys`. | 
+`restrictions` | :x: | :x: | A special field which does not operate on tags, therefore does not need `key` or `keys`. |
 all other fields | :heavy_check_mark: | :x: | A regular field which only operates on a single tag. | `"key": "oneway"`
 
 [^1]: The intended behaviour of a field with alternative `keys` is the following: If an OSM feature does not yet have a tag of the given `keys`, the supplied `key` will be used; if a feature has a single tag which matches a key from the `keys`, it should be used by the field; if a feature has multiple tags matching a key from the `keys` alternatives, the field should update them simultaneously and display a _multiple/conflicting values_ message if necessary.
@@ -563,7 +563,7 @@ These values populate the `options` property if it isn't otherwise specified.
 If `autoSuggestions` is `true` (as per default), then raw and labeled values might be mixed
 in the dropdown suggestions.
 
-The options can either be a string or `{"title": "…", "description": "…"}` object where the description is shown on mouse over 
+The options can either be a string or `{"title": "…", "description": "…"}` object where the description is shown on mouse over
 in iD to give additional context on a value ([Example](https://github.com/openstreetmap/id-tagging-schema/blob/main/data/fields/parking.json)).
 
 ```js
@@ -601,11 +601,20 @@ in iD to give additional context on a value ([Example](https://github.com/openst
 //–
 ```
 
-[Checkbox field tyes](#checkboxes) use the options keys to specify the values of the OSM tag corresponding 
+[Checkbox field tyes](#checkboxes) use the options keys to specify the values of the OSM tag corresponding
 to the different states of the checkbox input element, in the following order:
 1. fields of type `check`: _unset state_ (must use the option `undefined`), _checked state_,
 _unchecked state_ ([example](https://github.com/openstreetmap/id-tagging-schema/blob/2375a6b/data/fields/parcel_pickup.json))
 2. fields of type `defaultCheck`: _unchecked state_ (must use the option `undefined`), _checked state_ ([example](https://github.com/openstreetmap/id-tagging-schema/blob/2375a6b/data/fields/crossing_raised.json))
+
+The value of each option can be a reference to another field or preset's name. For example:
+```json
+  "strings": {
+    "options": {
+      "portal_crane": "{presets/man_made/crane/portal_crane}",
+    }
+  }
+```
 
 ##### `stringsCrossReference`
 
@@ -635,15 +644,15 @@ For semiCombo fields, duplicate values are allowed if `allowDuplicates` is `true
 
 ##### `minValue`
 
-For number fields, the lowest valid value. There is no default.
+For `number` & `integer` fields, the lowest valid value. There is no default.
 
 ##### `maxValue`
 
-For number fields, the greatest valid value. There is no default.
+For `number` & `integer` fields, the greatest valid value. There is no default.
 
 ##### `increment`
 
-For number fields, the amount the stepper control increases or decreases the value. The default is `1`.
+For `number` & `integer` fields, the amount the stepper control increases or decreases the value. The default is `1`.
 
 ##### `prerequisiteTag`
 
@@ -651,16 +660,19 @@ An object defining the tags the feature needs before this field will be displaye
 
 - `key`: The key for the required tag.
 
-And may optionally be combined with one of these properties:
+And may optionally be combined with one of these properties, but not both:
 
-- `value`: The value that the key must have.
-- `valueNot`: The value that the key must not have.
+- `values`: The value(s) that the key must have. For backwards compatibly, `value` can also be used.
+- `valuesNot`: The value(s) that the key must not have. For backwards compatibly, `valueNot` can also be used.
 
 Alternatively, the object may contain a single property:
 
 - `keyNot`: The key that must not be present.
 
-For example, this is how we show the Internet Access Fee field only if the feature has an `internet_access` tag not equal to `no`.
+If a feature already has a value for this field's `key`, it will always display and ignore the prerequsites.
+If a field with `prerequisiteTag`s is referenced as `moreFields` the "Add field" dropdown will only include it if the prerequisites are met.
+
+Example: This is how we show the Internet Access Fee field only if the feature has an `internet_access` tag not equal to `no`.
 
 ```js
 "prerequisiteTag": {
@@ -668,8 +680,6 @@ For example, this is how we show the Internet Access Fee field only if the featu
     "valueNot": "no"
 }
 ```
-
-If a feature has a value for this field's `key` or `keys`, it will display regardless of the `prerequisiteTag` property.
 
 ##### `locationSet`
 

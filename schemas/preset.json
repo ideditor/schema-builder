@@ -43,6 +43,8 @@
         "fields": {
             "description": "Default form fields that are displayed for the preset. A preset can reference the fields of another by using that preset's identifier contained in brackets, like {preset}.",
             "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
             "items": {
                 "type": "string"
             }
@@ -50,6 +52,8 @@
         "moreFields": {
             "description": "Additional form fields that can be attached with the 'Add field' dropdown. A preset can reference the \"moreFields\" of another by using that preset's identifier contained in brackets, like {preset}.",
             "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
             "items": {
                 "type": "string"
             }
@@ -65,6 +69,8 @@
         "terms": {
             "description": "English search terms or related keywords",
             "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
             "items": {
                 "type": "string"
             }
@@ -72,6 +78,8 @@
         "aliases": {
             "description": "Display-ready English synonyms for the `name`",
             "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
             "items": {
                 "type": "string"
             }
@@ -125,6 +133,7 @@
                     }
                 }
             },
+            "minProperties": 1,
             "additionalProperties": false
         }
     },

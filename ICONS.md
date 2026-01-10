@@ -6,15 +6,16 @@ For presets and some fields, icons can be specified. They provide an additional 
 
 Icons from the below listed sources can be used. When specifying an icon, use the prefixed version of the name, for example `"icon": "maki-park"`.
 
-* [Maki](https://labs.mapbox.com/maki-icons/) (`maki-`), map-specific icons from Mapbox
-* [Temaki](https://rapideditor.github.io/temaki/docs/) (`temaki-`), an expansion pack for Maki
-* [Röntgen](https://github.com/enzet/map-machine#r%C3%B6ntgen-icon-set) ([available icons](https://github.com/openstreetmap/iD/tree/develop/svg/roentgen)) (`roentgen-`), part of the Map Machine project
-* [Font Awesome](https://fontawesome.com/icons?d=gallery&m=free), thousands of general-purpose icons
-    * There is a free and pro tier. You can use any icon from the free tier in the following styles:
-        * [Solid](https://fontawesome.com/search?o=r&ic=free&s=solid) (`fas-`)
-        * [Regular](https://fontawesome.com/search?o=r&ic=free&s=regular) (`far-`)
-        * [Brands](https://fontawesome.com/search?o=r&ic=free&ip=brands) (`fab-`)
-* [iD's presets-icons](https://github.com/openstreetmap/iD/tree/develop/svg/iD-sprite/presets), [iD's fields-icons](https://github.com/openstreetmap/iD/tree/develop/svg/iD-sprite/fields) (`iD-`)
+| Name | Prefix | Description | Preview |
+|------|-----------|-------------|---------|
+| [Maki](https://labs.mapbox.com/maki-icons/) | `maki-` | Map-specific icons from Mapbox | [Preview](https://icones.js.org/collection/maki) |
+| [Temaki](https://rapideditor.github.io/temaki/docs/) | `temaki-` | An expansion pack for Maki | [Preview](https://icones.js.org/collection/temaki) |
+| [Röntgen](https://github.com/enzet/map-machine#r%C3%B6ntgen-icon-set) | `roentgen-` | Part of the Map Machine project | [Preview](https://icones.js.org/collection/roentgen) |
+| [Font Awesome Solid](https://fontawesome.com/search?o=r&ic=free&s=solid) | `fas-` | Solid style icons from Font Awesome (free tier) | [Preview](https://icones.js.org/collection/fa-solid) |
+| [Font Awesome Regular](https://fontawesome.com/search?o=r&ic=free&s=regular) | `far-` | Regular style icons from Font Awesome (free tier) | [Preview](https://icones.js.org/collection/fa-regular) |
+| [Font Awesome Brands](https://fontawesome.com/search?o=r&ic=free&ip=brands) | `fab-` | Brand icons from Font Awesome (free tier) | [Preview](https://icones.js.org/collection/fa-brands) |
+| [iD Presets](https://github.com/openstreetmap/iD/tree/develop/svg/iD-sprite/presets) | `iD-` | iD's presets-icons | - |
+| [iD Fields](https://github.com/openstreetmap/iD/tree/develop/svg/iD-sprite/fields) | `iD-` | iD's fields-icons | - |
 
 ## How can I add new icons?
 

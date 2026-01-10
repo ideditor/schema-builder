@@ -12,6 +12,8 @@
         "keys": {
             "description": "Tag keys whose value is to be displayed",
             "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
             "items": {
                 "type": "string"
             }
@@ -42,7 +44,8 @@
                             "type": "string"
                         }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                    "required": ["rtype"]
                 }
             ]
         },
@@ -60,6 +63,7 @@
                 "directionalCombo",
                 "email",
                 "identifier",
+                "integer",
                 "lanes",
                 "localized",
                 "manyCombo",
@@ -104,6 +108,8 @@
         "options": {
             "description": "List of untranslatable string suggestions (combo fields)",
             "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
             "items": {
                 "type": "string"
             }
@@ -130,15 +136,46 @@
         "strings": {
             "description": "Strings sent to transifex for translation",
             "type": "object",
+            "minProperties": 1,
+            "additionalProperties": false,
             "properties": {
                 "options": {
                     "description": "Translatable options (combo fields).",
-                    "type": "object"
+                    "type": "object",
+                    "minProperties": 1,
+                    "additionalProperties": {
+                        "oneOf": [
+                            { "type": "string" },
+                            {
+                                "type": "object",
+                                "properties": {
+                                    "title": { "type": "string" },
+                                    "description": { "type": "string" }
+                                },
+                                "required": ["title", "description"],
+                                "additionalProperties": false
+                            }
+                        ]
+                    }
+                },
+                "types": {
+                    "description": "Translatable types (directionalCombo and access only).",
+                    "type": "object",
+                    "minProperties": 1,
+                    "additionalProperties": { "type": "string" }
+                },
+                "placeholders": {
+                    "description": "Translatable placeholders of fields with subfields (address only).",
+                    "type": "object",
+                    "minProperties": 1,
+                    "additionalProperties": { "type": "string" }
+                },
+                "labels": {
+                    "description": "Translatable labels of fields with subfields (address only).",
+                    "type": "object",
+                    "minProperties": 1,
+                    "additionalProperties": { "type": "string" }
                 }
-            },
-            "additionalProperties": {
-                "description": "Specialized fields can request translation of arbitrary strings",
-                "type": "object"
             }
         },
         "stringsCrossReference": {
@@ -205,6 +242,24 @@
                     "required": ["key", "value"]
                 },
                 {
+                    "$id": "requires-key-equals-values",
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "description": "The key of the required tag",
+                            "type": "string"
+                        },
+                        "values": {
+                            "description": "The values that the tag must have. (alternative to 'valuesNot')",
+                            "type": "array",
+                            "items": { "type": "string" },
+                            "minItems": 1
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": ["key", "values"]
+                },
+                {
                     "$id": "requires-key-not-value",
                     "type": "object",
                     "properties": {
@@ -219,6 +274,24 @@
                     },
                     "additionalProperties": false,
                     "required": ["key", "valueNot"]
+                },
+                {
+                    "$id": "requires-key-not-values",
+                    "type": "object",
+                    "properties": {
+                        "key": {
+                            "description": "The key of the required tag",
+                            "type": "string"
+                        },
+                        "valuesNot": {
+                            "description": "The values that the tag cannot have. (alternative to 'values')",
+                            "type": "array",
+                            "items": { "type": "string" },
+                            "minItems": 1
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": ["key", "valuesNot"]
                 },
                 {
                     "$id": "requires-not-key",
@@ -237,6 +310,8 @@
         "terms": {
             "description": "English synonyms or related search terms",
             "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
             "items": {
                 "type": "string"
             }
@@ -244,9 +319,11 @@
         "locationSet": {
             "description": "An object specifying the IDs of regions where this field is or isn't valid. See: https://github.com/ideditor/location-conflation",
             "type": "object",
+            "minProperties": 1,
             "properties": {
                 "include": {
                     "type": "array",
+                    "minItems": 1,
                     "uniqueItems": true,
                     "items": {
                         "type": "string"
@@ -254,6 +331,7 @@
                 },
                 "exclude": {
                     "type": "array",
+                    "minItems": 1,
                     "uniqueItems": true,
                     "items": {
                         "type": "string"
@@ -277,7 +355,11 @@
         },
         "icons": {
             "description": "For combo fields: Name of icons which represents different values of this field",
-            "type": "object"
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+                "type": "string"
+            }
         },
         "iconsCrossReference": {
             "description": "A field can reference icons of another by using that field's identifier contained in brackets, like {field}.",
