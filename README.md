@@ -368,6 +368,11 @@ See the [location-conflation](https://github.com/ideditor/location-conflation) p
 }
 ```
 
+Alternatively, a string can be used to reference the `locationSet` from another field or preset:
+```json
+"locationSet": "{presets/man_made/crane}"
+```
+
 ##### `replacement`
 
 The ID of a preset that is preferable to this one. iD's validator will flag features matching this preset and recommend that the user upgrade the tags.
@@ -692,6 +697,11 @@ See the [location-conflation](https://github.com/ideditor/location-conflation) p
     "include": ["US"],
     "exclude": ["PR", "VI"]
 }
+```
+
+Alternatively, a string can be used to reference the `locationSet` from another field or preset:
+```json
+"locationSet": "{fields/crane/type}"
 ```
 
 ##### `urlFormat`
