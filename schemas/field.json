@@ -97,8 +97,7 @@
             "minItems": 1,
             "uniqueItems": true,
             "items": {
-                "type": "string",
-                "enum": ["point", "vertex", "line", "area", "relation"]
+              "$ref": "#/$defs/Geometry"
             }
         },
         "default": {
@@ -382,5 +381,11 @@
                 { "required": ["keys"] }
             ]}
         ]}
-    ]
+    ],
+    "$defs": {
+        "Geometry": {
+            "type": "string",
+            "enum": ["point", "vertex", "line", "area", "relation"]
+        }
+    }
 }

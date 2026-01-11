@@ -386,6 +386,96 @@ For example,
 }
 ```
 
+##### `relation`
+
+For relations, this object describes which roles are allowed, which tags are required for each role, and other constraints related to relation roles.
+
+* `relation.id` – a string. This is the “permanent relation type ID”, it should match the value of [permanent relation type ID<sup><code>P41</code></sup>](https://osm.wiki/Property:P41) in the OSM wiki’s wikibase system.
+* `relation.allowDuplicateMembers` – a boolean. Set to `true` if the same OSM feature is allowed to appear multiple times in the relation's members.
+* `relation.optionalTags` – an object, only useful for specifying placeholders which are referenced in `members.*.matchTags`. See example below.
+* `relation.members` – an array of objects, which lists every member that is permitted (see below).
+
+A full example looks like this:
+
+```jsonc
+// type/restriction/no_left_turn.json
+{
+  "relation": {
+    "id": "restriction", // value of https://osm.wiki/Property:P41
+    "allowDuplicateMembers": true,
+    "members": [
+      {
+        "role": "from", // The relation role. An empty string is allowed
+        "roleLabel": "From", // The label for the role, in the default language.
+        "geometry": ["line"], // If not specified, any geometry is allowed
+        "matchTags": [
+          // Describes which tags the member must have, if it has this role.
+          // `*` can be used as a tag value.
+          // If multiple array items are specified, only 1 needs to match.
+          // If this property is not specified, then any tags are allowed
+          { "highway": "*" }
+        ],
+        "min": 1, // minimum number of times that this role must appear in the relation
+        "max": 1, // maxmium number of times that this role must appear in the relation
+      },
+      {
+        "role": "via",
+        "roleLabel": "Via",
+        "geometry": ["vertex", "line"],
+        "min": 1,
+        "max": 1,
+      },
+      {
+        "role": "to",
+        "roleLabel": "To",
+        "geometry": ["line"],
+        "matchTags": [{ "highway": "*" }],
+        "min": 1,
+        "max": 1,
+      }
+    ]
+  }
+}
+```
+
+It is possible for the `matchTags` constraints to reference tags from the relation.
+
+For example, if a relation with [`type=route`](https://osm.wiki/Tag:type=route) + [`route=XXXX`](https://osm.wiki/Key:route) has a member with a role of `stop`, then that member must have a tag of `XXXX=yes`<sup>[[1]](https://osm.wiki/Relation:route#Members)</sup>. This can be expressed using the following syntax:
+
+```jsonc
+// type/route.json
+{
+  "relation": {
+    "optionalTags": {
+      "route": "$1" // 👈 here
+    },
+    "members": [
+      {
+        "role": "stop",
+        "roleLabel": "Stop Position",
+        "geometry": ["point", "vertex"],
+        "matchTags": [
+          {
+            "public_transport": "stop_position",
+            "$1": "yes" // 👈 here
+          },
+        ],
+      },
+    ],
+  },
+}
+```
+
+
+##### `relationCrossReference`
+
+To avoid repeating the [`relation` object](#relation) in several presets, you can use `relationCrossReference` to reference another preset.
+
+For example:
+```js
+  "relationCrossReference": "{type/route}"
+```
+
 ### Fields
 
 Fields are reusable form elements that can be associated with presets.
