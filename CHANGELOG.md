@@ -7,6 +7,23 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
+# Unreleased
+##### (????-???-??)
+
+* Make schemas stricter ([#242], thanks [@FloEdelmann])
+  * Arrays that now have to be non-empty and only allow unique items: deprecated tags, field `keys`/`options`/`terms`, preset `fields`/`moreFields`/`terms`/`aliases`, preset defaults `point`/`vertex`/`line`/`area`/`relation`
+  * Arrays that now have to be non-empty: field `locationSet.include`/`locationSet.exclude`
+  * Objects that now have to be non-empty: field `strings`/`strings.options`/`strings.types`/`strings.placeholders`/`locationSet`/`icons`, preset `locationSet`
+  * Objects that now disallow unknown properties: field `strings`/`strings.options`
+  * Only strings are now allowed as field `icons` values
+  * `rtype` is now required in field relation type `reference`s
+  * `title` and `description` are now required in field `strings.options`
+  * `name`, `icon` and `members` are now required in preset category
+  * `point`, `vertex`, `line`, `area` and `relation` are now required in preset defaults
+
+[#242]: https://github.com/ideditor/schema-builder/pull/242
+[@FloEdelmann]: https://github.com/FloEdelmann
+
 # 6.5.1
 ##### 2024-Mar-14
 
