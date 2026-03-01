@@ -618,7 +618,17 @@ The value of each option can be a reference to another field or preset's name. F
 
 ##### `stringsCrossReference`
 
-An optional property to reference to the strings of another field, indicated  by using that field's name contained in brackets, like `{field}`. This is for example useful when there are multiple variants of fields for the same tag, which should all use the same strings.
+An optional property to reference to the strings of another field, indicated  by using that field's name contained in brackets, like `{field}`. This is for example useful when there are multiple variants of fields for the same tag, which should all use the same strings. For example:
+
+```json
+  "stringsCrossReference": "{gender}",
+  "options": [
+      "female",
+      "male"
+  ]
+```
+
+would inherit translations from `gender` field but keep only defined options. 
 
 ##### `autoSuggestions`
 
