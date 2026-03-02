@@ -10,6 +10,25 @@
 # Unreleased
 ##### (????-???-??)
 
+###### Breaking changes
+
+* :warning: Allow multiple values in `prerequisiteTag` property ([#87], thanks [@k-yle])
+* :warning: Add _schedule_ field type ([#101], thanks [@1ec5])
+* :warning: Add _integer_ field type ([#217], thanks [@k-yle])
+* :warning: Store `terms` and `aliases` as an array in the translation files ([#227], thanks [@k-yle])
+* :warning: Allow individual field options to reference other translations ([#230], thanks [@k-yle])
+* :warning: Support discarding tags, not just keys ([#231], thanks [@k-yle])
+
+###### Non-breaking changes
+
+* Fix invalid json schema for the `required` field ([#172], thanks [@k-yle])
+* Add `$schema` and `$id` to all json schema for better IDE support ([#173], thanks [@k-yle])
+* Fix invalid eslint config ([#176], thanks [@k-yle])
+* Auto-generate type definitions from the json schema ([#177], thanks [@k-yle])
+* Add `allowDuplicates` property for semi-combo fields ([#178], thanks [@k-yle])
+* Fix taginfo file not including base tags for `directionalCombo` ([#222], thanks [@k-yle])
+* Fix taginfo file only including the last key-value pair in the object ([#223], thanks [@k-yle])
+* Consider other unicode commas when splitting translated `terms` ([#228], thanks [@k-yle])
 * Make schemas stricter ([#242], thanks [@FloEdelmann])
   * Arrays that now have to be non-empty and only allow unique items: deprecated tags, field `keys`/`options`/`terms`, preset `fields`/`moreFields`/`terms`/`aliases`, preset defaults `point`/`vertex`/`line`/`area`/`relation`
   * Arrays that now have to be non-empty: field `locationSet.include`/`locationSet.exclude`
@@ -20,9 +39,44 @@
   * `title` and `description` are now required in field `strings.options`
   * `name`, `icon` and `members` are now required in preset category
   * `point`, `vertex`, `line`, `area` and `relation` are now required in preset defaults
+* Add validation for terms to be lowercase and sorted ([#243], thanks [@FloEdelmann])
 
+###### Docs
+
+* Preset properties > `name`: Explain edge case of presets with underscore ([#147], thanks [@tordans])
+* Explain that references don't respect the underscore convention ([#148], thanks [@tordans])
+* Fix typo ([#171], thanks [@matkoniecz])
+* Update directionalCombo docs to mention `:both` ([#179], thanks [@k-yle])
+* Document "strings" with "title" and "description" ([#205], thanks [@tordans])
+* Icons: Make table and add preview ([#254], thanks [@tordans])
+* Better phrasing - it is NOT name ([#256], thanks [@matkoniecz])
+
+[#87]: https://github.com/ideditor/schema-builder/pull/87
+[#101]: https://github.com/ideditor/schema-builder/pull/101
+[#147]: https://github.com/ideditor/schema-builder/pull/147
+[#148]: https://github.com/ideditor/schema-builder/pull/148
+[#171]: https://github.com/ideditor/schema-builder/pull/171
+[#172]: https://github.com/ideditor/schema-builder/pull/172
+[#173]: https://github.com/ideditor/schema-builder/pull/173
+[#176]: https://github.com/ideditor/schema-builder/pull/176
+[#177]: https://github.com/ideditor/schema-builder/pull/177
+[#178]: https://github.com/ideditor/schema-builder/pull/178
+[#179]: https://github.com/ideditor/schema-builder/pull/179
+[#205]: https://github.com/ideditor/schema-builder/pull/205
+[#217]: https://github.com/ideditor/schema-builder/pull/217
+[#222]: https://github.com/ideditor/schema-builder/pull/222
+[#223]: https://github.com/ideditor/schema-builder/pull/223
+[#227]: https://github.com/ideditor/schema-builder/pull/227
+[#228]: https://github.com/ideditor/schema-builder/pull/228
+[#230]: https://github.com/ideditor/schema-builder/pull/230
+[#231]: https://github.com/ideditor/schema-builder/pull/231
 [#242]: https://github.com/ideditor/schema-builder/pull/242
+[#243]: https://github.com/ideditor/schema-builder/pull/243
+[#254]: https://github.com/ideditor/schema-builder/pull/254
+[#256]: https://github.com/ideditor/schema-builder/pull/256
+[@1ec5]: https://github.com/1ec5
 [@FloEdelmann]: https://github.com/FloEdelmann
+[@matkoniecz]: https://github.com/matkoniecz
 
 # 6.5.1
 ##### 2024-Mar-14
