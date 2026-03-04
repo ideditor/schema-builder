@@ -621,14 +621,15 @@ The value of each option can be a reference to another field or preset's name. F
 An optional property to reference to the strings of another field, indicated  by using that field's name contained in brackets, like `{field}`. This is for example useful when there are multiple variants of fields for the same tag, which should all use the same strings. For example:
 
 ```json
-  "stringsCrossReference": "{gender}",
+  "stringsCrossReference": "{sport}",
   "options": [
-      "female",
-      "male"
+      "ice_skating",
+      "ice_hockey",
+      "curling"
   ]
 ```
 
-would inherit translations from `gender` field but keep only defined options. 
+This would inherit all translations from the `gender` field but keep only the defined options.
 
 ##### `autoSuggestions`
 
