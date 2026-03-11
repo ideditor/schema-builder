@@ -35,4 +35,4 @@ For presets, it is possible to define an icon via the `imageURL` property in add
 
 `imageURL` is extensively used to specify the logos of brand presets by the [name-suggestion-index](https://github.com/osmlab/name-suggestion-index) project.
 
-It is not be used for regular preset entries in [iD tagging schema](https://github.com/openstreetmap/id-tagging-schema).
+It must not be used for regular preset entries in [iD tagging schema](https://github.com/openstreetmap/id-tagging-schema).
