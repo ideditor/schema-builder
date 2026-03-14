@@ -135,8 +135,83 @@
             },
             "minProperties": 1,
             "additionalProperties": false
+        },
+        "relation": {
+            "$ref": "#/$defs/RelationSchema"
+        },
+        "relationCrossReference": {
+            "description": "A preset can reference the relation schema from another preset, instead of defining the same schema again. If present, then the `relation` property must not appear.",
+            "type": "string",
+            "pattern": "^\\{.+\\}$"
         }
     },
     "additionalProperties": false,
-    "required": ["name", "geometry", "tags"]
+    "required": ["name", "geometry", "tags"],
+    "$defs": {
+        "RelationSchema": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "The “permanent relation type ID”, this should match the value of https://osm.wiki/Property:P41 in the OSM wiki’s wikibase system."
+                },
+                "allowDuplicateMembers": {
+                    "type": "boolean",
+                    "description": "Set to `true` if the relation can contain the same member multiple times."
+                },
+                "members": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "role": {
+                                "type": "string",
+                                "description": "The relation role. An empty string is allowed."
+                            },
+                            "roleLabel": {
+                                "type": "string",
+                                "description": "The label for the role, in the default language. An empty string is allowed."
+                            },
+                            "geometry": {
+                                "type": "array",
+                                "uniqueItems": true,
+                                "items": {
+                                    "$ref": "field.json#/$defs/Geometry"
+                                },
+                                "description": "If not specified, any geometry is allowed"
+                            },
+                            "matchTags": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    },
+                                    "minProperties": 1
+                                },
+                                "minItems": 1,
+                                "examples": [
+                                    [{ "a": 1, "b": 2 }],
+                                    [{ "a": 1 }, { "b": 2 }]
+                                ],
+                                "description": "`*` can be used as a tag value. If the object has multiple tags, then all tags must match (logical AND). If multiple array items are specified, only 1 needs to match (logical OR). If this property is not specified, then any tags are allowed."
+                            },
+                            "min": {
+                                "type": "integer",
+                                "description": "If unspecified, there is no minimum for how many times this role can appear in the relation"
+                            },
+                            "max": {
+                                "type": "integer",
+                                "description": "If unspecified, there is no maximum for how many times this role can appear in the relation"
+                            }
+                        },
+                        "required": ["role", "roleLabel"],
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "required": ["id", "allowDuplicateMembers", "members"],
+            "additionalProperties": false
+        }
+    }
 }
