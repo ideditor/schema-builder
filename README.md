@@ -473,8 +473,7 @@ A string specifying the UI and behavior of the field. Must be one of the followi
 
 * `access` - Block of dropdowns for defining the `access=*` tags on a highway
 * `address` - Block of text and dropdown fields for entering address information (localized for editing location)
-* `roadspeed` - Numeric text field for speed and dropdown for "mph" / "km/h", defaulting to the speed unit used for roads in the feature's region
-* `roadheight` - Numeric text field for height and dropdowns for "m" / "ft" and "in", defaulting to the height unit used for roads in the feature's region
+* `measurement` - Numeric text field with associated unit of measurement, such as inches or kilometers-per-hour. The field may have multiple units. See [#measurement](#measurement) for details.
 * `restrictions` - Graphical field for editing turn restrictions
 * `wikidata` - Search field for selecting a Wikidata entity
 * `wikipedia` - Block of fields for selecting a wiki language and Wikipedia page
@@ -739,6 +738,41 @@ Combo field types can accept key-label pairs in the `options` value of the `stri
 ##### `iconsCrossReference`
 
 An optional property to reference to the icons of another field, indicated  by using that field's name contained in brackets, like `{field}`. This is for example useful when there are multiple variants of fields for the same tag, which should all use the same icons.
+
+##### `measurement`
+
+Used when `type = measurement`. Defines the unit of measurements that are supported by this field. For example:
+
+```json
+{
+  "key": "diameter",
+  "type": "measurement",
+  "measurement": {
+     // The dimension being measured. This constrains the permitted units.
+     // The ID id defined by CLDR.
+    "dimension": "length",
+
+    "units": {
+      // The key defines the ID of the of the unit, as defined by CLDR.
+      // The values define the suffix used in the OSM tag value. 
+      // If there are multiple values in the array (such as "kW", "KW"),
+      // then the first one is the preferred value, but iD will still 
+      // recognise the alternative/s.
+      "meter": ["m"],
+      "centimeter": ["cm"],
+      "yard": ["yd"],
+
+      // mm is the default unit in OSM, so the tag value should have no suffix.
+      // Therefore, the first array item is blank.
+      // The second value exists so that iD will recognise tag values with an 
+      // explicit 'mm' suffix.
+      "millimeter": ["", "mm"]
+    }
+  }
+}
+```
+
+Translations for the [`narrow` and `long` form](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat) of each unit are bundled into iD-tagging-schema's locale files.
 
 ### Deprecations
 
