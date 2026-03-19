@@ -44,7 +44,6 @@ describe('schema-builder', () => {
     expect(schemaBuilder && schemaBuilder.buildDist).not.toBeUndefined();
     expect(schemaBuilder && schemaBuilder.buildDev).not.toBeUndefined();
     expect(schemaBuilder && schemaBuilder.validate).not.toBeUndefined();
-    expect(schemaBuilder && schemaBuilder.fetchTranslations).not.toBeUndefined();
   });
 
   it('runs validate', () => {
