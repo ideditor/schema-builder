@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://cdn.jsdelivr.net/npm/@ideditor/schema-builder/schemas/generated/dimension.json",
+    "enum": [
+        "area",
+        "concentration",
+        "consumption",
+        "duration",
+        "energy",
+        "length",
+        "mass",
+        "mass-density",
+        "power",
+        "pressure",
+        "speed",
+        "temperature",
+        "volume",
+        "year-duration",
+        "acceleration",
+        "angle",
+        "concentr",
+        "digital",
+        "electric",
+        "force",
+        "frequency",
+        "graphics",
+        "light",
+        "torque"
+    ]
+}

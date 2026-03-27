@@ -1,0 +1,464 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://cdn.jsdelivr.net/npm/@ideditor/schema-builder/schemas/generated/usage.json",
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "area"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default",
+                            "floor",
+                            "geograph",
+                            "land"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "concentration"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "blood-glucose",
+                            "default"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "consumption"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default",
+                            "vehicle-fuel"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "duration"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default",
+                            "media"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "energy"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default",
+                            "food"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "length"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default",
+                            "focal-length",
+                            "person",
+                            "person-height",
+                            "rainfall",
+                            "road",
+                            "snowfall",
+                            "vehicle",
+                            "visiblty"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "mass"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default",
+                            "person"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "mass-density"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "power"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default",
+                            "engine"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "pressure"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "baromtrc",
+                            "default"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "speed"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default",
+                            "rainfall",
+                            "snowfall",
+                            "wind"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "temperature"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default",
+                            "weather"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "volume"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default",
+                            "fluid",
+                            "oil",
+                            "vehicle"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "year-duration"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default",
+                            "person-age"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "acceleration"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "angle"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "concentr"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "digital"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "electric"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "force"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "frequency"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "graphics"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "light"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "torque"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "usage": {
+                        "enum": [
+                            "default"
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

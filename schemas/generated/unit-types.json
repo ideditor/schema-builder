@@ -1,0 +1,813 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://cdn.jsdelivr.net/npm/@ideditor/schema-builder/schemas/generated/units.json",
+    "$defs": {
+        "area": {
+            "enum": [
+                "square-kilometer",
+                "hectare",
+                "square-meter",
+                "square-centimeter",
+                "square-mile",
+                "acre",
+                "square-foot",
+                "square-inch",
+                "square-yard",
+                "dunam"
+            ]
+        },
+        "concentration": {
+            "enum": [
+                "milligram-ofglucose-per-deciliter",
+                "millimole-per-liter",
+                "item-per-cubic-meter"
+            ]
+        },
+        "consumption": {
+            "enum": [
+                "liter-per-100-kilometer",
+                "liter-per-kilometer",
+                "mile-per-gallon-imperial",
+                "mile-per-gallon"
+            ]
+        },
+        "duration": {
+            "enum": [
+                "day",
+                "hour",
+                "minute",
+                "second",
+                "millisecond",
+                "microsecond",
+                "nanosecond",
+                "minute-and-second",
+                "century",
+                "decade",
+                "year",
+                "quarter",
+                "month",
+                "week",
+                "night"
+            ]
+        },
+        "energy": {
+            "enum": [
+                "kilowatt-hour",
+                "kilocalorie",
+                "foodcalorie",
+                "calorie",
+                "kilojoule",
+                "joule",
+                "electronvolt",
+                "british-thermal-unit",
+                "therm-us"
+            ]
+        },
+        "length": {
+            "enum": [
+                "kilometer",
+                "meter",
+                "centimeter",
+                "mile",
+                "foot",
+                "inch",
+                "millimeter",
+                "meter-and-centimeter",
+                "foot-and-inch",
+                "yard",
+                "mile-scandinavian",
+                "earth-radius",
+                "decimeter",
+                "micrometer",
+                "nanometer",
+                "picometer",
+                "parsec",
+                "light-year",
+                "astronomical-unit",
+                "furlong",
+                "fathom",
+                "nautical-mile",
+                "point",
+                "solar-radius"
+            ]
+        },
+        "mass": {
+            "enum": [
+                "tonne",
+                "kilogram",
+                "gram",
+                "milligram",
+                "microgram",
+                "ton",
+                "pound",
+                "ounce",
+                "stone-and-pound",
+                "pound-and-ounce",
+                "stone",
+                "ounce-troy",
+                "carat",
+                "dalton",
+                "earth-mass",
+                "solar-mass",
+                "grain"
+            ]
+        },
+        "mass-density": {
+            "enum": [
+                "kilogram-per-cubic-meter"
+            ]
+        },
+        "power": {
+            "enum": [
+                "gigawatt",
+                "megawatt",
+                "kilowatt",
+                "watt",
+                "milliwatt",
+                "horsepower"
+            ]
+        },
+        "pressure": {
+            "enum": [
+                "hectopascal",
+                "millibar",
+                "millimeter-ofhg",
+                "inch-ofhg",
+                "megapascal",
+                "pascal",
+                "pound-force-per-square-inch",
+                "bar",
+                "atmosphere",
+                "kilopascal",
+                "gasoline-energy-density"
+            ]
+        },
+        "speed": {
+            "enum": [
+                "kilometer-per-hour",
+                "mile-per-hour",
+                "millimeter-per-hour",
+                "centimeter-per-hour",
+                "inch-per-hour",
+                "meter-per-second",
+                "knot",
+                "beaufort",
+                "light-speed"
+            ]
+        },
+        "temperature": {
+            "enum": [
+                "celsius",
+                "fahrenheit",
+                "generic",
+                "kelvin"
+            ]
+        },
+        "volume": {
+            "enum": [
+                "cubic-meter",
+                "cubic-centimeter",
+                "cubic-foot",
+                "cubic-inch",
+                "liter",
+                "milliliter",
+                "gallon-imperial",
+                "fluid-ounce-imperial",
+                "gallon",
+                "quart",
+                "pint",
+                "cup",
+                "fluid-ounce",
+                "tablespoon",
+                "teaspoon",
+                "barrel",
+                "cubic-kilometer",
+                "cubic-mile",
+                "cubic-yard",
+                "megaliter",
+                "hectoliter",
+                "deciliter",
+                "centiliter",
+                "pint-metric",
+                "cup-metric",
+                "acre-foot",
+                "bushel",
+                "dessert-spoon",
+                "dessert-spoon-imperial",
+                "drop",
+                "dram",
+                "jigger",
+                "pinch",
+                "quart-imperial"
+            ]
+        },
+        "year-duration": {
+            "enum": [
+                "year",
+                "month",
+                "year-person",
+                "year-person-and-month-person",
+                "month-person"
+            ]
+        },
+        "acceleration": {
+            "enum": [
+                "g-force",
+                "meter-per-square-second"
+            ]
+        },
+        "angle": {
+            "enum": [
+                "revolution",
+                "radian",
+                "degree",
+                "arc-minute",
+                "arc-second"
+            ]
+        },
+        "concentr": {
+            "enum": [
+                "karat",
+                "milligram-ofglucose-per-deciliter",
+                "millimole-per-liter",
+                "item",
+                "permillion",
+                "percent",
+                "permille",
+                "permyriad",
+                "mole",
+                "portion-per-1e9"
+            ]
+        },
+        "digital": {
+            "enum": [
+                "petabyte",
+                "terabyte",
+                "terabit",
+                "gigabyte",
+                "gigabit",
+                "megabyte",
+                "megabit",
+                "kilobyte",
+                "kilobit",
+                "byte",
+                "bit"
+            ]
+        },
+        "electric": {
+            "enum": [
+                "ampere",
+                "milliampere",
+                "ohm",
+                "volt"
+            ]
+        },
+        "force": {
+            "enum": [
+                "pound-force",
+                "newton",
+                "kilowatt-hour-per-100-kilometer"
+            ]
+        },
+        "frequency": {
+            "enum": [
+                "gigahertz",
+                "megahertz",
+                "kilohertz",
+                "hertz"
+            ]
+        },
+        "graphics": {
+            "enum": [
+                "em",
+                "pixel",
+                "megapixel",
+                "pixel-per-centimeter",
+                "pixel-per-inch",
+                "dot-per-centimeter",
+                "dot-per-inch",
+                "dot"
+            ]
+        },
+        "light": {
+            "enum": [
+                "lux",
+                "candela",
+                "lumen",
+                "solar-luminosity"
+            ]
+        },
+        "torque": {
+            "enum": [
+                "pound-force-foot",
+                "newton-meter"
+            ]
+        }
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "area"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/area"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/area"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "concentration"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/concentration"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/concentration"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "consumption"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/consumption"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/consumption"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "duration"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/duration"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/duration"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "energy"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/energy"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/energy"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "length"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/length"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/length"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "mass"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/mass"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/mass"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "mass-density"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/mass-density"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/mass-density"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "power"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/power"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/power"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "pressure"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/pressure"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/pressure"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "speed"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/speed"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/speed"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "temperature"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/temperature"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/temperature"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "volume"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/volume"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/volume"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "year-duration"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/year-duration"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/year-duration"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "acceleration"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/acceleration"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/acceleration"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "angle"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/angle"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/angle"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "concentr"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/concentr"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/concentr"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "digital"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/digital"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/digital"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "electric"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/electric"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/electric"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "force"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/force"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/force"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "frequency"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/frequency"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/frequency"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "graphics"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/graphics"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/graphics"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "light"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/light"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/light"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "dimension": {
+                        "const": "torque"
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "units": {
+                        "items": {
+                            "$ref": "#/$defs/torque"
+                        }
+                    },
+                    "impliedUnit": {
+                        "$ref": "#/$defs/torque"
+                    }
+                }
+            }
+        }
+    ]
+}
