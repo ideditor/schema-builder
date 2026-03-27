@@ -148,6 +148,7 @@ data/
     defaults.json
     deprecated.json
     discarded.json
+    units.json
 ```
 
 The format for each file is defined in the [`schemas`](schemas) directory.
@@ -748,29 +749,26 @@ Used when `type = measurement`. Defines the unit of measurements that are suppor
   "key": "diameter",
   "type": "measurement",
   "measurement": {
-     // The dimension being measured. This constrains the permitted units.
-     // The ID id defined by CLDR.
+    // The dimension being measured. This constrains the permitted units.
+    // The ID id defined by CLDR.
     "dimension": "length",
 
-    "units": {
-      // The key defines the ID of the of the unit, as defined by CLDR.
-      // The values define the suffix used in the OSM tag value. 
-      // If there are multiple values in the array (such as "kW", "KW"),
-      // then the first one is the preferred value, but iD will still 
-      // recognise the alternative/s.
-      "meter": ["m"],
-      "centimeter": ["cm"],
-      "yard": ["yd"],
+    // The corresponding 'usage' from CLDR.
+    "usage": "default",
 
-      // mm is the default unit in OSM, so the tag value should have no suffix.
-      // Therefore, the first array item is blank.
-      // The second value exists so that iD will recognise tag values with an 
-      // explicit 'mm' suffix.
-      "millimeter": ["", "mm"]
-    }
+    // If the field only allows some units, you can list them here
+    // using CLDR's unit names. If not specified, then, all units from
+    // this dimension are allowed.
+    "units": ["meter", "centimeter", "foot-and-inch"],
+
+    // Some OSM tags have a default unit, which does not need to be explicitly included in the tag value.
+    // This field defines how to interpret a unit-less value:
+    "impliedUnit": "meter"
   }
 }
 ```
+
+To convert the unit IDs into the values used by OSM, see [§Units](#Units).
 
 Translations for the [`narrow` and `long` form](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat) of each unit are bundled into iD-tagging-schema's locale files.
 
@@ -806,6 +804,26 @@ To update a specific tag to a specific new tag
   {
     "old": {"content": "unknown"}
   },
+```
+
+## Units
+
+The [`units.json` file](https://github.com/openstreetmap/id-tagging-schema/blob/main/data/units.json) defines the suffix which is used in the OSM tag value for every unit of measurement.
+
+```jsonc
+{
+  "power": {
+    // The key defines the ID of the of the unit, as defined by CLDR.
+    // The values define the suffix used in the OSM tag value.
+    "megawatt": ["MW"],
+
+    // If there are multiple values in the array, then the first one
+    // is the preferred value, but iD will still recognise the alternative/s.
+    "kilowatt": ["kW", "KW"],
+
+    // `horsepower` is not included, therefore it can't be used by any fields.
+  },
+}
 ```
 
 ## Contributing

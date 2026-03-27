@@ -37,61 +37,86 @@ const usage = {
   }),
 };
 
-const units = {
+const unitTypes = {
   $schema: 'http://json-schema.org/draft-07/schema#',
   $id: 'https://cdn.jsdelivr.net/npm/@ideditor/schema-builder/schemas/generated/units.json',
 
-  allOf: dimension.enum.map((dimension) => {
-    const defaults =
-      unitPreference.supplemental.unitPreferenceData[dimension] || {};
+  $defs: Object.fromEntries(
+    dimension.enum.map((dimension) => {
+      const defaults =
+        unitPreference.supplemental.unitPreferenceData[dimension] || {};
 
-    /** @type {import('json-schema').JSONSchema4['properties']} */
-    const properties = {};
+      /** @type {Set<string>} */
+      const units = new Set(
+        // units.json does not include 'Mixed Units', so we need to add some of
+        // the 'Mixed Units' (only the ones which are used):
+        Object.values(defaults)
+          .flatMap(Object.values)
+          .flat()
+          .map((item) => item.unit),
+      );
 
-    for (const key in unitTranslations.main.en.units.long) {
-      if (key.startsWith(`${dimension}-`)) {
-        const unit = key.split('-').slice(1).join('-');
-        properties[unit] = {
-          type: 'array',
-          items: { type: 'string' },
-          minItems: 1,
-        };
+      // also add all standard units:
+      for (const key in unitTranslations.main.en.units.long) {
+        if (key.startsWith(`${dimension}-`)) {
+          const unit = key.split('-').slice(1).join('-');
+          units.add(unit);
+        }
       }
-    }
 
-    // units.json does not include 'Mixed Units', so we need to add some of
-    // the 'Mixed Units' (only the ones which are used).
-    const mixedUnits = new Set(
-      Object.values(defaults)
-        .flatMap(Object.values)
-        .flat()
-        .map((item) => item.unit),
-    );
+      return [dimension, { enum: [...units] }];
+    }),
+  ),
 
-    for (const unit of mixedUnits) {
-      properties[unit] ||= {
-        type: 'array',
-        items: { type: 'null' },
-        minItems: 1,
-        maxItems: 1,
-      };
-    }
-
+  allOf: dimension.enum.map((dimension) => {
     return {
       if: { properties: { dimension: { const: dimension } } },
       then: {
         properties: {
-          units: {
-            additionalProperties: false,
-            properties,
-          },
+          units: { items: { $ref: `#/$defs/${dimension}` } },
+          impliedUnit: { $ref: `#/$defs/${dimension}` },
         },
       },
     };
   }),
 };
 
-const files = { dimension, usage, units };
+const units = {
+  $schema: 'http://json-schema.org/draft-07/schema#',
+  $id: 'https://cdn.jsdelivr.net/npm/@ideditor/schema-builder/schemas/generated/units.json',
+  title: 'Units of measurement',
+  description:
+    'Defines the suffix used in the OSM tag value for every unit of measurement. If there are multiple values, the first one will be preferred.',
+  type: 'object',
+  properties: Object.fromEntries(
+    Object.entries(unitTypes.$defs).map(([dimension, value]) => {
+      return [
+        dimension,
+        {
+          type: 'object',
+          properties: Object.fromEntries(
+            value.enum.map((unit) => {
+              return [
+                unit,
+                {
+                  type: 'array',
+                  minItems: 1,
+                  uniqueItems: true,
+                  items: { type: 'string' },
+                },
+              ];
+            }),
+          ),
+          additionalProperties: false,
+          minProperties: 1,
+        },
+      ];
+    }),
+  ),
+  additionalProperties: false,
+};
+
+const files = { dimension, usage, 'unit-types': unitTypes, units };
 
 const generatedFolder = join(import.meta.dirname, '../schemas/generated');
 await fs.mkdir(generatedFolder, { recursive: true });
