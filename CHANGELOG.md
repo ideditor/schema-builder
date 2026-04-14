@@ -6,6 +6,12 @@
 
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
+# Unreleased
+
+* :warning: Add _measurement_ field type ([#198], thanks [@k-yle])
+  * Data consumers who don't support `type=measurement` should treat it as a `type=combo` if `autoSuggestions=true`, otherwise treat it as `type=text`.
+
+[#198]: https://github.com/ideditor/schema-builder/pull/198
 
 # 6.5.1
 ##### 2024-Mar-14
