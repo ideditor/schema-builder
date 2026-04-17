@@ -386,6 +386,73 @@ For example,
 }
 ```
 
+##### `relation`
+
+For relations, this object describes which roles are allowed, which tags are required for each role, and other constraints related to relation roles.
+
+* `relation.reference` – a string. This is the “permanent relation type ID”, it must match the value of [permanent relation type ID<sup><code>P41</code></sup>](https://osm.wiki/Property:P41) in the OSM wiki’s wikibase system.
+* `relation.allowDuplicateMembers` – a boolean. Set to `true` if the same OSM feature is allowed to appear multiple times in the relation's members.
+* `relation.role_labels` – translatable labels for each relation role.
+* `relation.members` – an array of objects, which lists every relation role that is permitted as a member (see below).
+
+A full example looks like this:
+
+```jsonc
+// type/restriction/no_u_turn.json
+{
+  "relation": {
+    "reference": "restriction", // the value of https://osm.wiki/Property:P41 from the matching
+    // item, in this case https://wiki.openstreetmap.org/wiki/Item:Q16054. Note that multiple
+    // relation entries may have the same `reference` value.
+    "allowDuplicateMembers": true,
+
+    // The label of ecah role, in the default language. An empty string is allowed.
+    "role_labels": {
+      "from": "From",
+      "via": "Via",
+      "to": "To",
+    },
+    "members": [
+      {
+        "role": "from", // The relation role. An empty string is allowed.
+        "geometry": ["line"], // If not specified, any geometry is allowed.
+        "matchTags": [
+          // Describes which tags the member must have, if it has this role.
+          // `*` can be used as a tag value.
+          // If the object has multiple tags, then all tags must match (logical AND).
+          // If multiple array items are specified, only 1 needs to match (logical OR).
+          // If this property is not specified, then any tags are allowed.
+          { "highway": "*" }
+        ],
+        "min": 1, // The minimum number of times that this role must appear in the relation.
+        "max": 1 // The maximum number of times that this role must appear in the relation.
+      },
+      {
+        "role": "via",
+        "geometry": ["vertex", "line"],
+        "min": 1
+      },
+      {
+        "role": "to",
+        "geometry": ["line"],
+        "matchTags": [{ "highway": "*" }],
+        "min": 1,
+        "max": 1
+      }
+    ]
+  }
+}
+```
+
+##### `relationCrossReference`
+
+To avoid repeating the [`relation` object](#relation) in several presets, you can use `relationCrossReference` to reference another preset.
+
+For example:
+```js
+  "relationCrossReference": "{type/route}"
+```
+
 ### Fields
 
 Fields are reusable form elements that can be associated with presets.
