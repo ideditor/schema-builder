@@ -232,7 +232,7 @@ The primary name of the feature type.
 
 Upon merging into the `main` branch, this is sent to Transifex for translating to other localizations. Changing the name of an existing preset will require it to be re-translated to all localizations.
 
-A preset can optionally re-use translated strings from another preset, by specifying the other preset's ID in the `name`. For example, `"name": "{presetId}"` or `"name": "{folder/presetId}"` would reuse the `name`, `terms` and `aliases` from that other preset. This is for example useful for regional presets which should get the same labels as the preset they are based on. The `presetId` is the same as the filename but ignoring the underscore convention for unsearchable presets. So for a preset at `folder/_name` the reference would be `{folder/name}`.
+A preset can optionally reuse translated strings from another preset, by specifying the other preset's ID in the `name`. For example, `"name": "{presetId}"` or `"name": "{folder/presetId}"` would reuse the `name`, `terms` and `aliases` from that other preset. This is for example useful for regional presets which should get the same labels as the preset they are based on. The `presetId` is the same as the filename but ignoring the underscore convention for unsearchable presets. So for a preset at `folder/_name` the reference would be `{folder/name}`.
 
 This property is required. There is no default.
 
@@ -321,7 +321,7 @@ preset are used. For example, `shop/convenience` automatically uses the same
 fields as `shop`.
 
 In both explicit and implicit inheritance, fields for keys that define the
-preset via `tags` are generally not inherited, even when specified by the parent explicity.
+preset via `tags` are generally not inherited, even when specified by the parent explicitly.
 E.g. the `shop` field is not inherited by `shop/…` presets.
 This can be overwritten by adding the field explicitly like `"fields": [ "shop", "{shop}" ],`
 
@@ -421,7 +421,7 @@ The complete JSON schema for fields can be found in [`schemas/field.json`](schem
 
 ##### `label`
 
-A sort desciption or caption of the field.
+A sort description or caption of the field.
 
 A field can optionally reference the label of another by using that field's name contained in brackets, like `{field}`. In which case the field's _terms_ are also automatically sourced from that other field. This is for example useful when there are multiple variants of fields for the same tag, which should all have the same labels.
 
@@ -601,7 +601,7 @@ in iD to give additional context on a value ([Example](https://github.com/openst
 //–
 ```
 
-[Checkbox field tyes](#checkboxes) use the options keys to specify the values of the OSM tag corresponding
+[Checkbox fields](#checkboxes) use the options keys to specify the values of the OSM tag corresponding
 to the different states of the checkbox input element, in the following order:
 1. fields of type `check`: _unset state_ (must use the option `undefined`), _checked state_,
 _unchecked state_ ([example](https://github.com/openstreetmap/id-tagging-schema/blob/2375a6b/data/fields/parcel_pickup.json))
@@ -680,7 +680,7 @@ Alternatively, the object may contain a single property:
 
 - `keyNot`: The key that must not be present.
 
-If a feature already has a value for this field's `key`, it will always display and ignore the prerequsites.
+If a feature already has a value for this field's `key`, it will always display and ignore the prerequisites.
 If a field with `prerequisiteTag`s is referenced as `moreFields` the "Add field" dropdown will only include it if the prerequisites are met.
 
 Example: This is how we show the Internet Access Fee field only if the feature has an `internet_access` tag not equal to `no`.

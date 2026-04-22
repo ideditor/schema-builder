@@ -1,6 +1,6 @@
 # Icons
 
-For presets and some fields, icons can be specified. They provide an additional hint to the user about what the respective OSM tags are about. Additionaly, icons can help to make presets more universally understood, as icons are even present when presets are not translated into all languages.
+For presets and some fields, icons can be specified. They provide an additional hint to the user about what the respective OSM tags are about. Additionally, icons can help to make presets more universally understood, as icons are even present when presets are not translated into all languages.
 
 # Where do the icons come from?
 
