@@ -26,5 +26,3 @@ updates:
         patterns:
           - "*"
         applies-to: version-updates
-    labels:
-      - "chore-dependabot"
