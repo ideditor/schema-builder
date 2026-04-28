@@ -354,7 +354,7 @@
             "enum": ["preset", "changeset", "manual", "group"]
         },
         "icons": {
-            "description": "For combo fields: Name of icons which represents different values of this field",
+            "description": "For combo and radio fields: Name of icons which represents different values of this field",
             "type": "object",
             "minProperties": 1,
             "additionalProperties": {
