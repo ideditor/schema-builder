@@ -36,3 +36,9 @@ For presets, it is possible to define an icon via the `imageURL` property in add
 `imageURL` is extensively used to specify the logos of brand presets by the [name-suggestion-index](https://github.com/osmlab/name-suggestion-index) project.
 
 It must not be used for regular preset entries in [iD tagging schema](https://github.com/openstreetmap/id-tagging-schema).
+
+## For maintainers: adding a whole new icon *source*
+
+Introducing a new prefixed family (e.g. a new public icon set with its own npm repo or CDN) touches **schema-builder**, **id-tagging-schema**, **iD**, and often **other editors**. That process is documented on a separate page so this file stays short for contributors:
+
+**[Adding a new icon source](docs/Adding-a-new-icon-source.md)** — JSON schema impact, Taginfo URLs, iD sprites, StreetComplete’s Gradle icon task, GoMap!! assets, and a checklist.
