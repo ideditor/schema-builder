@@ -368,6 +368,11 @@ See the [location-conflation](https://github.com/ideditor/location-conflation) p
 }
 ```
 
+Alternatively, `locationSetCrossReference` can be use to reference the `locationSet` property from another field or preset:
+```json
+"locationSetCrossReference": "{presets/man_made/crane}"
+```
+
 ##### `replacement`
 
 The ID of a preset that is preferable to this one. iD's validator will flag features matching this preset and recommend that the user upgrade the tags.
@@ -703,6 +708,11 @@ See the [location-conflation](https://github.com/ideditor/location-conflation) p
     "include": ["US"],
     "exclude": ["PR", "VI"]
 }
+```
+
+Alternatively, `locationSetCrossReference` can be use to reference the `locationSet` property from another field or preset:
+```json
+"locationSetCrossReference": "{fields/crane/type}"
 ```
 
 ##### `urlFormat`

@@ -135,6 +135,11 @@
             },
             "minProperties": 1,
             "additionalProperties": false
+        },
+        "locationSetCrossReference": {
+            "type": "string",
+            "pattern": "^\\{.+\\}$",
+            "description": "An string referencing another preset which has a locationSet"
         }
     },
     "additionalProperties": false,
