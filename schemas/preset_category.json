@@ -10,7 +10,7 @@
             "type": "string"
         },
         "icon": {
-            "description": "Name of preset icon which represents this preset",
+            "description": "Name of preset icon which represents this category",
             "type": "string"
         },
         "members": {
