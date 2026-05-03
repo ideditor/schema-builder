@@ -152,6 +152,10 @@ data/
 
 The format for each file is defined in the [`schemas`](schemas) directory.
 
+#### Preset categories
+
+Files in `data/preset_categories/` (the `categories/` folder in the tree above) define preset groups in the editor. Each JSON file requires `name`, `icon`, and `members`. See the [icons subpage](ICONS.md) for icon ids.
+
 ### Presets
 
 A [preset](https://wiki.openstreetmap.org/wiki/Preset) represents a specific type of
