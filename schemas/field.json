@@ -359,7 +359,7 @@
             "enum": ["preset", "changeset", "manual", "group"]
         },
         "icons": {
-            "description": "For combo and radio fields: Name of icons which represents different values of this field",
+            "description": "For combo and radio fields: Name of icons which represents different values of this field. Values may be icon ids or \"{presets/<preset-id>}\".",
             "type": "object",
             "minProperties": 1,
             "additionalProperties": {
@@ -367,7 +367,7 @@
             }
         },
         "iconsCrossReference": {
-            "description": "A field can reference icons of another by using that field's identifier contained in brackets, like {field}.",
+            "description": "Copy the entire icons map from another field using that field's id in brackets, e.g. {other_field}.",
             "type": "string"
         }
     },
