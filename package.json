@@ -23,9 +23,10 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/taginfo-projects": "github:taginfo/taginfo-projects#6daafd2e30a86a8bfb9615855af2c2d73bd98279",
+    "@vitest/coverage-istanbul": "^4.1.5",
     "eslint": "^10.0.0",
     "globals": "^17.3.0",
-    "jest": "^30.2.0"
+    "vitest": "^4.1.5"
   },
   "engines": {
     "node": ">=22"
@@ -33,6 +34,6 @@
   "scripts": {
     "lint": "eslint lib",
     "lint:fix": "eslint lib --fix",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest schema-builder.test.js"
+    "test": "vitest run"
   }
 }

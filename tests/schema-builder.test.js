@@ -81,7 +81,7 @@ describe('schema-builder', () => {
     expect(fs.existsSync(_workspace + '/dist')).toBe(false);
   });
 
-  it('runs buildDist', (done) => {
+  it('runs buildDist', async () => {
     writeSourceData({
       'data/preset_categories/water.json': {
         icon: 'temaki-water',
@@ -229,7 +229,7 @@ describe('schema-builder', () => {
         name: 'Lake'
       }
     });
-    schemaBuilder.buildDist({
+    await schemaBuilder.buildDist({
       inDirectory: _workspace + '/data',
       interimDirectory: _workspace + '/interim',
       outDirectory: _workspace + '/dist',
@@ -241,10 +241,8 @@ describe('schema-builder', () => {
         contact_email: 'maintainer@example.com'
       },
       listReusedIcons: true
-    }).then(function() {
-      expect(fs.existsSync(_workspace + '/interim/source_strings.yaml')).toBe(true);
-      expect(fs.existsSync(_workspace + '/dist')).toBe(true);
-      done();
     });
+    expect(fs.existsSync(_workspace + '/interim/source_strings.yaml')).toBe(true);
+    expect(fs.existsSync(_workspace + '/dist')).toBe(true);
   });
 });
