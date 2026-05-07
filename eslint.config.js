@@ -1,8 +1,12 @@
 // @ts-check
 import js from '@eslint/js';
+import vitest from '@vitest/eslint-plugin';
 import globals from 'globals';
 
 export default [
+  {
+    ignores: ['.coverage']
+  },
   js.configs.recommended,
   {
     files: ['**/*.js', '**/*.mjs'],
@@ -105,7 +109,15 @@ export default [
       'space-unary-ops': 'error',
       'wrap-regex': 'off'
     }
+  },
+  {
+    files: ['tests/**/*.js'],
+    plugins: { vitest },
+    rules: {
+      ...vitest.configs.recommended.rules,
+    },
+    languageOptions: {
+      globals: vitest.environments.env.globals,
+    },
   }
 ];
-
-
