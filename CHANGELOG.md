@@ -20,6 +20,7 @@
 * :warning: Add _integer_ field type ([#217], thanks [@k-yle])
 * :warning: Store `terms` and `aliases` as an array in the translation files ([#227], thanks [@k-yle])
 * :warning: Support discarding tags, not just keys ([#231], thanks [@k-yle])
+* Pinhead is now available as dependency ([#300], thanks [@matkoniecz])
 
 ###### Non-breaking changes, which affect consumers
 
