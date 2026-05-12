@@ -5,7 +5,7 @@ export default defineConfig({
     globals: true,
     coverage: {
       enabled: true,
-      provider: 'istanbul',
+      provider: 'v8',
       include: ['lib/*.js'],
       reportsDirectory: '.coverage',
     },
