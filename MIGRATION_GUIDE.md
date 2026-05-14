@@ -121,6 +121,8 @@ Any other values of the `attribution` tag should NOT be discarded.
 
 `pinhead-` prefixed icon codes are now allowed and point to [https://pinhead.ink/](https://pinhead.ink/) project. Support for one more icon set should be added.
 
+Icons can be obtained from `https://pinhead.ink/latest/{ID}.svg` for `pinhead-{ID}` icon reference.
+
 See also [bundling proposal](https://github.com/openstreetmap/id-tagging-schema/issues/2208) considered to be added in future (feedback welcome).
 
 ## 7. No more references ([#281](https://github.com/ideditor/schema-builder/pull/281))
