@@ -630,7 +630,7 @@ The user can pick from any of the options, or type their own value.
 
 The `strings` object contains values that the field wants to be translated on Transifex.
 
-[Combo field types](#combodropdown-fields) can accept custom translations for `options` values via the `strings` property.
+[Combo](#combodropdown-fields) and [radio](#radio-buttons) fields can accept custom translations for `options` values via the `strings` property.
 These values populate the `options` property if it isn't otherwise specified.
 If `autoSuggestions` is `true` (as per default), then raw and labeled values might be mixed
 in the dropdown suggestions.
@@ -687,6 +687,11 @@ The value of each option can be a reference to another field or preset's name. F
     }
   }
 ```
+
+Some [special](#special) fields define additional strings besides `options`:
+* `access` fields define `types` for the different traffic modes
+* `directionalCombo` fields define `types` for the respecive directions subtags
+* `address` fields define `placeholders` and `labels` for the individual address sub-fields
 
 ##### `stringsCrossReference`
 
