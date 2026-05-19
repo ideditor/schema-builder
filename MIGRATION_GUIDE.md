@@ -1,6 +1,6 @@
 # v7 Migration Guide
 
-v7 of [id-tagging-schema](https://github.com/openstreetmap/id-tagging-schema) and [schema-builder](https://github.com/ideditor/schema-builder) contains 5 breaking changes, where data consumers will need to take action.
+v7 of [id-tagging-schema](https://github.com/openstreetmap/id-tagging-schema) and [schema-builder](https://github.com/ideditor/schema-builder) contains 6 breaking changes, where data consumers will need to take action.
 
 This document is a brief migration guide.
 The full list of changes is in [CHANGELOG.md](./CHANGELOG.md).
@@ -117,7 +117,15 @@ Any other values of the `attribution` tag should NOT be discarded.
 > [!IMPORTANT]
 > Action Required: If you use this file, ensure that your code handles the new format.
 
-## 6. No more references ([#281](https://github.com/ideditor/schema-builder/pull/281))
+## 6. New icon set ([#300](https://github.com/ideditor/schema-builder/pull/300))
+
+`pinhead-` prefixed icon codes are now allowed and point to [https://pinhead.ink/](https://pinhead.ink/) project. Support for one more icon set should be added.
+
+Icons can be obtained from `https://pinhead.ink/latest/{ID}.svg` for `pinhead-{ID}` icon reference.
+
+See also [bundling proposal](https://github.com/openstreetmap/id-tagging-schema/issues/2208) considered to be added in future (feedback welcome).
+
+## 7. No more references ([#281](https://github.com/ideditor/schema-builder/pull/281))
 
 If you currently parse the fields `stringsCrossReference` or `iconsCrossReference`, or if you handle the reference syntax (such as `"{natural/beach}"`), all this logic can be now be deleted.
 
@@ -129,6 +137,6 @@ It also allows iD-tagging-schema to implement new internal referencing logic (su
 > [!IMPORTANT]
 > Action Required: None. Optionally, you could delete this logic from your code.
 
-## 7. Other changes
+## 8. Other changes
 
 See the [CHANGELOG.md](./CHANGELOG.md) file for the 3 other non-breaking changes to the schema.

@@ -14,6 +14,7 @@ Icons from the below listed sources can be used. When specifying an icon, use th
 | [Font Awesome Solid](https://fontawesome.com/search?o=r&ic=free&s=solid) | `fas-` | Solid style icons from Font Awesome (free tier) | [Preview](https://icones.js.org/collection/fa7-solid) |
 | [Font Awesome Regular](https://fontawesome.com/search?o=r&ic=free&s=regular) | `far-` | Regular style icons from Font Awesome (free tier) | [Preview](https://icones.js.org/collection/fa7-regular) |
 | [Font Awesome Brands](https://fontawesome.com/search?o=r&ic=free&ip=brands) | `fab-` | Brand icons from Font Awesome (free tier) | [Preview](https://icones.js.org/collection/fa7-brands) |
+| [Pinhead](https://pinhead.ink/) | `pinhead-` | Public domain icons for map pins  | [Preview](https://pinhead.ink/) |
 | [iD Presets](https://github.com/openstreetmap/iD/tree/develop/svg/iD-sprite/presets) | `iD-` | iD's presets-icons | - |
 | [iD Fields](https://github.com/openstreetmap/iD/tree/develop/svg/iD-sprite/fields) | `iD-` | iD's fields-icons | - |
 

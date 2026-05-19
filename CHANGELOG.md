@@ -20,6 +20,7 @@
 * :warning: Add _integer_ field type ([#217], thanks [@k-yle])
 * :warning: Store `terms` and `aliases` as an array in the translation files ([#227], thanks [@k-yle])
 * :warning: Support discarding tags, not just keys ([#231], thanks [@k-yle])
+* :warning: Pinhead icon set is allowed as an additional source for icons ([#300], thanks [@matkoniecz])
 
 ###### Non-breaking changes, which affect consumers
 
