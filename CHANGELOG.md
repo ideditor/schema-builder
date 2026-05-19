@@ -7,8 +7,8 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
-# Unreleased
-##### (????-???-??)
+# 7.0.0-rc.1
+##### 2026-May-19
 
 ###### Breaking changes
 
