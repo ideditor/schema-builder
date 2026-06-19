@@ -12,7 +12,7 @@
   "license": "ISC",
   "exports": "./lib/index.js",
   "dependencies": {
-    "@transifex/api": "^7.1.0",
+    "@transifex/api": "^8.0.0",
     "js-yaml": "^4.0.0",
     "json-schema-to-typescript-lite": "^15.0.0",
     "jsonschema": "^1.1.0",
