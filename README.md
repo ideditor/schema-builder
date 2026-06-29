@@ -520,9 +520,9 @@ A string specifying the UI and behavior of the field. Must be one of the followi
 * `combo` - Dropdown field for picking one option out of many (e.g. `surface=*`)
 * `typeCombo` - Dropdown field picking a specific type from a generic category key<br/>
 (e.g. `waterway=*`.  If unset, tag will be `waterway=yes`, but dropdown contains options like `stream`, `ditch`, `river`)
-* `multiCombo` - Dropdown field for adding `yes` values to multiple keys with the same prefix (a common multikey)<br/>
-(e.g. `recycling:*` -> `recycling:glass=yes`, `recycling:paper=yes`, etc.)
-* `manyCombo` - Dropdown field for adding `yes` values to many different keys<br/>
+* `multiCombo` - Dropdown field for adding `yes` value to multiple keys with the same prefix (a common multikey) and suffixes selected among specified options<br/>
+(e.g. `recycling:*` as prefix and `glass`, `paper` as suffixes  -> `recycling:glass=yes`, `recycling:paper=yes`)
+* `manyCombo` - Dropdown field for adding `yes` values to many different keys from a specified list<br/>
 (e.g. `bus`, `tram`, `train` -> `bus=yes`, `tram=yes`, etc.)
 * `networkCombo` - Dropdown field that helps users pick a route `network` tag (localized for editing location)
 * `semiCombo` - Dropdown field for adding multiple values to a semicolon-delimited list<br/>
