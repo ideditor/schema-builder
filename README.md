@@ -288,7 +288,11 @@ When adding a feature with this preset, it will be given the tags `man_made=brid
 
 ##### `removeTags`
 
-The tags that are removed from the feature when deselecting this preset. Defaults to `addTags` or if this is also not defined, to `tags`.
+`removeTags` is a special feature that needs explicit setting in edge cases when [automatic tag removal on preset switching](https://github.com/ideditor/schema-builder/issues/329) is not enough.
+
+Specified tags are removed from the feature when deselecting this preset. Defaults to `addTags` or if this is also not defined, to `tags`.
+
+For example [`landuse=vineyard`](https://github.com/openstreetmap/id-tagging-schema/blob/7c94ba9d1568f089234af39d5a1a5d8503e8ae39/data/presets/landuse/vineyard.json#L18-L22) removes also `crop=grape` - which is not included in its preset.
 
 ##### `fields`/`moreFields`
 
