@@ -316,13 +316,8 @@ of `presets/shop.json`. When subfolders are used, the format is `{shop/books}` t
 }
 ```
 
-If `fields` or `moreFields` are not defined, the values of the preset's "parent"
-preset are used. For example, `shop/convenience` automatically uses the same
-fields as `shop`.
-
-In both explicit and implicit inheritance, fields for keys that define the
-preset via `tags` are generally not inherited, even when specified by the parent explicitly.
-E.g. the `shop` field is not inherited by `shop/…` presets.
+Fields for keys that define the preset via `tags` are generally not inherited.
+E.g. the `shop` field is not inherited despite specifying as inherinting from `{shop}` presets.
 This can be overwritten by adding the field explicitly like `"fields": [ "shop", "{shop}" ],`
 
 ##### `icon`
