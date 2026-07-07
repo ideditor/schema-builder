@@ -137,6 +137,13 @@ It also allows iD-tagging-schema to implement new internal referencing logic (su
 > [!IMPORTANT]
 > Action Required: None. Optionally, you could delete this logic from your code.
 
-## 8. Other changes
+## 8. No more implicit inheritance ([#335](https://github.com/ideditor/schema-builder/pull/335))
+
+After [implicit inheritance was replaced by explicit inheritance](https://github.com/openstreetmap/id-tagging-schema/pull/1855) it is no longer considered necessary or desirable for data consumers to resolve implicit inheritance.
+
+> [!IMPORTANT]
+> Action Required: None. Optionally, you could delete this logic from your code.
+
+## 9. Other changes
 
 See the [CHANGELOG.md](./CHANGELOG.md) file for the 3 other non-breaking changes to the schema.
