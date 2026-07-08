@@ -125,11 +125,11 @@ Icons can be obtained from `https://pinhead.ink/latest/{ID}.svg` for `pinhead-{I
 
 See also [bundling proposal](https://github.com/openstreetmap/id-tagging-schema/issues/2208) considered to be added in future (feedback welcome).
 
-## 7. No more references ([#281](https://github.com/ideditor/schema-builder/pull/281))
+## 7. No more references [#281](https://github.com/ideditor/schema-builder/pull/281)) and implicit inheritance ([#335](https://github.com/ideditor/schema-builder/pull/335))
 
-If you currently parse the fields `stringsCrossReference` or `iconsCrossReference`, or if you handle the reference syntax (such as `"{natural/beach}"`), all this logic can be now be deleted.
+If you currently parse the fields `stringsCrossReference` or `iconsCrossReference`, or if you handle the reference syntax (such as `"{natural/beach}"`), all this logic can be now be deleted. Similarly, it is not also not necessary anymore to include logic for the implicit inheritance of fields from a parent field to any sub-presets when the sub-preset does not specify its own set of fields.
 
-References are now expanded at build-time, so fields like `stringsCrossReference` and `iconsCrossReference` will never be exposed to downstream consumers. Likewise for references such as `"{natural/beach}"`.
+References are now expanded at build-time, so fields like `stringsCrossReference` and `iconsCrossReference` will never be exposed to downstream consumers. Likewise for references such as `"{natural/beach}"` and implicitly inherited properties.
 
 While this marginally increases the file size, it significantly simplifies the logic for consumers.
 It also allows iD-tagging-schema to implement new internal referencing logic (such as [#230](https://github.com/ideditor/schema-builder/pull/230)), without creating a breaking change for consumers.
@@ -137,6 +137,6 @@ It also allows iD-tagging-schema to implement new internal referencing logic (su
 > [!IMPORTANT]
 > Action Required: None. Optionally, you could delete this logic from your code.
 
-## 8. Other changes
+## 9. Other changes
 
 See the [CHANGELOG.md](./CHANGELOG.md) file for the 3 other non-breaking changes to the schema.

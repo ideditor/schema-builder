@@ -7,8 +7,8 @@
 [#x]: https://github.com/ideditor/schema-builder/issues/x
 -->
 
-# 7.0.0-rc.1
-##### 2026-May-19
+# 7.0.0
+##### 2026-July-08
 
 ###### Breaking changes
 
@@ -29,6 +29,7 @@
 * Add `allowDuplicates` property for semi-combo fields ([#178], thanks [@k-yle])
 * Dereference at build-time ([#281], thanks [@k-yle])
 * Allow icons for radio field ([#291], thanks [@matkoniecz])
+* Remove implicit inheritance ([#335], thanks [@matkoniecz])
 
 ###### Non-breaking changes, which do NOT affect consumers
 
@@ -38,6 +39,8 @@
 * Fix invalid eslint config ([#176], thanks [@k-yle])
 * Fix taginfo file not including base tags for `directionalCombo` ([#222], thanks [@k-yle])
 * Fix taginfo file only including the last key-value pair in the object ([#223], thanks [@k-yle])
+* Fix taginfo file having bogus key listed for `multiCombo`, make `multiCombo`, `manyCombo`, `check`, `defaultCheck`, `onewayCheck` listings more accurate, take into consideration `autoSuggestion` and `customValues` ([#331], thanks [@matkoniecz])
+* List Roentgen icons in taginfo dataset ([#321], thanks [@matkoniecz])
 * Allow fields & presets to reference the `locationSet` from other files ([#226], thanks [@k-yle])
 * Consider other unicode commas when splitting translated `terms` ([#228], thanks [@k-yle])
 * Make schemas stricter ([#242], thanks [@FloEdelmann])
@@ -51,6 +54,7 @@
   * `name`, `icon` and `members` are now required in preset category
   * `point`, `vertex`, `line`, `area` and `relation` are now required in preset defaults
 * Add validation for terms to be lowercase and sorted ([#243], thanks [@FloEdelmann])
+* Be more clear when complaining during build about value ordering ([#325], thanks [@matkoniecz] and [@k-yle])
 
 ###### Docs
 
@@ -63,6 +67,8 @@
 * Better phrasing in documentation of referencing ([#256], thanks [@matkoniecz])
 * link opening hours specs ([#274], thanks [@matkoniecz])
 * fix some typos ([#292], thanks [@matkoniecz])
+* fix broken links ([#328], thanks [@matkoniecz])
+* improve `removeTags` documentation ([#332], thanks [@matkoniecz])
 
 [#87]: https://github.com/ideditor/schema-builder/pull/87
 [#101]: https://github.com/ideditor/schema-builder/pull/101
@@ -93,6 +99,10 @@
 [#281]: https://github.com/ideditor/schema-builder/pull/281
 [#291]: https://github.com/ideditor/schema-builder/pull/291
 [#292]: https://github.com/ideditor/schema-builder/pull/292
+[#328]: https://github.com/ideditor/schema-builder/pull/328
+[#331]: https://github.com/ideditor/schema-builder/pull/331
+[#332]: https://github.com/ideditor/schema-builder/pull/332
+[#335]: https://github.com/ideditor/schema-builder/pull/335
 [@1ec5]: https://github.com/1ec5
 [@FloEdelmann]: https://github.com/FloEdelmann
 [@matkoniecz]: https://github.com/matkoniecz
