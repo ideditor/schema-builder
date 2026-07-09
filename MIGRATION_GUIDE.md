@@ -125,7 +125,7 @@ Icons can be obtained from `https://pinhead.ink/latest/{ID}.svg` for `pinhead-{I
 
 See also [bundling proposal](https://github.com/openstreetmap/id-tagging-schema/issues/2208) considered to be added in future (feedback welcome).
 
-## 7. No more references [#281](https://github.com/ideditor/schema-builder/pull/281)) and implicit inheritance ([#335](https://github.com/ideditor/schema-builder/pull/335))
+## 7. No more references ([#281](https://github.com/ideditor/schema-builder/pull/281)) and implicit inheritance ([#335](https://github.com/ideditor/schema-builder/pull/335))
 
 If you currently parse the fields `stringsCrossReference` or `iconsCrossReference`, or if you handle the reference syntax (such as `"{natural/beach}"`), all this logic can be now be deleted. Similarly, it is not also not necessary anymore to include logic for the implicit inheritance of fields from a parent field to any sub-presets when the sub-preset does not specify its own set of fields.
 
