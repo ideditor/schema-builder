@@ -99,6 +99,7 @@
 [#281]: https://github.com/ideditor/schema-builder/pull/281
 [#291]: https://github.com/ideditor/schema-builder/pull/291
 [#292]: https://github.com/ideditor/schema-builder/pull/292
+[#300]: https://github.com/ideditor/schema-builder/pull/300
 [#328]: https://github.com/ideditor/schema-builder/pull/328
 [#331]: https://github.com/ideditor/schema-builder/pull/331
 [#332]: https://github.com/ideditor/schema-builder/pull/332
