@@ -100,6 +100,8 @@
 [#291]: https://github.com/ideditor/schema-builder/pull/291
 [#292]: https://github.com/ideditor/schema-builder/pull/292
 [#300]: https://github.com/ideditor/schema-builder/pull/300
+[#321]: https://github.com/ideditor/schema-builder/pull/321
+[#325]: https://github.com/ideditor/schema-builder/pull/325
 [#328]: https://github.com/ideditor/schema-builder/pull/328
 [#331]: https://github.com/ideditor/schema-builder/pull/331
 [#332]: https://github.com/ideditor/schema-builder/pull/332
