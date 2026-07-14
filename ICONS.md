@@ -1,3 +1,9 @@
+# Migration
+
+This repository [was merged into iD-tagging-schema repository](https://github.com/ideditor/schema-builder/issues/35).
+
+See [ICONS.md in id-tagging-schema repo](https://github.com/openstreetmap/id-tagging-schema/blob/main/ICONS.md) for documentation in its new place.
+
 # Icons
 
 For presets and some fields, icons can be specified. They provide an additional hint to the user about what the respective OSM tags are about. Additionally, icons can help to make presets more universally understood, as icons are even present when presets are not translated into all languages.
