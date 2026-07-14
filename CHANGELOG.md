@@ -1,3 +1,14 @@
+# Migration
+
+This repository [was merged into iD-tagging-schema repository](https://github.com/ideditor/schema-builder/issues/35).
+
+See [CHANGELOG.md in id-tagging-schema repo](https://github.com/openstreetmap/id-tagging-schema/blob/main/CHANGELOG.md) for documentation in its new place.
+
+Changelog there was merged with release listings of id-tagging-schema repo.
+
+-------------------------
+
+
 :warning: = Breaking change
 
 <!--

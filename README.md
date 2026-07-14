@@ -1,7 +1,14 @@
-[![build](https://github.com/ideditor/schema-builder/workflows/build/badge.svg)](https://github.com/ideditor/schema-builder/actions?query=workflow%3A%22build%22)
-[![npm version](https://badge.fury.io/js/%40ideditor%2Fschema-builder.svg)](https://badge.fury.io/js/%40ideditor%2Fschema-builder)
+# Migration
+
+> [!IMPORTANT]
+> This repository [was merged into iD-tagging-schema repository](https://github.com/ideditor/schema-builder/issues/35).
+> 
+> See [SCHEMA.md in id-tagging-schema repo](https://github.com/openstreetmap/id-tagging-schema/blob/main/SCHEMA.md) for documentation in its new place.
 
 # schema-builder
+
+[![build](https://github.com/ideditor/schema-builder/workflows/build/badge.svg)](https://github.com/ideditor/schema-builder/actions?query=workflow%3A%22build%22)
+[![npm version](https://badge.fury.io/js/%40ideditor%2Fschema-builder.svg)](https://badge.fury.io/js/%40ideditor%2Fschema-builder)
 
 This package lets you define and compile OpenStreetMap presets, fields, and other tagging
 info into the format expected by the [iD editor](https://github.com/openstreetmap/iD).
